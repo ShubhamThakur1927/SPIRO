@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../src/componets/Navbar'
+import Navbar from '../componets/Navbar'
 
 function Home() {
   return (
