@@ -28,15 +28,15 @@ function Signup() {
           <form>
             <input type="email"
             placeholder='Enter your email'
-            className='w-full py-4 my-2 text-white border-b  border-white font-extrabold bg-transparent outline-none focus:outline-none' />
+            className='w-full py-4 my-2 text-white border-b  border-white font-extrabold bg-transparent outline-none focus:outline-none' required/>
 
             <input type="password"
             placeholder='Enter your password'
-            className='w-full py-4 my-2 text-white border-b  border-white font-extrabold bg-transparent outline-none focus:outline-none' />
+            className='w-full py-4 my-2 text-white border-b  border-white font-extrabold bg-transparent outline-none focus:outline-none' required />
             
             <input type="password"
-            placeholder='Re-enter Confirm Your Password'
-            className='w-full py-4 my-2 text-white border-b  border-white font-extrabold bg-transparent outline-none focus:outline-none' />
+            placeholder='Re-enter Confirm Password'
+            className='w-full py-4 my-2 text-white border-b  border-white font-extrabold bg-transparent outline-none focus:outline-none' required/>
           </form>
           {/*<div className='w-full flex items-center justify-between'>
             <div className='w-full flex'>
@@ -46,7 +46,7 @@ function Signup() {
             <p className="text-sm underline font-medium underline-offset-2 cursor-pointer whitespace-nowrap">Forget password?</p>
           </div>*/}
 
-          <button className='w-full py-4 border-2 border-[#5c606b]  bg-transparent  text-white font-extrabold rounded-xl my-10 hover:bg-white hover:text-black'>Send OTP</button>
+          <button className='w-full py-4 border-2 border-[#5c606b]  bg-transparent  text-white font-extrabold rounded-xl my-10 hover:bg-white hover:text-black' >Send OTP</button>
           <div className='w-full items-center justify-center'>
           <p className='text-sm'>Already have an account? <span className='underline font-extrabold underline-offset-2 cursor-pointer'>Login</span></p>
         </div>
