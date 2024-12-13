@@ -8,9 +8,12 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <LoginSignup/>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginSignup />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
