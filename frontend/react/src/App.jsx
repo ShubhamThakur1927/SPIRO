@@ -7,7 +7,7 @@ import EmailVerificationPage from "./pages/EmailVerificationPage";
 import DashboardPage from "./pages/DashboardPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
-
+import Home from "./pages/Home";
 import LoadingSpinner from "./components/LoadingSpinner";
 
 import { Toaster } from "react-hot-toast";
@@ -67,6 +67,15 @@ function App() {
 						</ProtectedRoute>
 					}
 				/>
+				<Route
+					path='/Home'
+					element={
+						<ProtectedRoute>
+							<Home />
+						</ProtectedRoute>
+					}
+				/>
+				
 				<Route
 					path='/signup'
 					element={
