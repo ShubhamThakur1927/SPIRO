@@ -1,8 +1,9 @@
-# React + Vite
+# Spiro-frontend    
+    This is link only used by devloper to test the frontend componets of the project.
+    {waring: Don't play with website script}
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+       Link: http://localhost:<Your_port>/test
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+       <your_port> = put ther port number you are using to run the project
+        example : http://localhost:5173/test
+        

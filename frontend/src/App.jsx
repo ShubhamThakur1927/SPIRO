@@ -8,6 +8,7 @@ import DashboardPage from "./pages/DashboardPage";
 import { useAuthstore } from "./Stores/authstores";
 import Verification from "./pages/Verification";
 import StudentLogin from "./pages/StudentLogin";
+import Testing from "./Test/Testing";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, teacher } = useAuthstore();
@@ -72,6 +73,13 @@ function App() {
 
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Forgetpassword" element={<Forgetpassword />} />
+
+
+        {/* Only for testing... */}
+
+        <Route path="/test" element={<Testing/>} />
+
+        
       </Routes>
     </BrowserRouter>
   );
