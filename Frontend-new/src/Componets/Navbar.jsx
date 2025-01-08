@@ -14,7 +14,7 @@ function Navbar() {
                 <Link to="*" ><li className='hover:text-[#0056D2]'>Courses</li></Link>
                 <Link to="*" ><li  className='hover:text-[#0056D2]'>About</li></Link>
                 <Link to="*" ><li className='hover:text-[#0056D2]'>Contact us</li></Link>
-                <Link to="*" ><li><button className='action-btn hover:bg-[#3f74bf] bg-[#0056D2] text-white py-2 px-6 rounded-full'>Login</button></li></Link>
+                <Link to="Login" ><li><button className='action-btn hover:bg-[#3f74bf] bg-[#0056D2] text-white py-2 px-6 rounded-full'>Login</button></li></Link>
             </ul>
         </div>
         <div className="toggle-btn md:hidden">
