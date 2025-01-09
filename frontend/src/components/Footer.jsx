@@ -10,7 +10,7 @@ function Footer() {
                     <h4 className='text-h4 leading-h4 font-semibold'>Courses</h4>
                   
                     <ul>
-                    <li>Artificial Inteligence</li>
+                    <li>Artificial </li>
                     <li>Data Science</li>
                     <li>Machine learning</li>
                     <li>Cloud Computing</li>
