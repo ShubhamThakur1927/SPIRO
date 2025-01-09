@@ -1,8 +1,12 @@
 import React from 'react'
+import Footer from '../components/Footer'
 
 function Testing() {
   return (
-    <div>Testing</div>
+    <section className='my-10'>
+    <Footer/>
+    
+    </section>
   )
 }
 

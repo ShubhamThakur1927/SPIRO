@@ -13,11 +13,17 @@ export default {
       fontSize:{
         'display': "64px",
         'small':"20px",
-        'h4': "24px",
-        'h2':"36px"
+        'h2':"36px",
+        'h1':"40px",
+        'h4':"20px",
+        'tiny':"18",
       },
       lineHeight:{
-        'h2':"48px"
+      'h1':"48px",
+      'h4':"28px",
+      'tiny':"18",
+      'small':"20",
+      'h2':"48px"
       },
 
       colors: {
