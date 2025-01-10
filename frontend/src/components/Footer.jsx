@@ -2,14 +2,14 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer className='pb-10 w-full'>
-        <div className='Uppersection flex gap-24 border-t-2 border-card pt-5'>
+    <footer className='pb-10 w-full mt-28 '>
+        <div className='Uppersection flex gap-24 px-20 pt-5'>
+            
             <div className='Logo text-h1 font-semibold leading-h1' >SPIRO</div>
-            <div className='flex gap-10 px-20'>
+            <div className='flex gap-28 px-20'>
                 <div className='Cources grid gap-3'>
                     <h4 className='text-h4 leading-h4 font-semibold'>Courses</h4>
-                  
-                    <ul>
+                    <ul className='flex flex-col gap-4 text-small text-body-2'>
                     <li>Artificial Inteligence</li>
                     <li>Data Science</li>
                     <li>Machine learning</li>
@@ -21,13 +21,13 @@ function Footer() {
                 
                     <h4 className='text-h4 leading-h4 font-semibold'>Company</h4>
                   
-                    <ul className='mt-3'>
+                    <ul className='mt-3 text-small text-body-2'>
                     <li>About us</li>
                     </ul> 
                 </div>
                 <div className='Resources'>
                 <h4 className='text-h4 leading-h4 font-semibold'>Resources</h4>
-                  <ul className='mt-3'>
+                  <ul className='mt-3 text-small text-body-2'>
                   <li>Blog</li>
                   </ul>
                 </div>
@@ -35,7 +35,7 @@ function Footer() {
         </div>
     <div className='mt-24'>
         <div>
-            <ul className='flex gap-4 border-t-2 border-card py-5 text-tiny'>
+            <ul className='flex gap-4 py-5 text-tiny'>
                 <li>© Spiro All Right reserved.</li>
                 <li>Privacy Policy</li>
                 <li>Termens of services</li>

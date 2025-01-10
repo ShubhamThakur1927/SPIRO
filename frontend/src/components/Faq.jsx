@@ -1,6 +1,7 @@
+import AOS from "aos";
 import { CrossIcon, PlusIcon, X } from "lucide-react";
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import 'aos/dist/aos.css';
 function Faq(props) {
   const [isClicked, setIsClicked] = useState(false);
 
@@ -8,9 +9,13 @@ function Faq(props) {
     setIsClicked((prev) => !prev);
   };
 
+ useEffect(() => {
+      AOS.init();
+    }, [])
+
   return (
     
-    <div className=" align-middle justify-centre h-auto border-b-2 mb-10 space-x-1">
+    <div className=" align-middle justify-centre h-auto border-b-2 mb-10 space-x-1" data-aos ="fade-right">
       
       <div
         className="question flex align-middle items-center justify-between mb-2 cursor-pointer"

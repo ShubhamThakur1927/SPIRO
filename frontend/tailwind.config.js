@@ -39,13 +39,15 @@ export default {
       },
 
       colors: {
-        'primary' : "#0056d2",
-        'secondary' : "#F2F2F2",
+        'primary':"#0056d2",
+        'secondary':"#F2F2F2",
         'Dark' : "#020817",
         'main':"#f1f1f2",
         'trip':"#4d4d4d",
-        'testo':"#4b4b4b",
+        'card':"#F5F5F5",
         'rips':"#e4e4e4",
+        'body':"#1a1a1a",
+        'body-2':"#4d4d4d"
 
       }
     },

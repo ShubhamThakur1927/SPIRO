@@ -1,29 +1,32 @@
-import React from 'react'
-import Card from './Card'
+import React, { useEffect } from 'react'
 import Teststomonial from './Teststomonial'
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 function Cardsareng() {
+  useEffect(() => {
+      AOS.init();
+    }, [])
+  
   return (
-    <div >
-        <div className='text-center py-5'>
-            <h1 className='text-h1 font-semibold'>Success Stories from <span className='text-primary'>Our Community</span></h1>
-        </div>
-        <div className='grid grid-flow-col grid-cols-3 w-auto'>
-    <div className='grid py-20 '>
-        <Teststomonial title="Hanna Dorwart" headinfo="Project Management" subtitle="This platform has transformed the way I learn. The courses are concise, clear, and extremely practical. I feel more confident applying these skills to real-world projects."/>
-        <Teststomonial title="Hanna Dorwart" headinfo="Project Management" subtitle="This platform has transformed the way I learn. The courses are concise, clear, and extremely practical. I feel more confident applying these skills to real-world projects."/>
-    </div>
-      <div>
-      <Teststomonial title="Hanna Dorwart" headinfo="Project Management" subtitle="This platform has transformed the way I learn. The courses are concise, clear, and extremely practical. I feel more confident applying these skills to real-world projects."/>
-        <Teststomonial title="Hanna Dorwart" headinfo="Project Management" subtitle="This platform has transformed the way I learn. The courses are concise, clear, and extremely practical. I feel more confident applying these skills to real-world projects."/>
-        <Teststomonial title="Hanna Dorwart" headinfo="Project Management" subtitle="This platform has transformed the way I learn. The courses are concise, clear, and extremely practical. I feel more confident applying these skills to real-world projects."/>
+    <>
+    <h1 className='text-h1 font-semibold leading-h1 my-20'  data-aos="fade-up">Success Stories from <span className='text-primary'>Our Community</span></h1>
+    <div className="grid grid-flow-col gap-5 justify-center w-full h-auto">
+      <div className="flex flex-wrap flex-col items-end justify-center gap-5 " data-aos="fade-right">
+        <Teststomonial/>
+        <Teststomonial/>
       </div>
-      <div className='grid py-20'>
-      <Teststomonial title="Hanna Dorwart" headinfo="Project Management" subtitle="This platform has transformed the way I learn. The courses are concise, clear, and extremely practical. I feel more confident applying these skills to real-world projects."/>
-        <Teststomonial title="Hanna Dorwart" headinfo="Project Management" subtitle="This platform has transformed the way I learn. The courses are concise, clear, and extremely practical. I feel more confident applying these skills to real-world projects."/>
-        </div>
+      <div className="w-full grid grid-flow-row justify-center gap-5"  data-aos="fade-up">
+        <Teststomonial/>
+        <Teststomonial/>
+        <Teststomonial/>
+      </div>
+      <div className="flex flex-wrap flex-col justify-center gap-5 "  data-aos="fade-left">
+      <Teststomonial/>
+      <Teststomonial/>
       </div>
     </div>
+    </>
   )
 }
 
