@@ -11,7 +11,7 @@ const DashboardPage = () => {
 	return (
 		<>
 		<button onClick={handleLogout}>
-			Click
+			logout
 		</button>
 		<div>Dashboard</div>
 		</>
