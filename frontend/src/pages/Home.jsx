@@ -3,12 +3,16 @@ import Navbar from '../components/Navbar'
 import Faq from '../components/Faq'
 import Footer from '../components/Footer'
 import Cardsareng from '../components/Cardsareng'
+import './styles/styles.css'
 
 function Home() {
   return (
     <section className='bg-main main'>
-    <div className='min-h-screen bg-slate-400'>
-      <Navbar />
+    <Navbar/>
+    <div className='min-h-screen hero overflow-hidden '>
+      <div className='bg-black min-h-lvh opacity-30'>
+        
+      </div>
     </div>
     <section className='bg-white rounded-xl h-auto'>
       <Cardsareng/>
@@ -25,7 +29,3 @@ function Home() {
       <Footer/>
     </section>
     </section>
-  )
-}
-
-export default Home
