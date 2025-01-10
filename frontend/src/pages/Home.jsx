@@ -1,12 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-
+import './styles/styles.css'
 function Home() {
   return (
-    <div className='min-h-screen bg-slate-400'>
-      <Navbar />
-      <h1>Home</h1>
+    <>
+    <Navbar/>
+    <div className='min-h-screen hero overflow-hidden '>
+      <div className='bg-black min-h-lvh opacity-30'>
+        
+      </div>
     </div>
+    </>
   )
 }
 

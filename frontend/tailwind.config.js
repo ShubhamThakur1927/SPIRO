@@ -10,6 +10,9 @@ export default {
         'Inter' : ['Inter', 'sans-serif'],
         'Sourcesans' : ['Source Sans 3', 'sans-serif'],
       },
+      backgroundImage:{
+        "hero":"url('../assets/hero.png')",
+      },
       fontSize:{
         'display': "64px",
         'small':"20px",
@@ -31,7 +34,7 @@ export default {
       },
 
       colors: {
-        'primary' : "#0065F7",
+        'primary' : "#0056d2",
         'secondary' : "#F2F2F2",
         'Dark' : "#020817",
         'card':"#f1f1f2"

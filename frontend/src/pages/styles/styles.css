@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-.img1
+.hero
 {
-    background: url('https://img.freepik.com/free-vector/funny-education-background_23-2147902976.jpg?t=st=1735673783~exp=1735677383~hmac=38e8d4518f01ceab1bba01afad7aa0f8e1a42c5dbd36eef077802593a3816646&w=740');
+    background: url('../../assets/hero.png');
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;

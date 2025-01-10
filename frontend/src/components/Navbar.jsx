@@ -2,22 +2,24 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 function Navbar() {
   return (
-    <div className='min-w-screen flex justify-around items-center p-5 bg-transparent text-dark'>
-      <div className=''>
-        LOGO
+    <section className='fixed right-0 left-0 z-50'>
+    <div className='min-w-screen flex justify-around align-center items-center text-white p-5 bg-transparent text-dark'>
+      <div className='text-h1 font-semibold text-primary'>
+        <Link to="/"> SPIRO </Link>
       </div>
-      <div>
-        search
-      </div>
-      <div className='flex space-x-10'>
-        <ul className='flex space-x-5 font-medium'>
-          <li>Contact</li>
-          <li>About</li>
-          <li>Contact Us</li>
+      <div className='flex space-x-10 align-center text-small'>
+        <ul className='flex space-x-8'>
+          <Link to="*"><li>Docs</li></Link>
+          <Link to="*"><li>About</li></Link>
+          <Link to="*"><li>Contact Us</li></Link>
         </ul>
-        <Link to="/teacherlogin"> <span className='bg-primary py-3 px-8 text-center rounded-full font-semibold text-white'>Login</span></Link>
+      </div>
+      <div className='flex gap-7 text-white'>
+      <Link to="/signup"><span className='text-small'>Signup</span></Link>
+      <Link to="/login"> <span className='bg-primary py-3 text-small px-8 text-center rounded-xl font-semibold text-white'>Login</span></Link>
       </div>
     </div>
+    </section>
   )
 }
 
