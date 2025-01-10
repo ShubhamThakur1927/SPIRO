@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily:{
         'Inter' : ['Inter', 'sans-serif'],
-        'Sourcesans' : ['Source Sans 3', 'sans-serif'],
+        'Sourcesans' : ['Source Sans 3', 'serif'],
       },
       fontSize:{
         'display': "64px",
@@ -17,8 +17,11 @@ export default {
         'h1':"40px",
         'h4':"20px",
         'h3':"28px",
-        'tiny':"18px",
-        'p':"20px"
+        'tiny':"16px",
+        'p':"20px",
+        'h5':"18px",
+        'h9':"122px",
+        'l1':"40px"
       },
       lineHeight:{
       'h1':"48px",
@@ -27,14 +30,20 @@ export default {
       'small':"20px",
       'h2':"48px",
       'h3':"32px",
-      'p':"32px"
+      'p':"32px",
+      'h5':"20px",
+      'h9':"64px",
       },
 
       colors: {
         'primary' : "#0065F7",
         'secondary' : "#F2F2F2",
         'Dark' : "#020817",
-        'card':"#f1f1f2"
+        'main':"#f1f1f2",
+        'trip':"#4d4d4d",
+        'testo':"#4b4b4b",
+        'rips':"#e4e4e4",
+
       }
     },
   },

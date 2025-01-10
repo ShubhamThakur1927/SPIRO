@@ -8,6 +8,7 @@ import Faq from '../components/Faq'
 function Testing() {
   return (
     <section className='my-10'>
+      <h1 className="text-h1 ">FAQ's</h1>
     <Faq question="Is my data secure on SPIRO?" answer="Yes, Spiro uses advanced security measures to protect your data and ensure privacy."/>
     </section>
   )
