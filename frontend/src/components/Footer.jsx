@@ -2,8 +2,8 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer>
-        <div className='Uppersection flex gap-24 border-t-2 border-gray-500 pt-5'>
+    <footer className='pb-10 w-full'>
+        <div className='Uppersection flex gap-24 border-t-2 border-card pt-5'>
             <div className='Logo text-h1 font-semibold leading-h1' >SPIRO</div>
             <div className='flex gap-10 px-20'>
                 <div className='Cources grid gap-3'>
@@ -28,14 +28,14 @@ function Footer() {
                 <div className='Resources'>
                 <h4 className='text-h4 leading-h4 font-semibold'>Resources</h4>
                   <ul className='mt-3'>
-                  <li>About us</li>
+                  <li>Blog</li>
                   </ul>
                 </div>
             </div>
         </div>
     <div className='mt-24'>
         <div>
-            <ul className='flex gap-4 border-t-2 py-5 border-gray-500 text-tiny'>
+            <ul className='flex gap-4 border-t-2 border-card py-5 text-tiny'>
                 <li>© Spiro All Right reserved.</li>
                 <li>Privacy Policy</li>
                 <li>Termens of services</li>
