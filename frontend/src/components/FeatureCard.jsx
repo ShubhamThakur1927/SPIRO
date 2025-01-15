@@ -7,12 +7,18 @@ function FeatureCard(props) {
       AOS.init();
     }, [])
   return (
-    <div className="feature-card bg-primary h-[424px] w-[388px] rounded-xl" data-aos="fade-right">
-      <div className="card-content relative top-3/4 p-6 ">
-        <h3 className="title text-h3 font-semibold">{props.title}</h3>
-        <p className="subtitle text-p">{props.subtitle}</p>
-      </div>
-    </div>
+    <div
+  className="card bg-primary text-white font-semibold h-auto w-auto rounded-xl"
+  data-aos="fade-right"
+>
+  <div className="card-content my-32 xl:w-auto px-6">
+    <h3 className="title text-h3 leading-h3 font-semibold">
+      {props.title}
+    </h3>
+    <p className="subtitle text-xs sm:text-small">{props.subtitle}</p>
+  </div>
+</div>
+
   );
 }
 

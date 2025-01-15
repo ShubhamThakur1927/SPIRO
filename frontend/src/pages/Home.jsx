@@ -10,6 +10,8 @@ import FeatureCard from "../components/FeatureCard";
 import Banner from "../components/Banner";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 
 
 function Home() {
@@ -39,50 +41,54 @@ function Home() {
 
   
   return (
-    <section className="bg-main body scroll-smooth">
+    <section className="bg-main body scroll-smooth min-w-screen min-h-screen box-border">
       {/*Navbar & Hero-Section */}
       <Navbar className={`${navbarBg} ${textColor}`} />
-      <div className="min-h-screen hero overflow-hidden ">
-        <div className="bg-black min-h-lvh opacity-30">
+      <div className="min-h-screen min-w-screen hero overflow-hidden relative">
+        <div className="absolute inset-0 bg-black opacity-30"></div>
+        <div className="relative z-10 top-36 left-24 w-auto h-full">
+          <div className="text-white text-display xl:m-20 xl:w-1/3 w-1/2 leading-display font-semibold" >
+          Empowering Your Future
+          <p className="text-small text-white leading-small my-5 font-normal">Achieve your goals with flexible, high-quality <br/> programs for all levels</p>
+          </div>
+          <button className="bg-primary relative xl:bottom-14 xl:left-20  text-white font-semibold flex align-middle items-center py-3 px-8 rounded-lg">Get Free Demo <ChevronRight size={24} /></button>
         </div>
-        
       </div>
       {/*MID-Section */}
-      <section className="bg-white relative bottom-28 rounded-3xl h-auto py-20 flex flex-col items-center justify-center align-middle">
-        
+      <section className="bg-white relative bg-opacity-80 bottom-12 rounded-3xl w-auto h-auto py-20 flex flex-col items-center justify-around align-middle">
         {/*Feature-Section */}
         <h1 className="text-h1 font-semibold w-2/5 text-center leading-h1" data-aos="fade-up" >
-          The Tech That Simplifies Your Financial World
+          Unlock The Future Of Education With <Link to="/login" ><span className="text-primary font-bold">SPIRO</span></Link>
         </h1>
-        <div className="grid grid-flow-col gap-5 justify-center w-full h-auto my-20">
-          <div className="flex flex-wrap flex-col items-end justify-center gap-5 ">
-            <FeatureCard/>
-            <Card />
+        <div className="grid grid-flow-col grid-cols-3 gap-5  w-auto h-auto m-10">
+          <div className="grid xl:w-3/4 gap-5 justify-self-end">
+            <FeatureCard title="The Tech That Simplifies Your Educational World"/>
+            <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
           </div>
-          <div className="w-full grid grid-flow-row justify-center gap-8">
-            <Smallcard />
-            <Smallcard />
-            <Smallcard />
+          <div className="grid xl:w-full gap-5 ">
+            <Smallcard title="Personalized Chatbot"/>
+            <Smallcard title="Personalized Chatbot"/>
+            <Smallcard title="Personalized Chatbot"/>
           </div>
-          <div className="flex flex-wrap flex-col justify-center gap-5 ">
-            <Card />
-            <Card />
+          <div className="grid xl:w-3/4 gap-5 ">
+          <FeatureCard title="The Tech That Simplifies Your Educational World"/>
+           <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
           </div>
         </div>
 
         {/*About-Section */}
-          <h1 className="text-h1 leading-h1 font-semibold w-2/5 my-10 text-center"  data-aos="fade-up">The Tech That Simplifies Your Financial World</h1>
+          <h1 className="text-h1 leading-h1 font-semibold w-2/5 my-10 text-center"  data-aos="fade-up">Transforming learning, one click at a time</h1>
         <div className="grid grid-flow-row gap-12 ">
           <div className="w-[790px] h-[400px] bg-[#F4ECE0] rounded-3xl"  data-aos="fade-right">
           </div>
           <div className="flex gap-8">
           <div className="w-[379px] h-[400px] bg-[#F4ECE0] rounded-3xl"  data-aos="fade-down"></div>
-          <div className="w-[379px] h-[400px] bg-[#F4ECE0] rounded-3xl"  data-aos="fade-"></div>
+          <div className="w-[379px] h-[400px] bg-[#F4ECE0] rounded-3xl"  data-aos="fade-up"></div>
         </div>
         </div>
 
-      {/*TESTIMONIALS*/}
-        <Cardsareng />
+      {/*TESTIMONIALS
+        <Cardsareng />*/}
 
       {/*FAQ's*/}
         <div className="FAQ justify-center items-center p-52 w-10/12">

@@ -7,12 +7,18 @@ function Card (props) {
       AOS.init();
     }, [])
   return (
-    <div className='card bg-main h-[424px] w-[388px] rounded-xl' data-aos="fade-right">
-      <div className="card-content relative top-3/4 p-6 ">
-        <h3 className="title text-h3 font-semibold">{props.title}</h3>
-        <p className="subtitle text-p">{props.subtitle}</p>
-      </div>
-    </div>
+    <div
+  className="card bg-main h-auto w-auto rounded-xl"
+  data-aos="fade-right"
+>
+  <div className="card-content mt-64 w-auto mb-5 px-6">
+    <h3 className="title mb-2 text-h4 xl:text-h3 leading-h4 xl:leading-h3 font-semibold">
+      {props.title}
+    </h3>
+    <p className="subtitle text-tiny leading-tiny sm:text-small sm:leading-small">{props.subtitle}</p>
+  </div>
+</div>
+
   );
 };
 

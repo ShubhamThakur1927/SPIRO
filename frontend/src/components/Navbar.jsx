@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Navbar({ className }) {
   return (
-    <section className={`fixed right-0 left-0 z-50 ${className} font-semibold`}>
-      <div className={`min-w-screen flex justify-around align-center items-center p-5 ${className}`}>
+    <section className={`fixed lg:min-w-screen min-w-autoright-0 left-0 z-50 ${className} font-semibold`}>
+      <div className={`w-screen flex justify-around align-center items-center p-5 ${className}`}>
         <div className='text-h1 font-semibold text-primary'>
           <Link to="/"> SPIRO </Link>
         </div>
