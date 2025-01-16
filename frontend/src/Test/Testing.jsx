@@ -4,16 +4,18 @@ import Card from '../components/Card'
 import Smallcard from '../components/Smallcard'
 import Faq from '../components/Faq'
 import Banner from '../components/Banner'
+import Stuctclm from './test-comp/Stuctclm'
 
 
 function Testing() {
   return (
-    <section className='my-10'>
-      <h1 className="text-h1 ">FAQ's</h1>
-    <Faq question="Is my data secure on SPIRO?" answer="Yes, Spiro uses advanced security measures to protect your data and ensure privacy."/>
-    <Smallcard/>
-    <Banner Title="Your Vision, Our Platform Let’s Connect Today!"/>
+    <section className='w-1/4 bg-bagrd'>
+     <div className='logo p-2'><h1 className=' text-semibold text-h1 text-primary'>Spiro</h1></div>
+    <div>
+    <Stuctclm/>
+    </div>
     </section>
+    
   )
 }
 

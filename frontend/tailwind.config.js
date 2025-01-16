@@ -46,7 +46,8 @@ export default {
         'card':"#F5F5F5",
         'rips':"#e4e4e4",
         'body':"#1a1a1a",
-        'body-2':"#4d4d4d"
+        'body-2':"#4d4d4d",
+        'bagrd':"#ffffff"
 
       }
     },
