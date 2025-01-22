@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 import { useAuthstore } from "../Stores/authstores";
+import Video from "../Tests/Video";
 
 const DashboardPage = () => {
 	const { teacher, logout } = useAuthstore();
@@ -10,10 +11,7 @@ const DashboardPage = () => {
 	};
 	return (
 		<>
-		<button onClick={handleLogout}>
-			logout
-		</button>
-		<div>Dashboard</div>
+		<Video/>
 		</>
 	);
 };

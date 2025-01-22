@@ -14,15 +14,18 @@ export const useAuthstore = create((set) => ({
 	isLoading: false,
 	isCheckingAuth: true,
 	message: null,
+	email: undefined,
+
+	
 
 
     login: async (email, password) => {
 		set({ isLoading: true, error: null });
 		try {
-			const response = await axios.post(`${API_URL}/teacherlogin`, { email, password });
+			const response = await axios.post(`${API_URL}/studentLogin`, { email, password });
 			set({
 				isAuthenticated: true,
-				teacher: response.data.teacher,
+				student: response.data.student,
 				error: null,
 				isLoading: false,
 				isVerified : true
@@ -36,7 +39,7 @@ export const useAuthstore = create((set) => ({
 	logout: async () => {
 		set({ isLoading: true, error: null });
 		try {
-			await axios.post(`${API_URL}/teacherlogout`);
+			await axios.post(`${API_URL}/studentLogout`);
 			set({ teacher: null, isAuthenticated: false, error: null, isLoading: false });
 		} catch (error) {
 			set({ error: "Error logging out", isLoading: false });
@@ -70,16 +73,26 @@ export const useAuthstore = create((set) => ({
 			throw error;
 		}
 	},
-	verify : async (code) => {
+	verify: async (code) => {
 		set({ isLoading: true, error: null });
 		try {
-			const response = await axios.post(`${API_URL}/verify-email`, { code });
-			set({ user: response.data.user, isAuthenticated: true, isLoading: false });
+			const response = await axios.post(`${API_URL}/verifyStudent`, { code });	
+			const { user } = response.data; // Extract email and user from the response
+			set({ 
+				user, 
+				isAuthenticated: true, 
+				isLoading: false 
+			});
+	
 			return response.data;
 		} catch (error) {
-			set({ error: error.response.data.message || "Error verifying email", isLoading: false });
+			set({ 
+				error: error.response?.data?.message || "Error verifying email", 
+				isLoading: false 
+			});
 			throw error;
 		}
 	},
+	
 
 }))

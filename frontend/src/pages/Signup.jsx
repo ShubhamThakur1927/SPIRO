@@ -5,15 +5,19 @@ import { motion } from "framer-motion";
 import GoogleIcon from "../assets/Google.svg";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo.png";
-import { Circle  , CircleCheck , Loader } from "lucide-react";
+import { Circle ,Edit2Icon , CircleCheck , Loader } from "lucide-react";
 import { useAuthstore } from "../Stores/authstores";
+import OtpInput from "../components/Otp-input";
 
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const { signup, error, isLoading } = useAuthstore();
+  const { verify} = useAuthstore();
+  const [showOtp, setShowOtp] = useState(false);
   const navigate = useNavigate();
+  const [otp, setOtp] = useState(""); // Add OTP state
 
   const [valid, setValid] = useState({
     passwordLength: false,
@@ -36,11 +40,21 @@ function Signup() {
     setPassword(password);
   };
 
+  const handleverification = async (e) => {
+    e.preventDefault();
+    try {
+      await verify(otp); // Use OTP state
+      navigate("/dashboard"); // Navigate to success page or any other action
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
 			await signup(email, password, confirmPassword);
-			navigate("/verify-email");
+      setShowOtp(true);
 		} catch (error) {
 			console.log(error);
 		}
@@ -48,7 +62,7 @@ function Signup() {
 
   return (
     <section className="bg-black min-h-screen min-w-auto flex items-center">
-      <div className="md:w-screen min-h-screen w-0 hidden md:block text-white">
+      <div className="lg:w-screen min-h-screen hidden lg:block text-white">
         <div className="font-bold relative top-20 left-20 flex flex-col">
           <h1 className="text-display font-bold">Learn without limits</h1>
           <h2 className="text-small font-normal mb-5 w-1/2">
@@ -60,8 +74,9 @@ function Signup() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center md:w-1/2 w-screen h-screen bg-white">
+      <div className="flex flex-col items-center justify-center lg:w-1/2 w-screen h-screen bg-white">
         <div className="flex flex-col items-center justify-center h-auto rounded-2xl">
+          {!showOtp? 
           <div className="Top-login flex flex-col align-middle items-center px-2 md:w-96 w-auto text-center">
             <div className="mb-2">
               <img src={Logo} alt="logo" className="h-20 md:h-full" />
@@ -122,7 +137,29 @@ function Signup() {
                 </span>
               </form>
             </div>
-          </div>
+          </div>:
+          <div className='Top-login px-2 md:w-96 w-auto text-center'>
+                  <h2 className="md:text-h2 text-4xl text-center mb-4">Verify OTP</h2>
+                  <p className='md:text-lg text-lg mb-2'>Enter OTP send on Your Email</p>
+                  <div className='border-2 border-black text-center py-2 w-full  md:text-h4 flex items-center rounded-full justify-center gap-2'>
+                    {email} <Link to="/teachersignup" ><Edit2Icon/></Link>
+                  </div>
+                  
+                  <div className='Form-login my-10'>
+                    <form onSubmit={handleverification}>
+                    <OtpInput length={6} onOtpSubmit={(otp) => setOtp(otp)} /> {/* Update OTP state */}
+
+                    <motion.button
+                        className='bg-primary text-center flex justify-center text-white w-full py-4 text-small rounded-md mt-10'
+                        type='submit'
+                        disabled={isLoading}
+                  >
+                    {isLoading ? <Loader /> : "Login"}
+                  </motion.button>
+                  </form>
+                  </div>
+                  </div>
+                }
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import {React, useState} from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./styles/styles.css";
 import  GoogleIcon  from "../assets/Google.svg";
@@ -14,19 +14,26 @@ function Login() {
   const [password, setPassword] = useState("");
   const { login, isLoading, error } = useAuthstore();
   const notify = (message) => toast(message);
+  const navigate = useNavigate();
   const handleLogin = async (e) => {
 		e.preventDefault();
-		await login(email, password);
+    try {
+      await login(email, password); // Use OTP state
+      navigate("/dashboard"); // Navigate to success page or any other action
+    } catch (error) {
+      console.log(error);
+    }
 	};
+  
 
 
   return (
-    <section className="bg-black min-h-screen min-w-auto flex  items-center ">
-      <div className="md:w-screen min-h-screen w-0 hidden md:block text-white ">
+    <section className="bg-black min-h-screen min-w-auto flex items-center ">
+      <div className="md:w-screen min-h-screen hidden md:block text-white ">
         <div className=' font-bold relative top-20 left-20 flex flex-col'> 
           <h1 className='text-display font-bold'>Learn without limits</h1>
           <h2 className='text-small font-normal mb-5 w-1/2'>Start, switch, or advance your career with more than 7,000 courses, Professional Certificates, and degrees from world-class universities and companies.</h2>
-           <Link to="/"> <span className='bg-primary py-3 px-8 text-center rounded-full font-semibold text-white'>Explore</span></Link>
+           <Link to="/" className='w-0'><span className='bg-primary py-3 px-8 text-center rounded-full  w-auto font-semibold text-white'>Explore</span></Link>
         </div>
       </div>
       <div className=" flex flex-col items-center justify-center md:w-2/5 w-screen h-screen bg-white">
@@ -86,6 +93,7 @@ function Login() {
                   
                 </div>
                 </div>
+                
         </div>
       </div>
       

@@ -60,7 +60,7 @@ function Home() {
         <h1 className="text-h1 font-semibold w-2/5 text-center leading-h1" data-aos="fade-up" >
           Unlock The Future Of Education With <Link to="/login" ><span className="text-primary font-bold">SPIRO</span></Link>
         </h1>
-        <div className="grid grid-flow-col grid-cols-3 gap-5  w-auto h-auto m-10">
+        <div className="grid grid-flow-col grid-cols-3 gap-5 justify-self-start w-auto h-auto m-10">
           <div className="grid xl:w-3/4 gap-5 justify-self-end">
             <FeatureCard title="The Tech That Simplifies Your Educational World"/>
             <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
@@ -71,8 +71,8 @@ function Home() {
             <Smallcard title="Personalized Chatbot"/>
           </div>
           <div className="grid xl:w-3/4 gap-5 ">
-          <FeatureCard title="The Tech That Simplifies Your Educational World"/>
            <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
+            <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
           </div>
         </div>
 

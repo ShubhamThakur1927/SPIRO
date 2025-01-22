@@ -20,9 +20,9 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const RedirectAuthenticatedUser = ({ children }) => {
-  const { isAuthenticated, teacher, student } = useAuthstore();
+  const { isAuthenticated,  student } = useAuthstore();
 
-  if (isAuthenticated && !teacher.isVerified) {
+  if (isAuthenticated && !student.isVerified) {
     
     return <Navigate  to="/dashboard" replace />;
   }
@@ -48,9 +48,7 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/dashboard" element={
-          <ProtectedRoute>
           <DashboardPage />
-          </ProtectedRoute>
         } 
         />
         <Route

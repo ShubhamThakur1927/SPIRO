@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function OtpInput({ length = 4, onOtpSubmit = () => {} }) {
+function OtpInput({ length = 6, onOtpSubmit = () => {} }) {
   const [otp, setOtp] = useState(new Array(length).fill(''));
 
   const handleChange = (index, e) => {
