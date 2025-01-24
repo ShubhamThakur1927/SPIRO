@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
-
+import Dropdown from "../components/Dropdown";
 import { useAuthstore } from "../Stores/authstores";
-import Video from "../Tests/Video";
 
 const DashboardPage = () => {
 	const { teacher, logout } = useAuthstore();
@@ -11,7 +9,6 @@ const DashboardPage = () => {
 	};
 	return (
 		<>
-		<Video/>
 		</>
 	);
 };
