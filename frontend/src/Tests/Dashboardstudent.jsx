@@ -11,7 +11,7 @@ import {
 
 import { FiSettings, FiSun, FiMoon, FiUser, FiBell } from "react-icons/fi";
 
-function Dashboard() {
+function Dashboardstudent() {
   const [isClassesOpen, setClassesOpen] = useState(false);
   const [isActivityOpen, setActivityOpen] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -72,13 +72,13 @@ function Dashboard() {
         </style>
         {/* Logo Section */}
         <div className="logo rounded-3xl p-10">
-          <h1 className="text-h1 text-primary font-semibold text-center">SPIRO</h1>
+          <h1 className="text-display leading-h1 text-primary font-semibold text-center">SPIRO</h1>
         </div>
 
         {/* Navigation Menu */}
         <div className="p-10">
           <ul>
-            <li className="text-h4 cursor-pointer mt-4">
+            <li className="text-h3 cursor-pointer mt-4">
               <div
                 className="flex items-center justify-between"
                 onClick={() => setClassesOpen(!isClassesOpen)}
@@ -97,31 +97,31 @@ function Dashboard() {
                 </ul>
               )}
             </li>
-            <li className="text-h4 mt-4">
+            <li className="text-h3 mt-4">
               <div className="flex items-center">
                 <FaComments className="mr-2 text-black" />
                 <span>Chats</span>
               </div>
             </li>
-            <li className="text-h4 mt-4">
+            <li className="text-h3 mt-4">
               <div className="flex items-center">
                 <FaCalendarAlt className="mr-2 text-black" />
                 <span>Calendar</span>
               </div>
             </li>
-            <li className="text-h4 mt-4">
+            <li className="text-h3 mt-4">
               <div className="flex items-center">
                 <FaTasks className="mr-2 text-black" />
                 <span>Assignments</span>
               </div>
             </li>
-            <li className="text-h4 mt-4">
+            <li className="text-h3 mt-4">
               <div className="flex items-center">
                 <FaClipboardList className="mr-2 text-black" />
                 <span>To Do List</span>
               </div>
             </li>
-            <li className="text-h4 mt-4 cursor-pointer">
+            <li className="text-h3   mt-4 cursor-pointer">
               <div
                 className="flex items-center justify-between"
                 onClick={() => setActivityOpen(!isActivityOpen)}
@@ -145,7 +145,7 @@ function Dashboard() {
 
         {/* Logout */}
         <div className="p-10">
-          <div className="flex items-center text-h4">
+          <div className="flex items-center text-h3">
             <FaSignOutAlt className="mr-2 text-black" />
             <span>Logout</span>
           </div>
@@ -200,6 +200,57 @@ function Dashboard() {
             </button>
           </div>
         </div>
+
+        {/* New Section */}
+        <div className="mt-10 px-10">
+          {/* Frequently Viewed Classes */}
+          <div className="mb-8">
+            <h2 className="text-h2 font-bold mb-4">Frequently Viewed Classes</h2>
+            <div className="flex space-x-4">
+              <div className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md">Chemistry</div>
+              {/* Add more classes as needed */}
+            </div>
+          </div>
+
+          {/* Continue Playing */}
+          <div className="mb-8">
+            <h2 className="text-h2 font-bold mb-4">Continue Playing</h2>
+            <div className="grid grid-cols-3 gap-4">
+              {/* Placeholder cards */}
+              <div className="bg-gray-200 h-32 rounded-lg"></div>
+              <div className="bg-gray-200 h-32 rounded-lg"></div>
+              <div className="bg-gray-200 h-32 rounded-lg"></div>
+            </div>
+          </div>
+
+          {/* Syllabus Overview */}
+          <div>
+            <h2 className="text-h2 font-bold mb-4">Syllabus Overview</h2>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="bg-white shadow-md p-4 rounded-lg">
+                <h3 className="text-h3 font-semibold mb-2">Eng. Mathematics - IV</h3>
+                <div className="flex items-center">
+                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white">Active</div>
+                  <div className="ml-4">Inactive</div>
+                </div>
+              </div>
+              <div className="bg-white shadow-md p-4 rounded-lg">
+                <h3 className="text-h3 font-semibold mb-2">Database Management Systems</h3>
+                <div className="flex items-center">
+                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white">Active</div>
+                  <div className="ml-4">Inactive</div>
+                </div>
+              </div>
+              <div className="bg-white shadow-md p-4 rounded-lg">
+                <h3 className="text-h3 font-semibold mb-2">Operating Systems</h3>
+                <div className="flex items-center">
+                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white">Active</div>
+                  <div className="ml-4">Inactive</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Right Sidebar */}
@@ -232,4 +283,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Dashboardstudent;

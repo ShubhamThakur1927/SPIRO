@@ -23,7 +23,7 @@ export default {
         'tiny':"16px",
         'h5':"18px",
         'h9':"122px",
-        'l1':"40px"
+        'l1':"40px",
       },
       lineHeight:{
       'display':"64px",
