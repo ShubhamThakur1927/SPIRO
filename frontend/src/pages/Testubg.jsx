@@ -2,20 +2,26 @@ import React from 'react'
 import Chemistrycard from '../Tests/Components/Chemistrycard'
 import Circulargraphcard from '../Tests/Components/Circulargraphcard'
 import Cardoftheday from '../Tests/Components/Cardoftheday'
+import Linecardgraph from '../Tests/Components/Linecardgraph'
+import Infocard from '../Tests/Components/Infocardleft'
+import Infocardleft from '../Tests/Components/Infocardleft'
+import Infocardright from '../Tests/Components/Infocardright'
 
 function Testubg() {
   return (
-    <div className="p-6 space-y-4">
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
-
-     
-
-      {/* Example 2: Custom Dimensions */}
-      <Cardoftheday
-        title="Total no. of Students"
-        value="1200"
-        width="450px"
-        height="200px"
+    <div className="p-6  flex    ">
+      <Infocardleft
+        title="Innovative Learning"
+        description="Provide students with cutting-edge tools and resources to enhance their learning experience."
+        backgroundColor="#e0f2fe" // Light blue background
+        width="400px"
+        height="150px"
+      />
+      <Infocardright
+        title="Universal Accessibility"
+        description="Showcase your commitment to making education accessible to students worldwide, overcoming physical and geographical barriers."
+        width="400px"
+        height="150px"
       />
     </div>
   )
