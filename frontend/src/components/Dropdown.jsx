@@ -1,31 +1,34 @@
-import React from 'react'
-import { ChevronDown, ChevronUp } from 'lucide-react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 function Dropdown(props) {
-  const [isClicked, SetisClicked] = React.useState(false);
+  const [isClicked, setIsClicked] = React.useState(false);
   const handleClick = () => {
-    SetisClicked(!isClicked);
-  }
-  const subtitle = props.subtitle.map((item, index) => {
-    return (
-      <ul>
-        <li key={index} className=''>
-        <Link to="*">{item}</Link>
-      </li>
-      </ul>
-      )
-  });
+    setIsClicked(!isClicked);
+  };
+
+  const subtitle = Array.isArray(props.subtitle) ? props.subtitle.map((item, index) => (
+    <li key={index}>
+      <Link to="#">{item}</Link>
+    </li>
+  )) : null;
+
   return (
-    <div className=''>
-      <button onClick={handleClick} className='flex items-center text-h3'>{props.title}
-        {!isClicked? <ChevronUp size={35} />:<ChevronDown size={35} />}
+    <div>
+      <button onClick={handleClick} className='flex items-center leading-h3 text-h3'>
+        {props.title}
+        {!isClicked ? <ChevronDown size={35} /> : <ChevronUp size={35} />}
       </button>
-{!isClicked?
-  <div className="dropdown-content">
-        <a href="#">{subtitle}</a>
-      </div>:null}
+      {isClicked && subtitle && (
+        <div className="dropdown-content">
+          <ul className='text-h4 leading-h4'>
+            {subtitle}
+          </ul>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default Dropdown
+export default Dropdown;
