@@ -14,7 +14,7 @@ const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, teacher } = useAuthstore();
 
   if (!isAuthenticated) {
-    return <Navigate to="/teacherlogin" replace />;
+    return <Navigate to="/login" replace />;
   }
   return children;
 };
@@ -63,7 +63,7 @@ function App() {
         />
         <Route path="/login" element={
           <RedirectAuthenticatedUser>
-            <StudentLogin/>
+            <Login/>
           </RedirectAuthenticatedUser>
           
       } />
