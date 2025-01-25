@@ -43,10 +43,11 @@ const Sidebar = () => {
       <div className="p-4 font-bold text-blue-600 text-lg border-b">SPIRO</div>
 
       {/* Sidebar Items */}
-      <div className="p-4 space-y-2">
+      <div className="p-4 h-auto text-h4">
         {/* Classes Dropdown */}
+        <div className="grid grid-cols-1 gap-10">
         <SidebarItem title="Classes" icon={<FaChalkboardTeacher />}>
-          <div className="space-y-1">
+          <div className="space-y-1 text-h4">
             {["Class 1", "Class 2", "Class 3", "Class 4"].map((className) => (
               <button
                 key={className}
@@ -97,13 +98,16 @@ const Sidebar = () => {
             )}
           </div>
         </SidebarItem>
+        </div>
 
         {/* Logout */}
+        <div>
         <SidebarItem
           title="Logout"
           icon={<FaSignOutAlt />}
           onClick={() => alert("Logout clicked")}
         />
+        </div>
       </div>
     </div>
   );
