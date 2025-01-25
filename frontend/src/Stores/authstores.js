@@ -49,7 +49,7 @@ export const useAuthstore = create((set) => ({
 	StudentLogin: async (email, password) => {
 		set({ isLoading: true, error: null });
 		try {
-			const response = await axios.post(`${API_URL}/Studentlogin`, { email, password });
+			const response = await axios.post(`${API_URL}/StudentLogin`, { email, password });
 			set({
 				isAuthenticated: true,
 				student: response.data.student,

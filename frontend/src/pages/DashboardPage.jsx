@@ -27,8 +27,8 @@ const DashboardPage = () => {
 
   return (
     <>
-    <section>
-    <Sidebar title="Classes" subtitle={classes}/>
+    <section className="min-h-screen">
+    <Sidebar title={["Classes", "Assignment", "To Do List", "Calender", "Chatbox","Activity"]}  subtitle={classes} logout={handleLogout}/>
     </section>
     </>
   );
