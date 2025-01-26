@@ -93,17 +93,5 @@ export const useAuthstore = create((set) => ({
 			throw error;
 		}
 	},
-	getClasses: async () => {
-		set({ isLoading: true, error: null });
-		try {
-			const response = await axios.get(`${API_URL}/fetch-classes`);
-			set({ isLoading: false });
-			console.log(response.data.enrolledClasses);
-			return response.data.enrolledClasses; // Return enrolled classes data
-		} catch (error) {
-			set({ error: error.response?.data?.message || "Error fetching classes", isLoading: false });
-			throw error;
-		}
-	},
 
 }))
