@@ -130,7 +130,7 @@ function Signup() {
                 </motion.button>
                 {error && <p className="text-red-500 text-center">{error}</p>}
                 <span className="Signup text-sm md:text-md">
-                  Don't have an account?{" "}
+                  Already have an account?{" "}
                   <Link to="/login" className="underline font-bold underline-offset-1 text-primary">
                     Login
                   </Link>
