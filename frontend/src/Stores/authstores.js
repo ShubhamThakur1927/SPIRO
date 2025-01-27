@@ -2,7 +2,7 @@ import {create} from 'zustand';
 
 import axios from 'axios';
 
-const API_URL = import.meta.env.MODE === "development" ? "https://6797e1b65d63615c3c38165e--deluxe-semolina-615644.netlify.app/api/v1" : "/api/v1";
+const API_URL = import.meta.env.MODE === "development" ? "https://deluxe-semolina-615644.netlify.app/api/v1" : "/api/v1";
 
 axios.defaults.withCredentials = true;
 
