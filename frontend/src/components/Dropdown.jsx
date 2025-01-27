@@ -1,36 +1,43 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
-function Dropdown(props) {
+/**
+ * A reusable Dropdown component.
+ *
+ * @param {string} title - The title of the dropdown.
+ * @param {Array} items - The array of items to display in the dropdown. Each item should be an object with `label` and `value`.
+ * @param {Function} onItemSelect - Callback function called with the item's value when clicked.
+ * @param {React.ReactNode} icon - Optional icon to display next to the title.
+ */
+function Dropdown({ title, items = [], onItemSelect, icon }) {
   const [isClicked, setIsClicked] = useState(false);
-  const handleClick = () => {
-    setIsClicked(!isClicked);
-  };
 
-  const subtitle = Array.isArray(props.subtitle) ? props.subtitle.map((item, index) => (
-    <li className='text-h4 font-normal leading-h4' key={index}>
-      <Link to="#">{item}</Link>
-    </li>
-  )) : null;
+  const handleClick = () => setIsClicked(!isClicked);
 
   return (
-    <div>
-      <button 
-        onClick={handleClick} 
+    <div className="dropdown">
+      <button
+        onClick={handleClick}
         className={`flex items-center gap-2 ${isClicked ? 'text-primary' : ''}`}
       >
-        <span className='pt-1'>{props.icon}</span>
-        {props.title}
-        <div className='pt-2'>
-        {!isClicked ? <ChevronDown size={28} /> : <ChevronUp size={28} />}
+        {icon && <span className="pt-1">{icon}</span>}
+        {title}
+        <div className="pt-2">
+          {!isClicked ? <ChevronDown size={28} /> : <ChevronUp size={28} />}
         </div>
-        
       </button>
-      {isClicked && subtitle && (
+      {isClicked && (
         <div className="dropdown-content my-2">
-          <ul className='mx-10 grid gap-2'>
-            {subtitle}
+          <ul className="mx-2 grid gap-2">
+            {items.map((item) => (
+              <li
+                key={item.value}
+                onClick={() => onItemSelect(item.value)}
+                className="text-h4 font-normal leading-h4 cursor-pointer"
+              >
+                {item.label}
+              </li>
+            ))}
           </ul>
         </div>
       )}

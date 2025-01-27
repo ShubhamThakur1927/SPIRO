@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from "react";
-import Dropdown from "../components/Dropdown";
+import React, { useState } from "react";
 import { useAuthstore } from "../Stores/authstores";
-import Sidebar from "../components/Sidebar";
 import { StudentStores } from "../Stores/StudentStores";
-import Search from "../components/Search";
+import { useEffect } from "react";
+import Sidebar from "../components/Sidebar";
+import Dashboard from "./Dashboard-Pages/Dashboard";
+import { Bell } from "lucide-react";
 
-const DashboardPage = () => {
+function DashboardPage() {
   const { logout } = useAuthstore();
   const { getClasses, joinClass } = StudentStores();
   const [classes, setClasses] = useState([]);
   const [classLink, setClassLink] = useState("");
+  const [content, setContent] = useState(<Dashboard />);
 
   useEffect(() => {
     const fetchClasses = async () => {
       try {
         const classesData = await getClasses();
         setClasses(classesData);
-        //console.log(classesData);
       } catch (error) {
         console.log(error);
       }
@@ -38,20 +39,39 @@ const DashboardPage = () => {
     }
   };
 
-  return (
-    <section className="min-h-screen flex">
-      <section className="min-h-screen flex">
-        <Sidebar title={["Classes", "Assignment", "To Do List", "Calender", "Chatbox", "Activity"]} subtitle={classes} logout={handleLogout} />
-      </section>
-      <section className="min-h-screen  w-full border-2 grid justify-items-center border-black">
-        <div>
-          <Search/>
-        </div>
-      </section>
+  const handleContentChange = (newContent) => {
+    setContent(newContent);
+  };
 
-      <section className="w-auto border-2 border-red-900"></section>
-      </section>
+  return (
+    <div className="container mx-auto h-screen bg-main flex">
+      <Sidebar
+        classes={classes}
+        handleLogout={handleLogout}
+        onContentChange={handleContentChange}
+      />
+      <div className=" flex w-screen h-screen overflow-auto">
+        <div className="h-screen w-80 overflow-auto"></div>
+        <div className="w-full content-area p-4">{content}
+        <div className="w-auto fixed right-0 top-0 h-screen bg-white rounded-xl">
+          {" "}
+          <div className="px-5">
+            <div className="my-10 grid gap-5">
+              <div></div>
+              <ul className="grid gap-5">
+                <li><Bell /></li>
+                <li><Bell /></li>
+                <li><Bell /></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+        </div>
+        
+      </div>
+    </div>
   );
-};
+}
 
 export default DashboardPage;

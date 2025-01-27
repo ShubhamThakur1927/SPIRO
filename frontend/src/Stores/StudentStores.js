@@ -22,7 +22,7 @@ export const StudentStores = create((set) => ({
 			const response = await axios.get(`${API_URL}/fetch-classes`);
 			set({ isLoading: false });
 			//console.log(response.data.enrolledClasses);
-			return response.data.enrolledClasses; // Return enrolled classes data
+			return response.data.enrolledClasses; 
 		} catch (error) {
 			set({ error: error.response?.data?.message || "Error fetching classes", isLoading: false });
 			throw error;
@@ -53,9 +53,30 @@ export const StudentStores = create((set) => ({
             });
             throw error;
         }
-    }
-    ,
+    },
+    getContent: async (classId) => {
+        set({ isLoading: true, error: null });
+        try {
+            const response = await axios.get(`${API_URL}/getclasscontent/${classId}`);
+            set({ isLoading: false });
+            return response.data; // Return the data directly
+        } catch (error) {
+            set({ error: error.response?.data?.message || "Error fetching contents", isLoading: false });
+            throw error;
+        }
+    },
     
-     
+    fetchvideo: async (videoId) => {
+        set({ isLoading: true, error: null });
+        try {
+            const response = await axios.get(`${API_URL}/fetch-video/${videoId}`);
+            set({ isLoading: false });
+            //console.log(response.data);
+            return response.data; // Return the data directly
+        } catch (error) {
+            set({ error: error.response?.data?.message || "Error fetching video", isLoading: false });
+            throw error;
+        }
+    },
 
 }))

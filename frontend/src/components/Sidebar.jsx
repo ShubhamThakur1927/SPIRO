@@ -1,87 +1,70 @@
-import React,{useState} from "react";
-import Dropdown from "./Dropdown";
-import { Link } from "react-router-dom";
-import { Bot, Calendar, CalendarRange, CheckCheck, ClapperboardIcon, Gamepad2, Gamepad2Icon, LogOut, MessageSquareCode, MessageSquareWarning, NotebookTabs, UsersRound } from "lucide-react";
+import React from "react";
+import Dropdown from "../components/Dropdown";
+import { useNavigate } from "react-router-dom";
+import ToDoList from "../pages/Dashboard-Pages/ToDoList";
+import Dashboard from "../pages/Dashboard-Pages/Dashboard";
+import ClassesPage from "../pages/Dashboard-Pages/ClassesPage";
 
-function Sidebar(props) {
-    const [isClicked, setIsClicked] = useState(false);
-      const handleClick = () => {
-        setIsClicked(!isClicked);
-      };
-    const title = props.title;
-    title.map((item, index) => {
-        return (
-            <div key={index}>
-                {item}
-            </div>
-        )
-    })
+const Sidebar = ({ classes, handleLogout, onContentChange }) => {
+  const navigate = useNavigate();
+
+  if (typeof onContentChange !== "function") {
+    console.error("onContentChange is not a function");
+    return null;
+  }
+
   return (
-    <>
-      <div className="min-h-screen w-64 bg-white shadow-lg shadow-black rounded-r-3xl flex flex-col justify-between">
-
-           {/*LOGO*/} 
-        <div className="text-display leading-display text-primary font-semibold p-10">
-          <Link to="/dashboard">SPIRO</Link>
-        </div>
-             {/*mid*/} 
-        <div className="p-4 mx-5 flex-grow">
-          <ul className="grid gap-10">
-            <li className="text-h3 leading-h3 flex items-center gap-2">
-              <Dropdown title={props.title[0]} subtitle={props.subtitle} icon={<UsersRound size={28} />}/>
-            </li>
-            <Link to="/*">
-            <li className="text-h3 leading-h3 flex items-center gap-2">
-              <span className="pt-1">
-              <NotebookTabs size={28} />
-              </span>
-              {title[1]}
-            </li>
-            </Link>
-            <Link to="/*">
-            <li className="text-h3 leading-h3 flex items-center gap-2">
-              <span className="pt-1">
-                <CheckCheck size={28} />
-              </span>
-              {title[2]}
-            </li>
-            </Link>
-            <Link to="/*">
-            <li className="text-h3 leading-h3 flex items-center gap-2">
-              <span className="pt-1">
-                <CalendarRange size={28} />
-              </span>
-              {title[3]}
-            </li>
-            </Link>
-            <Link to="/*">
-            <li className="text-h3 leading-h3 flex items-center gap-2">
-              <span className="pt-1">
-                <MessageSquareCode size={28} />
-              </span>
-              {title[4]}
-            </li>
-            </Link>
-            <li className="text-h3 leading-h3">
+    <div className="sidebar bg-white h-full w-auto fixed top-0 left-0 shadow-lg shadow-black rounded-r-xl overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-gray-100 flex flex-col justify-between">
+      <div>
+        <h1
+          className="text-primary text-wrap text-display font-semibold p-4 m-10 cursor-pointer"
+          onClick={() => onContentChange(<Dashboard/>)}
+        >
+          SPIRO
+        </h1>
+        <div className="p-2 mx-10">
+          <ul className="grid gap-10 cursor-pointer">
+            <li className="text-h3 font-semibold leading-h3">
               <Dropdown
-                title={title[5]}
-                subtitle={["Games", "Simulations", "Quiz"]}
-                icon={<Gamepad2 size={28} />}
+                title="Classes"
+                items={classes.map((cls) => ({
+                  label: cls.subjectname,
+                  value: cls._id,
+                }))}
+                onItemSelect={(id) => onContentChange(<ClassesPage id={id} />)}
+              />
+            </li>
+            <li className="text-h3 font-semibold leading-h3 " onClick={() => onContentChange(<ToDoList/>)}>
+              To Do List
+            </li>
+            <li className="text-h3 font-semibold leading-h3 " onClick={() => onContentChange("Assignment Content")}>
+              Assignment
+            </li>
+            <li className="text-h3 font-semibold leading-h3 " onClick={() => onContentChange("Calendar Content")}>
+              Calendar
+            </li>
+            <li className="text-h3 font-semibold leading-h3 ">
+              <Dropdown
+                title="Activity"
+                items={[
+                  { label: "Games", value: "games" },
+                  { label: "Simulation", value: "simulation" },
+                  { label: "Quiz", value: "quiz" },
+                ]}
+                onItemSelect={(value) => onContentChange(`Activity content for ${value}`)}
               />
             </li>
           </ul>
         </div>
-        {/* Logout */}
-      <div className="p-4 mx-5">
-        <button onClick={props.logout} className=" flex text-h3 leading-h3 items-center gap-2">
-          <LogOut size={28} />
-          Logout
-        </button>
       </div>
-
-      </div>
-    </>
+      <button
+        onClick={handleLogout}
+        className="text-h3 leading-h3 p-2 text-start my-5 mx-10 font-semibold"
+      >
+        Logout
+      </button>
+    </div>
   );
-}
+};
 
 export default Sidebar;

@@ -9,6 +9,7 @@ import { useAuthstore } from "./Stores/authstores";
 import Verification from "./pages/Verification";
 import StudentLogin from "./pages/StudentLogin";
 import Testubg from "./pages/Testubg";
+import LecturesView from "./pages/LecturesView";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, teacher } = useAuthstore();
@@ -46,7 +47,11 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home />} />
-
+        <Route path="/lectures/:id" element={
+          <ProtectedRoute>
+            <LecturesView/>
+          </ProtectedRoute>
+          } />
         <Route path="/dashboard" element={
           <ProtectedRoute>
           <DashboardPage />
