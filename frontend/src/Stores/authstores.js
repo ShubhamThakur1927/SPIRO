@@ -96,7 +96,7 @@ export const useAuthstore = create((set) => ({
 	test: async () => {
 		set({ isLoading: true, error: null });
 		try {
-			const response = await axios.get(`${API_URL}/`);
+			const response = await axios.post(`${API_URL}/`);
 			set({ isLoading: false });
 			return response.data;
 		} catch (error) {
