@@ -1,7 +1,7 @@
 import {create} from 'zustand';
 import axios from 'axios';
 
-const API_URL = import.meta.env.MODE === "development" ? "https://backend-npyb.onrender.com/api/v1" : "/api/v1";
+const API_URL = import.meta.env.MODE === "https://backend-npyb.onrender.com/api/v1";
 
 export const useTeacherStore = create ((set) => ({
     Upload: async (File) => {
