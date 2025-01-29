@@ -12,7 +12,7 @@ function Navbar({ className }) {
           <ul className='flex space-x-8'>
             <Link to="*"><li>Docs</li></Link>
             <Link to="*"><li>About</li></Link>
-            <Link to="*"><li>Contact Us</li></Link>
+            <Link to="/test"><li>Contact Us</li></Link>
           </ul>
         </div>
         <div className='flex gap-7'>
