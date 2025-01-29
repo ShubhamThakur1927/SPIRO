@@ -17,7 +17,7 @@ function DashboardPage() {
     const fetchClasses = async () => {
       try {
         const classesData = await getClasses();
-        setClasses(classesData);
+        setClasses(classesData?.enrolledClasses || []);
       } catch (error) {
         console.log(error);
       }

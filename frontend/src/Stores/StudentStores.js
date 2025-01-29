@@ -22,7 +22,7 @@ export const StudentStores = create((set) => ({
 			const response = await axios.get(`${API_URL}/fetch-classes`);
 			set({ isLoading: false });
 			//console.log(response.data.enrolledClasses);
-			return response.data.enrolledClasses; 
+			return response.data; 
 		} catch (error) {
 			set({ error: error.response?.data?.message || "Error fetching classes", isLoading: false });
 			throw error;
