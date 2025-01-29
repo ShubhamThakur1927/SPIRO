@@ -93,5 +93,16 @@ export const useAuthstore = create((set) => ({
 			throw error;
 		}
 	},
+	test: async () => {
+		set({ isLoading: true, error: null });
+		try {
+			const response = await axios.get(`${API_URL}/`);
+			set({ isLoading: false });
+			return response.data;
+		} catch (error) {
+			set({ error: error.response?.data?.message || "Error fetching test data", isLoading: false });
+			throw error;
+		}
+	},
 
 }))
