@@ -5,7 +5,7 @@ import Sidebar from '../components/Sidebar';
 
 function LecturesView() {
     const { id } = useParams();
-    const { fetchvideo } = StudentStores();
+    const { fetchvideo, markVideoAsWatched } = StudentStores(); // Add markVideoAsWatched function
     const [lecture, setLecture] = useState('');
     const [lectureTitle, setLectureTitle] = useState('');
 
@@ -16,6 +16,14 @@ function LecturesView() {
             setLectureTitle(response?.lectureTitle); // Set the lecture title
         } catch (error) {
             console.error('Error fetching video:', error);
+        }
+    };
+
+    const handleVideoEnd = async () => {
+        try {
+            await markVideoAsWatched(id); // Mark the video as watched in the database
+        } catch (error) {
+            console.error('Error marking video as watched:', error);
         }
     };
 
@@ -41,6 +49,7 @@ function LecturesView() {
                         controls
                         autoPlay
                         className="w-[960px] h-[540px] max-w-full rounded-xl shadow-lg"
+                        onEnded={handleVideoEnd} // Add event listener for video end
                     >
                         <source src={lecture} type="video/mp4" />
                         Your browser does not support the video tag.

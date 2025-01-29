@@ -8,8 +8,14 @@ function LectureList({ items, onItemSelect }) {
                     <li
                         key={item.value} // Use unique `value` as the key
                         onClick={() => onItemSelect && onItemSelect(item.value)}
-                        className='w-auto h-auto cursor-pointer bg-white rounded-xl p-4'
+                        className='w-auto h-auto cursor-pointer bg-white rounded-xl p-4 flex items-center'
                     >
+                        <input
+                            type="checkbox"
+                            checked={item.watched}
+                            readOnly
+                            className="mr-2"
+                        />
                         {item.label}
                     </li>
                 ))

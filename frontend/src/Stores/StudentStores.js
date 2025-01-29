@@ -2,7 +2,7 @@ import {create} from 'zustand';
 
 import axios from 'axios';
 
-const API_URL = import.meta.env.MODE === "development" ? "http://localhost:8000/api/v1" : "/api/v1";
+const API_URL = import.meta.env.MODE === "development" ? "https://backend-npyb.onrender.com/api/v1" : "/api/v1";
 
 axios.defaults.withCredentials = true;
 
@@ -75,6 +75,16 @@ export const StudentStores = create((set) => ({
             return response.data; // Return the data directly
         } catch (error) {
             set({ error: error.response?.data?.message || "Error fetching video", isLoading: false });
+            throw error;
+        }
+    },
+
+    markVideoAsWatched: async (videoId) => {
+        try {
+            const response = await axios.post(`${API_URL}/update-watched-status`, { videoId });
+            return response.data;
+        } catch (error) {
+            console.error('Error marking video as watched:', error);
             throw error;
         }
     },
