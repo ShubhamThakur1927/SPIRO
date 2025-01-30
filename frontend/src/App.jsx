@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Navigate, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -21,21 +21,19 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const RedirectAuthenticatedUser = ({ children }) => {
-  const { isAuthenticated,  student } = useAuthstore();
+  const { isAuthenticated, student } = useAuthstore();
 
   if (isAuthenticated && !student.isVerified) {
-    
-    return <Navigate  to="/dashboard" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
 
   return children;
 };
 
 const RedirectAuthenticatedStudent = ({ children }) => {
-  const { isAuthenticated,  student } = useAuthstore();
+  const { isAuthenticated, student } = useAuthstore();
   if (isAuthenticated && !student.isVerified) {
-    
-    return <Navigate  to="/dashboard" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
 
   return children;
@@ -45,46 +43,34 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route path="/" element={<Home />} />
         <Route path="/lectures/:id" element={
           <ProtectedRoute>
-            <LecturesView/>
+            <LecturesView />
           </ProtectedRoute>
-          } />
+        } />
         <Route path="/dashboard" element={
           <ProtectedRoute>
-          <DashboardPage />
+            <DashboardPage />
           </ProtectedRoute>
-        } 
-        />
+        } />
         <Route
           path="/teacherlogin"
           element={
             <RedirectAuthenticatedUser>
-              <Login/>
+              <Login />
             </RedirectAuthenticatedUser>
           }
         />
         <Route path="/login" element={
           <RedirectAuthenticatedUser>
-            <Login/>
+            <Login />
           </RedirectAuthenticatedUser>
-          
-      } />
-
+        } />
         <Route path="/verify-email" element={<Verification />} />
-
-
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Forgetpassword" element={<Forgetpassword />} />
-
-
-        {/* Only for testing... */}
-
-        <Route path="/test" element={<Testubg/>} />
-
-        
+        <Route path="/test" element={<Testubg />} />
       </Routes>
     </BrowserRouter>
   );
