@@ -2,7 +2,7 @@ import {create} from 'zustand';
 
 import axios from 'axios';
 
-const API_URL = "https://backend-npyb.onrender.com/api/v1";
+const API_URL = "http://localhost:8000/api/v1";
 
 axios.defaults.withCredentials = true;
 
@@ -15,8 +15,6 @@ export const useAuthstore = create((set) => ({
 	isCheckingAuth: true,
 	message: null,
 	email: undefined,
-
-	
 
 
     login: async (email, password) => {
