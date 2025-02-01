@@ -29,14 +29,14 @@ function Login() {
 
   return (
     <section className="bg-black min-h-screen min-w-auto flex items-center ">
-      <div className="md:w-screen min-h-screen hidden md:block text-white ">
+      <div className="lg:w-screen min-h-screen hidden lg:block text-white ">
         <div className=' font-bold relative top-20 left-20 flex flex-col'> 
           <h1 className='text-display font-bold'>Learn without limits</h1>
           <h2 className='text-small font-normal mb-5 w-1/2'>Start, switch, or advance your career with more than 7,000 courses, Professional Certificates, and degrees from world-class universities and companies.</h2>
            <Link to="/" className='w-0'><span className='bg-primary py-3 px-8 text-center rounded-full  w-auto font-semibold text-white'>Explore</span></Link>
         </div>
       </div>
-      <div className=" flex flex-col items-center justify-center md:w-2/5 w-screen h-screen bg-white">
+      <div className=" flex flex-col items-center justify-center lg:w-1/2 w-screen h-screen bg-white">
         <div className="flex flex-col items-center justify-center  h-auto  rounded-2xl">
                 <div className='Top-login px-2 md:w-96 w-auto text-center'>
                   <div className="mb-4 relative left-24 md:left-32 w-fit">
