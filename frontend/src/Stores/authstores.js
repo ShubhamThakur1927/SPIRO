@@ -17,21 +17,14 @@ export const useAuthstore = create((set) => ({
 	email: undefined,
 
 
-    login: async (email, password) => {
+    login: async (email, password, backendUrl, rememberMe) => {
 		set({ isLoading: true, error: null });
 		try {
-			const response = await axios.post(`${API_URL}/studentLogin`, { email, password });
-			set({
-				isAuthenticated: true,
-				student: response.data.student,
-				error: null,
-				isLoading: false,
-				isVerified : true
-			});
-			//console.log(response.data.teacher);
+			const response = await axios.post(`${API_URL}${backendUrl}`, { email, password, rememberMe });
+			const { data } = response;
+			set({ isAuthenticated: true, student: data.student, teacher: data.teacher, isLoading: false });
 		} catch (error) {
-			set({ error: error.response?.data?.message || "Error logging in", isLoading: false });
-			throw error;
+			set({ error: error.response.data.message, isLoading: false });
 		}
 	},
 	logout: async () => {
