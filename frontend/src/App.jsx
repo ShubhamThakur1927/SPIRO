@@ -10,6 +10,7 @@ import Verification from "./pages/Verification";
 import StudentLogin from "./pages/StudentLogin";
 import Testubg from "./pages/Testubg";
 import LecturesView from "./pages/LecturesView";
+import AboutUs from "./pages/AboutUs";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, teacher } = useAuthstore();
@@ -69,6 +70,7 @@ function App() {
         } />
         <Route path="/verify-email" element={<Verification />} />
         <Route path="/Signup" element={<Signup />} />
+        <Route path="/about-us" element={<AboutUs/>}/>
         <Route path="/Forgetpassword" element={<Forgetpassword />} />
         <Route path="/test" element={<Testubg />} />
       </Routes>
