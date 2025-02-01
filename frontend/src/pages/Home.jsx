@@ -39,7 +39,7 @@ function Home() {
   }, []);
 
   return (
-    <section className="bg-main body scroll-smooth min-w-screen min-h-screen box-border">
+    <section className="bg-main body  scroll-smooth min-w-screen min-h-screen box-border">
       {/* Navbar & Hero Section */}
       <Navbar className={`${navbarBg} ${textColor}`} />
       <div className="min-h-screen min-w-screen hero overflow-hidden relative">

@@ -7,7 +7,7 @@ function Banner(props) {
         AOS.init();
       }, [])
   return (
-    <div className='mx-16 text-white' data-aos="fade-down">
+    <div className='mx-16 text-white md:block hidden' data-aos="fade-down">
       <h1 className='text-h1 font-semibold relative top-48 left-12 z-50 w-2/5 '>{props.Title}</h1>
       {props.Subtitle}
     <div className='bg-primary h-auto w-auto rounded-2xl my-10 '>
