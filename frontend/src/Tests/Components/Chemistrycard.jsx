@@ -4,7 +4,7 @@ function Chemistrycard(props) {
   const { image, title, author, onMenuClick } = props;
 
   return (
-    <div className="relative w-64 h-40 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+    <div className="relative w-64 h-40 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition">
       {/* Background Image */}
       <img
         src={image}
