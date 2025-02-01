@@ -48,7 +48,7 @@ function Home() {
           <div className="text-white text-display xl:m-20 xl:w-1/3 w-2/3 md:w-1/2 leading-display font-semibold">
             Empowering Your Future
             <p className="text-small text-white leading-small my-5 font-normal">
-              Achieve your goals with flexible, high-quality <br /> programs for all levels
+              Achieve your goals with flexible, high-quality  programs for all levels
             </p>
           </div>
           <button className="bg-primary relative xl:bottom-14 xl:left-20 text-white font-semibold flex align-middle items-center py-3 px-8 rounded-lg">
