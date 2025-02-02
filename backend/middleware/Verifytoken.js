@@ -15,6 +15,9 @@ const verifyToken = (req, res, next) => {
     if (!decoded.userId) {
       return res.status(401).json({ message: "Invalid token" });
     }
+    // Refresh the token expiration time
+    const newToken = jwt.sign({ userId: decoded.userId }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    res.cookie('token', newToken, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
     next();
   } catch (error) {
     console.error("JWT Verification Error:", error.message);
