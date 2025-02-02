@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 
 function Home() {
-  const [navbarBg, setNavbarBg] = useState("transparent");
   const [textColor, setTextColor] = useState("text-white");
 
   useEffect(() => {
@@ -24,10 +23,8 @@ function Home() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setNavbarBg("glass-blur");
         setTextColor("text-black");
       } else {
-        setNavbarBg("transparent");
         setTextColor("text-white");
       }
     };
@@ -39,19 +36,19 @@ function Home() {
   }, []);
 
   return (
-    <section className="bg-main body  scroll-smooth min-w-screen min-h-screen box-border">
+    <section className="bg-main body scroll-smooth min-w-screen min-h-screen box-border">
       {/* Navbar & Hero Section */}
-      <Navbar className={`${navbarBg} ${textColor}`} />
+      <Navbar className={`${textColor}`} />
       <div className="min-h-screen min-w-screen hero overflow-hidden relative">
         <div className="absolute inset-0 bg-black opacity-30"></div>
-        <div className="relative z-10 top-36 left-4 md:left-24 w-auto h-full">
-          <div className="text-white text-display xl:m-20 xl:w-1/3 w-2/3 md:w-1/2 leading-display font-semibold">
+        <div className="relative z-10 top-36 left-4 mx-10 md:left-24 w-auto h-full">
+          <div className="text-white text-display xl:my-20 xl: xl:w-1/3 w-2/3 md:w-1/2  leading-display font-semibold">
             Empowering Your Future
             <p className="text-small text-white leading-small my-5 font-normal">
               Achieve your goals with flexible, high-quality  programs for all levels
             </p>
           </div>
-          <button className="bg-primary relative xl:bottom-14 xl:left-20 text-white font-semibold flex align-middle items-center py-3 px-8 rounded-lg">
+          <button className="bg-primary relative xl:bottom-14 text-white font-semibold flex align-middle items-center py-3 px-8 rounded-lg">
             Get Free Demo <ChevronRight size={24} />
           </button>
         </div>
@@ -118,7 +115,7 @@ function Home() {
       </section>
 
       {/* Footer */}
-      <section className="mx-4 md:mx-20">
+      <section className="mx-4 md:mx-10">
         <Banner Title="Your Vision, Our Platform Let’s Connect Today!" />
         <Footer />
       </section>

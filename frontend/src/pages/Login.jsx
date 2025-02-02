@@ -74,10 +74,10 @@ function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                   <div
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+                    className="absolute top-6 inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
                     onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
                   >
-                    {showPassword ? <EyeOff /> : <Eye />}
+                    {showPassword ? <EyeOff size={24} /> : <Eye size={24} />}
                   </div>
                 </div>
 
