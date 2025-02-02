@@ -40,6 +40,7 @@ export default {
       colors: {
         'primary':"#0056d2",
         'secondary':"#F2F2F2",
+        'primary-dark': "#0046BF",
         'Dark' : "#020817",
         'main':"#f1f1f2",
         'trip':"#4d4d4d",

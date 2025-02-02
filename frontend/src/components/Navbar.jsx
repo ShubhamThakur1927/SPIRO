@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 function Navbar({ className, textColor = 'text-white' }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,8 +20,8 @@ function Navbar({ className, textColor = 'text-white' }) {
     <nav className={`fixed w-full top-0 z-50 font-semibold ${isScrolled ? 'text-black' : textColor} ${className}`}> 
       <div className={`w-full flex md:justify-around justify-between items-center px-5 pt-6 md:px-10 lg:px-16`}>
         {/* Logo */}
-        <div className='text-h1 font-semibold text-primary'>
-          <Link to='/'>SPIRO</Link>
+        <div className='text-h1 font-semibold leading-h1 text-primary'>
+          <Link to='/' className='flex gap-2 items-center'> <img src={logo} alt="Logo" /> SPIRO</Link>
         </div>
 
         {/* Desktop Menu */}

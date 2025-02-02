@@ -48,8 +48,8 @@ function Home() {
               Achieve your goals with flexible, high-quality  programs for all levels
             </p>
           </div>
-          <button className="bg-primary relative xl:bottom-14 text-white font-semibold flex align-middle items-center py-3 px-8 rounded-lg">
-            Get Free Demo <ChevronRight size={24} />
+          <button className="bg-primary relative xl:bottom-14 hover:bg-primary-dark text-white font-semibold flex align-middle items-center py-3 px-8 rounded-lg">
+            Explore <ChevronRight size={24} />
           </button>
         </div>
       </div>
