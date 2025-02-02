@@ -18,6 +18,7 @@ function Signup() {
   const [showOtp, setShowOtp] = useState(false);
   const navigate = useNavigate();
   const [otp, setOtp] = useState(""); // Add OTP state
+  const [isChecked, setIsChecked] = useState(false); // Add checkbox state
 
   const [valid, setValid] = useState({
     passwordLength: false,
@@ -153,19 +154,21 @@ function Signup() {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                   <div className="text-start">
-                    <input type="checkbox" className="h-5 w-4 relative top-1" />{" "}
-                    I agree with{" "}
+                    <Input
+                      type="checkbox"
+                      className="h-5 w-4 relative top-1"
+                      checked={isChecked}
+                      onChange={(e) => setIsChecked(e.target.checked)}
+                    /> 
+                    I agree with 
                     <span className="underline underline-offset-1">Terms </span>
-                    and{" "}
-                    <span className="underline underline-offset-1">
-                      {" "}
-                      Privacy policy
-                    </span>
+                    and 
+                    <span className="underline underline-offset-1"> Privacy policy</span>
                   </div>
                   <motion.button
                     className="bg-primary text-center flex justify-center text-white w-full  py-2 md:py-4 text-small rounded-md my-2"
                     type="submit"
-                    disabled={isLoading}
+                    disabled={isLoading || !isChecked}
                   >
                     {isLoading ? <Loader /> : "Sign Up"}
                   </motion.button>
