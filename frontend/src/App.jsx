@@ -60,6 +60,8 @@ function App() {
         <Route path="/about-us" element={<AboutUs/>}/>
         <Route path="/Forgetpassword" element={<Forgetpassword />} />
         <Route path="/test" element={<Testubg />} />
+        <Route path="/pagenotfound" element={<h1>Page Not Found</h1>} />
+        <Route path="*" element={<Navigate to="/pagenotfound" />} />
       </Routes>
     </BrowserRouter>
   );
