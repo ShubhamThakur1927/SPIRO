@@ -1,9 +1,26 @@
-import React from 'react'
+import React,{useState, useEffect}from 'react'
+import GoHomeButton from '../Tests/Components/GoHomeButton'
+import Navbar from '../components/Navbar'
 
 function PageNotFound() {
+  const [textColor, setTextColor] = useState("text-black");
+  useEffect(() => {
+        const handleScroll = () => {
+          if (window.scrollY > 50) {
+            setTextColor("text-black");
+          } else {
+            setTextColor("text-black");
+          }
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
   return (
-    <div className="space-y-16 ">
-      <Navbar />
+    <div className="">
+      <Navbar className={`${textColor}`} textColor="text-black" />
       <div className="flex flex-col items-center justify-center h-screen w-screen bg-white text-blue-600 px-5">
         <h1 className="text-h1 font-bold">404</h1>
         <p className="text-lg mt-2">Sorry, the page you're looking for could not be found</p>
