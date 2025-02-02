@@ -6,8 +6,6 @@ import Signup from "./pages/Signup";
 import Forgetpassword from "./pages/Forgetpassword";
 import DashboardPage from "./pages/DashboardPage";
 import { useAuthstore } from "./Stores/authstores";
-import Verification from "./pages/Verification";
-import StudentLogin from "./pages/StudentLogin";
 import Testubg from "./pages/Testubg";
 import LecturesView from "./pages/LecturesView";
 import AboutUs from "./pages/AboutUs";
