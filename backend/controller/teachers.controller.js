@@ -1,7 +1,7 @@
 import bcryptjs from 'bcryptjs';
 import crypto from "crypto";
 import { generateTokenAndSetCookie } from '../utils/token.js';
-import { sendVerificationEmail, sendWelcomeEmail, sendPasswordResetEmail, sendResetSuccessEmail } from '../mailtrap/email.js';
+import { sendVerificationEmail} from '../mailtrap/email.js';
 import Teacher from '../model/teacher.model.js';
 
 // program for Teacher registration
@@ -53,7 +53,7 @@ const registerTeacher = async (req, res) => {
 
 // program for Teacher login
 const loginTeacher = async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, rememberMe } = req.body;
 
     try {
         const teacher = await Teacher.findOne({ email });
@@ -66,7 +66,7 @@ const loginTeacher = async (req, res) => {
             return res.status(400).json({ message: "Invalid credentials" });
         }
 
-        generateTokenAndSetCookie(res, teacher._id);
+        generateTokenAndSetCookie(res, teacher._id, rememberMe);
 
         teacher.lastLogin = new Date();
         await teacher.save();
@@ -120,7 +120,7 @@ const verifyTeacher = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            message: "Email verified successfully",
+            message: "Email verified successfully. Redirecting to login...",
             user: {
                 ...teacher._doc,
                 password: undefined,
