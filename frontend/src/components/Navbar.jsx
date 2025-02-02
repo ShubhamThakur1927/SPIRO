@@ -48,7 +48,7 @@ function Navbar({ className, textColor = 'text-white' }) {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className='md:hidden bg-white shadow-lg rounded-b-lg p-4 absolute top-16 w-full'>
+        <div className='md:hidden text-black bg-white shadow-lg rounded-b-lg p-4 absolute top-16 w-full'>
           <ul className='flex flex-col items-center space-y-4 text-small'>
             <Link to='*' onClick={() => setIsMenuOpen(false)}><li className='hover:text-primary transition'>Docs</li></Link>
             <Link to='/about-us' onClick={() => setIsMenuOpen(false)}><li className='hover:text-primary transition'>About</li></Link>
