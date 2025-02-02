@@ -9,6 +9,7 @@ import { useAuthstore } from "./Stores/authstores";
 import Testubg from "./pages/Testubg";
 import LecturesView from "./pages/LecturesView";
 import AboutUs from "./pages/AboutUs";
+import PageNotFound from "./pages/PageNotFound";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, teacher } = useAuthstore();
@@ -60,7 +61,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs/>}/>
         <Route path="/Forgetpassword" element={<Forgetpassword />} />
         <Route path="/test" element={<Testubg />} />
-        <Route path="/pagenotfound" element={<h1>Page Not Found</h1>} />
+        <Route path="/pagenotfound" element={<PageNotFound/>} />
         <Route path="*" element={<Navigate to="/pagenotfound" />} />
       </Routes>
     </BrowserRouter>
