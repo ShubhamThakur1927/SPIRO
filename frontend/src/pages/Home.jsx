@@ -81,10 +81,10 @@ function Home() {
           Transforming learning, one click at a time
         </h1>
         <div className="grid grid-cols-1 gap-12 w-full md:w-2/3 px-4 md:px-10">
-          <div className="w-full h-[400px] bg-[#F4ECE0] rounded-3xl" data-aos="fade-right"></div>
+          <div className="w-full h-[400px] bg-[url(./assets/cardbg.png)] bg-cover bg-center bg-no-repeat bg-blend-screen bg-slate-900 rounded-3xl" data-aos="fade-right"></div>
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="w-full md:w-1/2 h-[400px] bg-[#F4ECE0] rounded-3xl" data-aos="fade-down"></div>
-            <div className="w-full md:w-1/2 h-[400px] bg-[#F4ECE0] rounded-3xl" data-aos="fade-up"></div>
+            <div className="w-full md:w-1/2 h-[400px] bg-[url(./assets/image108.png)] bg-cover bg-center bg-no-repeat bg-blend-screen bg-slate-900 rounded-3xl" data-aos="fade-down"></div>
+            <div className="w-full md:w-1/2 h-[400px] bg-[url(./assets/image109.png)] bg-cover bg-center bg-no-repeat bg-blend-screen bg-slate-900 rounded-3xl" data-aos="fade-up"></div>
           </div>
         </div>
 
