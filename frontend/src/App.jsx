@@ -6,8 +6,6 @@ import Signup from "./pages/Signup";
 import Forgetpassword from "./pages/Forgetpassword";
 import DashboardPage from "./pages/DashboardPage";
 import { useAuthstore } from "./Stores/authstores";
-import Verification from "./pages/Verification";
-import StudentLogin from "./pages/StudentLogin";
 import Testubg from "./pages/Testubg";
 import LecturesView from "./pages/LecturesView";
 import AboutUs from "./pages/AboutUs";
@@ -24,7 +22,7 @@ const ProtectedRoute = ({ children }) => {
 const RedirectAuthenticatedUser = ({ children }) => {
   const { isAuthenticated, student } = useAuthstore();
 
-  if (isAuthenticated && !student.isVerified) {
+  if (isAuthenticated && student.isVerified) {
     return <Navigate to="/dashboard" replace />;
   }
 
@@ -55,20 +53,9 @@ function App() {
             <DashboardPage />
           </ProtectedRoute>
         } />
-        <Route
-          path="/teacherlogin"
-          element={
-            <RedirectAuthenticatedUser>
-              <Login />
-            </RedirectAuthenticatedUser>
-          }
-        />
         <Route path="/login" element={
-          <RedirectAuthenticatedUser>
             <Login />
-          </RedirectAuthenticatedUser>
         } />
-        <Route path="/verify-email" element={<Verification />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/about-us" element={<AboutUs/>}/>
         <Route path="/Forgetpassword" element={<Forgetpassword />} />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-function Navbar({ className }) {
+function Navbar({ className, textColor = 'text-white' }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -16,8 +16,8 @@ function Navbar({ className }) {
   }, []);
 
   return (
-    <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-opacity-5 bg-gray-300 shadow-md backdrop-blur-md' : 'bg-transparent'} ${className} font-semibold`}> 
-      <div className='w-full flex justify-between items-center px-5 py-4 md:px-10 lg:px-16'>
+    <nav className={`fixed w-full top-0 z-50 font-semibold ${isScrolled ? 'text-black' : textColor} ${className}`}> 
+      <div className={`w-full flex md:justify-around justify-between items-center px-5 pt-6 md:px-10 lg:px-16`}>
         {/* Logo */}
         <div className='text-h1 font-semibold text-primary'>
           <Link to='/'>SPIRO</Link>
@@ -51,13 +51,12 @@ function Navbar({ className }) {
         <div className='md:hidden bg-white shadow-lg rounded-b-lg p-4 absolute top-16 w-full'>
           <ul className='flex flex-col items-center space-y-4 text-small'>
             <Link to='*' onClick={() => setIsMenuOpen(false)}><li className='hover:text-primary transition'>Docs</li></Link>
-            <Link to='/aboutuspage' onClick={() => setIsMenuOpen(false)}><li className='hover:text-primary transition'>About</li></Link>
+            <Link to='/about-us' onClick={() => setIsMenuOpen(false)}><li className='hover:text-primary transition'>About</li></Link>
             <Link to='*' onClick={() => setIsMenuOpen(false)}><li className='hover:text-primary transition'>Contact Us</li></Link>
           </ul>
           <div className='mt-4 flex flex-col items-center space-y-8'>
             <Link to='/signup' onClick={() => setIsMenuOpen(false)}><span className='text-small'>Signup</span></Link>
             <Link to='/login' onClick={() => setIsMenuOpen(false)}>
-            
               <span className='bg-primary py-3 text-small px-8 text-center rounded-xl font-semibold text-white hover:bg-opacity-80 transition'>Login</span>
             </Link>
           </div>
