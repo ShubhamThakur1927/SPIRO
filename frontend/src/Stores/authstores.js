@@ -1,8 +1,9 @@
 import {create} from 'zustand';
-
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import axios from 'axios';
 
-const API_URL = "https://backend-npyb.onrender.com/api/v1";
+const API_URL = "http://localhost:8000/api/v1";
 
 axios.defaults.withCredentials = true;
 
@@ -24,7 +25,11 @@ export const useAuthstore = create((set) => ({
 			const { data } = response;
 			set({ isAuthenticated: true, student: data.student, teacher: data.teacher, isLoading: false });
 		} catch (error) {
-			set({ error: error.response.data.message, isLoading: false });
+			const errorMessage = error.response?.data?.message || "Error logging in";
+            if (error.response?.status === 400) {
+                toast.error("Bad Request: " + errorMessage);
+            }
+			set({ error: errorMessage, isLoading: false });
 		}
 	},
 	logout: async () => {
@@ -37,23 +42,6 @@ export const useAuthstore = create((set) => ({
 			throw error;
 		}
 	},	
-	StudentLogin: async (email, password) => {
-		set({ isLoading: true, error: null });
-		try {
-			const response = await axios.post(`${API_URL}/StudentLogin`, { email, password });
-			set({
-				isAuthenticated: true,
-				student: response.data.student,
-				error: null,
-				isLoading: false,
-				isVerified : false
-			});
-			//console.log(response.data.teacher);
-		} catch (error) {
-			set({ error: error.response?.data?.message || "Error logging in", isLoading: false });
-			throw error;
-		}
-	},
 	signup : async (email, password, passwordConfirm) => {
 		set({ isLoading: true, error: null });
 		try {
@@ -64,26 +52,21 @@ export const useAuthstore = create((set) => ({
 			throw error;
 		}
 	},
-	verify: async (code) => {
+	verify: async (code) => {  // Accept navigate as a parameter
 		set({ isLoading: true, error: null });
 		try {
-			const response = await axios.post(`${API_URL}/verifyStudent`, { code });	
-			const { user } = response.data; // Extract email and user from the response
-			set({ 
-				user, 
-				isAuthenticated: true, 
-				isLoading: false 
-			});
-	
+			console.log(code);
+			const response = await axios.post(`${API_URL}/verifyStudent`, { code });
+			set({ isLoading: false });
 			return response.data;
-		} catch (error) {
-			set({ 
-				error: error.response?.data?.message || "Error verifying email", 
-				isLoading: false 
-			});
+			// navigate("/dashboard"); // Navigate to success page or any other action
+		}catch (error) {
+			set({ error: error.response.data.message || "Error verifying account", isLoading: false });
 			throw error;
 		}
 	},
+	
+	
 	test: async () => {
 		set({ isLoading: true, error: null });
 		try {

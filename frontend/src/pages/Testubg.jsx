@@ -7,7 +7,7 @@ import AboutUs from './AboutUs'
 function Testubg() {
   return (
     <div>
-      <Aboutuspage/>
+      <Termsandcondition/>
     </div>
   )
 }

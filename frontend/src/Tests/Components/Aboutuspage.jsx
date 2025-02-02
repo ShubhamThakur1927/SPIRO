@@ -3,13 +3,33 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 function Aboutuspage() {
+  const [textColor, setTextColor] = useState("text-white");
+  
+    useEffect(() => {
+      AOS.init();
+    }, []);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          setTextColor("text-black");
+        } else {
+          setTextColor("text-white");
+        }
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
   return (
     <div>
-      <Navbar />
+      <Navbar className={"text-black"}/>
       <div className="bg-main">
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center px-6 py-24 md:p-32 text-center space-y-5">
-          <h2 className="text-display font-bold text-blue-600">Who are we?</h2>
+          <h2 className="text-display leading-display font-bold text-blue-600">Who are we?</h2>
           <p className="text-h3 text-gray-600">
             <span className="font-bold text-blue-600">SPIRO</span>, we believe that education should be accessible,
             engaging, and empowering for every learner.

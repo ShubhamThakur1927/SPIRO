@@ -5,15 +5,15 @@ function Footer() {
     <footer className="pb-10 w-full mt-28 px-6 md:px-20">
       
       {/* Upper Section */}
-      <div className="Uppersection grid grid-cols-1 md:grid-cols-2 gap-12 pt-5">
+      <div className="Uppersection w-auto grid grid-cols-1 md:grid-cols-2 lg:gap-12 gap-0 pt-5">
         
         {/* Logo */}
-        <div className="text-h1 font-semibold leading-h1 text-primary">
+        <div className="text-h1 font-semibold w-1/4 leading-h1 text-primary">
           SPIRO
         </div>
 
         {/* Links Section */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3  lg:gap-8 md:gap-24 gap-10 text-small text-body-2">
           
           {/* Courses */}
           <div className="Courses">
