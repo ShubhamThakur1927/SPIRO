@@ -1,11 +1,10 @@
 import React from 'react'
-
-import Pagenotfound from '../Tests/Components/Pagenotfound'
+import Privacypolicy from '../Tests/Components/privacypolicy'
 
 function Testubg() {
   return (
     <div>
-      <Pagenotfound/>
+      <Privacypolicy/>
     </div>
   )
 }
