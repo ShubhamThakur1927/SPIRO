@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -12,7 +12,11 @@ import AboutUs from "./pages/AboutUs";
 import PageNotFound from "./pages/PageNotFound";
 
 const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated, teacher } = useAuthstore();
+  const { isAuthenticated, checkAuth } = useAuthstore();
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
@@ -21,9 +25,9 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const RedirectAuthenticatedUser = ({ children }) => {
-  const { isAuthenticated, student } = useAuthstore();
+  const { isAuthenticated } = useAuthstore();
 
-  if (isAuthenticated && student.isVerified) {
+  if (isAuthenticated) {
     return <Navigate to="/dashboard" replace />;
   }
 
@@ -50,12 +54,14 @@ function App() {
           </ProtectedRoute>
         } />
         <Route path="/dashboard" element={
-          <ProtectedRoute>
+           <ProtectedRoute>
             <DashboardPage />
-          </ProtectedRoute>
+           </ProtectedRoute>
         } />
         <Route path="/login" element={
+          <RedirectAuthenticatedUser>
             <Login />
+          </RedirectAuthenticatedUser>
         } />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/about-us" element={<AboutUs/>}/>

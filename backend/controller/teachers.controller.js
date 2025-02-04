@@ -49,7 +49,7 @@ const registerTeacher = async (req, res) => {
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
     }
-}
+};
 
 // program for Teacher login
 const loginTeacher = async (req, res) => {
@@ -82,7 +82,7 @@ const loginTeacher = async (req, res) => {
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
     }
-}
+};
 
 // program for teacher auth check
 const checkAuth = async (req, res) => {

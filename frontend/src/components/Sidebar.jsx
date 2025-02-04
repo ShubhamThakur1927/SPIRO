@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ToDoList from "../pages/Dashboard-Pages/ToDoList";
 import Dashboard from "../pages/Dashboard-Pages/Dashboard";
 import ClassesPage from "../pages/Dashboard-Pages/ClassesPage";
+import { NotebookPen } from "lucide-react";
 
 const Sidebar = ({ classes, handleLogout, onContentChange }) => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Sidebar = ({ classes, handleLogout, onContentChange }) => {
               />
             </li>
             <li className="text-h3 font-semibold leading-h3 " onClick={() => onContentChange(<ToDoList/>)}>
-              To Do List
+              <span className="flex items-center gap-2"><NotebookPen/>To Do List</span>
             </li>
             <li className="text-h3 font-semibold leading-h3 " onClick={() => onContentChange("Assignment Content")}>
               Assignment

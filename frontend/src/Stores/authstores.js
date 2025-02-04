@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from 'axios';
 
-const API_URL = "http://localhost:8000/api/v1";
+const API_URL = "https://backend-npyb.onrender.com/api/v1";
 
 axios.defaults.withCredentials = true;
 
@@ -20,16 +20,29 @@ export const useAuthstore = create((set) => ({
 
     login: async (email, password, backendUrl, rememberMe) => {
 		set({ isLoading: true, error: null });
+	
 		try {
-			const response = await axios.post(`${API_URL}${backendUrl}`, { email, password, rememberMe });
+			const response = await axios.post(`${API_URL}${backendUrl}`, {
+				email,
+				password,
+				rememberMe,
+			}, { withCredentials: true }); // Ensures cookies are sent
+	
 			const { data } = response;
+	
+			if (data.token) {
+				sessionStorage.setItem("token", data.token); // Store token in sessionStorage
+				axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
+			}
+	
 			set({ isAuthenticated: true, student: data.student, teacher: data.teacher, isLoading: false });
 		} catch (error) {
 			const errorMessage = error.response?.data?.message || "Error logging in";
-            toast.error(errorMessage);
+			toast.error(errorMessage);
 			set({ error: errorMessage, isLoading: false });
 		}
 	},
+	
 	logout: async () => {
 		set({ isLoading: true, error: null });
 		try {
@@ -54,6 +67,25 @@ export const useAuthstore = create((set) => ({
 			throw error;
 		}
 	},
+
+	checkAuth: async () => {
+        const token = sessionStorage.getItem("token");
+        if (token) {
+			axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+			set({ isLoading: true, error: null });
+            try {
+                const response = await axios.get(`${API_URL}/student-auth`);
+
+                set({ isAuthenticated: true, student: response.data.student, teacher: response.data.teacher, isLoading: false });
+            } catch (error) {
+                sessionStorage.removeItem("token");
+				delete axios.defaults.headers.common['Authorization'];
+                set({ isAuthenticated: false, student: null, teacher: null, isLoading: false });
+            }
+        }
+    },
+
+
 	verify: async (code) => {  // Accept navigate as a parameter
 		set({ isLoading: true, error: null });
 		try {
