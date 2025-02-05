@@ -10,9 +10,7 @@ function Profileinfo({ details, onEdit }) {
   };
 
   const handleSaveClick = () => {
-    Object.keys(editValues).forEach((field) => {
-      onEdit(field, editValues[field]);
-    });
+    onEdit(editValues);
     setIsEditing(false);
   };
 

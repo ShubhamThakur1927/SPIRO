@@ -54,15 +54,7 @@ function Profilepage({ profilePic: initialProfilePic }) {
     gender: studentGender,
   };
 
-  const handleEditDetails = async (field, value) => {
-    const updatedDetails = {
-      name: field === "name" ? value : studentName,
-      phone: field === "phone" ? value : studentPhone,
-      branch: field === "branch" ? value : studentBranch,
-      yearAndDivision: field === "yearAndDivision" ? value : studentYearAndDivision,
-      gender: field === "gender" ? value : studentGender,
-    };
-
+  const handleEditDetails = async (updatedDetails) => {
     try {
       await updateProfile(updatedDetails);
       setStudentName(updatedDetails.name);
