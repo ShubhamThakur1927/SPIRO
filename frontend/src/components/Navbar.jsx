@@ -17,7 +17,7 @@ function Navbar({ className, textColor = 'text-white' }) {
   }, []);
 
   return (
-    <nav className={`fixed w-full top-0 z-50 font-semibold ${isScrolled ? 'text-black' : textColor} ${className}`}> 
+    <nav className={`fixed w-full top-0 z-50 font-semibold ${isScrolled ? 'bg-white text-black' : textColor} ${className}`}> 
       <div className={`w-full flex md:justify-around justify-between items-center px-5 pt-6 md:px-10 lg:px-16`}>
         {/* Logo */}
         <div className='text-h1 font-semibold leading-h1 text-primary'>
