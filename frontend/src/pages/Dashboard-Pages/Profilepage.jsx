@@ -141,9 +141,9 @@ function Profilepage({ profilePic: initialProfilePic }) {
     <div className="bg-transparent min-h-screen flex flex-col space-y-5">
       <div className="relative left-2 px-8 mt-2">
       {/* Main Content */}
-      <div className="px-5 grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-2 gap-4 lg:gap-20">
+      <div className="px-5 grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-2 gap-2 xl:gap-24 ">
         {/* Left Column */}
-        <div className="space-y-4 place-items-center md:space-y-6">
+        <div className="space-y-4 xl:place-items-center place-items-stretch md:space-y-6">
           <Profilecard name={studentName} image={profilePic || profilealt} onUpdateProfile={()=> document.getElementById("fileInput").click()} />
           <input
             type="file"
@@ -178,11 +178,11 @@ function Profilepage({ profilePic: initialProfilePic }) {
         </div>
 
         {/* Right Column */}
-        <div className="md:col-span-3 space-y-4">
+        <div className="place-items-stretch xl:col-span-3 col-span-1 space-y-4">
           <Profileinfo details={userDetails} onEdit={handleEditDetails} />
 
           {/* Activity Status Section */}
-          <section className="space-y-4">
+          <section className="space-y-4 max-w-full">
             <h1 className="text-xl md:text-2xl font-semibold">
               Activity Status
             </h1>

@@ -3,9 +3,10 @@ import { useAuthstore } from "../Stores/authstores";
 import { StudentStores } from "../Stores/StudentStores";
 import Sidebar from "../components/Sidebar";
 import Dashboard from "./Dashboard-Pages/Dashboard";
-import { Bell, Plus, Settings } from "lucide-react";
+import { Bell, Home, Plus, Settings } from "lucide-react";
 import Profilepage from "./Dashboard-Pages/Profilepage";
 import profilealt from "../assets/profile-alt.svg";
+import { useNavigate } from "react-router-dom";
 
 function DashboardPage() {
   const { logout } = useAuthstore();
@@ -15,6 +16,7 @@ function DashboardPage() {
   const [profilePic, setProfilePic] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [link, setLink] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchClasses = async () => {
@@ -78,8 +80,7 @@ function DashboardPage() {
         onContentChange={handleContentChange}
       />
       <div className=" flex w-screen h-screen overflow-auto">
-        <div className="h-screen w-1/6 overflow-auto"></div>
-        <div className="w-9/12 relative left-10 content-area px-8 mt-2">{content}
+        <div className="w-9/12 xl:ml-72 ml-52 xl:place-items-center content-area px-8 mt-2">{content}
         <div className="w-auto fixed right-0 top-0 h-screen bg-white rounded-xl">
           {" "}
           <div className="px-5">
@@ -93,6 +94,9 @@ function DashboardPage() {
                 <li className="place-items-center"><Bell /></li>
                 <li className="place-items-center"><Settings/></li>
                 <li className="place-items-center cursor-pointer" onClick={handlePlusClick}><Plus/></li>
+                <li className="place-items-center cursor-pointer" onClick={()=>{
+                  navigate("/")
+                }}><Home/></li>
               </ul>
             </div>
             
