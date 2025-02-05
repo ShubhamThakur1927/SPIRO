@@ -15,7 +15,8 @@ function Banner(props) {
       className="text-white md:block hidden lg:w-auto w-full "
       data-aos="fade-down"
     >
-      <h1 className="lg:text-h1 lg:leading-h1 text-h2 leading-h2 font-semibold relative top-48 left-12 z-50 w-3/4 xl:w-fit ">
+      <h1 className="lg:text-h1 lg:leading-h1 text-h2 leading-h2 font-semibold relative top-48 left-12 
+       w-3/4 xl:w-fit ">
         {props.Title}
       </h1>
       {props.Subtitle}

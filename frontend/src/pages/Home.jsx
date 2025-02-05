@@ -41,7 +41,7 @@ function Home() {
       <Navbar className={`${textColor}`} />
       <div className="min-h-screen min-w-screen hero overflow-hidden relative">
         <div className="absolute inset-0 bg-black opacity-30"></div>
-        <div className="relative z-10 top-36 xl:mx-10 xl:left-32 md:left-20 left-0 mx-10 w-auto h-full">
+        <div className="relative z-10 mt-24 xl:mx-10 xl:left-32 md:left-20 left-0 mx-10 w-auto h-full">
           <div className="text-white text-display xl:my-20 xl: xl:w-1/3 w-2/3 md:w-1/2  leading-display font-semibold">
             Empowering Your Future
             <p className="text-small text-white leading-small my-5 font-normal">
