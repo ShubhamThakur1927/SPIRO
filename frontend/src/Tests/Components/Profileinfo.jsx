@@ -38,7 +38,7 @@ function Profileinfo({ details, onEdit }) {
                 value={editValues.name}
                 onChange={(e) => handleChange("name", e.target.value)}
                 placeholder={details.name}
-                className="ml-2 bg-transparent outline-none"
+                className="ml-2 bg-transparent outline-none overflow-hidden"
               />
             ) : (
               <span className="font-semibold text-gray-700 ml-2">{details.name}</span>
