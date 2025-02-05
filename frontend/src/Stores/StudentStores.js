@@ -27,7 +27,6 @@ export const StudentStores = create(
         set({ isLoading: true });
         const response = await axios.post(`${API_URL}/update-profile`, { name, phone, branch, yearAndDivision,gender});
         set({ student: response.data.student, isLoading: false });
-        window.location.reload();
       } catch (error) {
         set({ error: error.message, isLoading: false });
       }
@@ -131,6 +130,7 @@ export const StudentStores = create(
             "Content-Type": "multipart/form-data",
           },
         });
+        window.location.reload();
         set({ profilePic: response.data.profilePic });
       } catch (error) {
         console.error("Failed to update profile picture:", error);
