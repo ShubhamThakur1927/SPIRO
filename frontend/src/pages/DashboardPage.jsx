@@ -78,8 +78,8 @@ function DashboardPage() {
         onContentChange={handleContentChange}
       />
       <div className=" flex w-screen h-screen overflow-auto">
-        <div className="h-screen w-3/12 overflow-auto"></div>
-        <div className="w-full relative right-12 content-area px-4 mt-2">{content}
+        <div className="h-screen w-1/6 overflow-auto"></div>
+        <div className="w-9/12 relative left-10 content-area px-8 mt-2">{content}
         <div className="w-auto fixed right-0 top-0 h-screen bg-white rounded-xl">
           {" "}
           <div className="px-5">

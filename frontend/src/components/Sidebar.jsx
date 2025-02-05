@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ToDoList from "../pages/Dashboard-Pages/ToDoList";
 import Dashboard from "../pages/Dashboard-Pages/Dashboard";
 import ClassesPage from "../pages/Dashboard-Pages/ClassesPage";
-import { NotebookPen } from "lucide-react";
+import { Calendar, CalendarDays, GamepadIcon, LogOut, NotebookPen, PencilRuler, School } from "lucide-react";
 
 const Sidebar = ({ classes, handleLogout, onContentChange }) => {
   const navigate = useNavigate();
@@ -33,16 +33,17 @@ const Sidebar = ({ classes, handleLogout, onContentChange }) => {
                   value: cls._id,
                 }))}
                 onItemSelect={(id) => onContentChange(<ClassesPage id={id} />)}
+                icon={<School />} 
               />
             </li>
             <li className="text-h3 font-semibold leading-h3 " onClick={() => onContentChange(<ToDoList/>)}>
               <span className="flex items-center gap-2"><NotebookPen/>To Do List</span>
             </li>
             <li className="text-h3 font-semibold leading-h3 " onClick={() => onContentChange("Assignment Content")}>
-              Assignment
+            <span className="flex items-center gap-2"><PencilRuler />Assignment</span> 
             </li>
             <li className="text-h3 font-semibold leading-h3 " onClick={() => onContentChange("Calendar Content")}>
-              Calendar
+              <span className="flex items-center gap-2"><CalendarDays />Calendar</span> 
             </li>
             <li className="text-h3 font-semibold leading-h3 ">
               <Dropdown
@@ -52,6 +53,7 @@ const Sidebar = ({ classes, handleLogout, onContentChange }) => {
                   { label: "Simulation", value: "simulation" },
                   { label: "Quiz", value: "quiz" },
                 ]}
+                icon={<GamepadIcon/>}
                 onItemSelect={(value) => onContentChange(`Activity content for ${value}`)}
               />
             </li>
@@ -62,7 +64,7 @@ const Sidebar = ({ classes, handleLogout, onContentChange }) => {
         onClick={handleLogout}
         className="text-h3 leading-h3 p-2 text-start my-5 mx-10 font-semibold"
       >
-        Logout
+        <span className="flex items-center gap-2"><LogOut />Logout</span>
       </button>
     </div>
   );

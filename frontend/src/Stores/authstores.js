@@ -42,18 +42,10 @@ export const useAuthstore = create((set) => ({
 			set({ error: errorMessage, isLoading: false });
 		}
 	},
-	
 	logout: async () => {
-		set({ isLoading: true, error: null });
-		try {
-			await axios.post(`${API_URL}/studentLogout`);
-			set({ teacher: null, isAuthenticated: false, error: null, isLoading: false });
-		} catch (error) {
-			const errorMessage = "Error logging out";
-            toast.error(errorMessage);
-			set({ error: errorMessage, isLoading: false });
-			throw error;
-		}
+		sessionStorage.removeItem("token");
+		set({ isAuthenticated: false, student: null, teacher: null });
+		window.location.reload(); // Ensures full logout
 	},	
 	signup : async (email, password, passwordConfirm) => {
 		set({ isLoading: true, error: null });

@@ -147,10 +147,11 @@ function Profilepage({ profilePic: initialProfilePic }) {
 
   return (
     <div className="bg-transparent min-h-screen flex flex-col space-y-5">
+      <div className="relative left-2 px-8 mt-2">
       {/* Main Content */}
-      <div className="flex-1 px-5 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+      <div className="px-5 grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-2 gap-4 lg:gap-20">
         {/* Left Column */}
-        <div className="space-y-4 md:space-y-6">
+        <div className="space-y-4 place-items-center md:space-y-6">
           <Profilecard name={studentName} image={profilePic || profilealt} onUpdateProfile={()=> document.getElementById("fileInput").click()} />
           <input
             type="file"
@@ -225,6 +226,7 @@ function Profilepage({ profilePic: initialProfilePic }) {
             </div>
           </section>
         </div>
+      </div>
       </div>
 
       {/* Crop Modal */}
