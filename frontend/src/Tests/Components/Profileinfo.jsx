@@ -22,7 +22,7 @@ function Profileinfo({ details, onEdit }) {
   };
 
   return (
-    <div className="bg-white xl:w-full w-5/6 p-4 md:p-6 rounded-xl shadow-md">
+    <div className="bg-white xl:w-full w-5/6 p-4 md:p-6 rounded-xl overflow-hidden shadow-md">
       {/* Heading */}
       <h3 className="text-xl md:text-2xl font-semibold mb-4">Personal Detail</h3>
 
