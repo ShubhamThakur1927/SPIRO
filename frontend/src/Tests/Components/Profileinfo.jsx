@@ -47,7 +47,7 @@ function Profileinfo({ details, onEdit }) {
         </div>
 
         {/* College Email */}
-        <div className="flex items-center justify-between border-b pb-2">
+        <div className="flex items-center justify-between border-b pb-2 overflow-hidden">
           <p className="text-base md:text-lg">
             College Email: 
             <span className="font-medium text-gray-700 ml-2">{details.email}</span>
@@ -55,7 +55,7 @@ function Profileinfo({ details, onEdit }) {
         </div>
 
         {/* Phone */}
-        <div className="flex items-center justify-between border-b pb-2">
+        <div className="flex items-center justify-between border-b pb-2 overflow-hidden">
           <p className="text-base md:text-lg">
             Phone: +91 
             {isEditing ? (
@@ -73,7 +73,7 @@ function Profileinfo({ details, onEdit }) {
         </div>
 
         {/* Branch */}
-        <div className="flex items-center justify-between border-b pb-2">
+        <div className="flex items-center justify-between border-b pb-2 overflow-hidden">
           <p className="text-base md:text-lg">
             Branch: 
             {isEditing ? (
@@ -91,7 +91,7 @@ function Profileinfo({ details, onEdit }) {
         </div>
 
         {/* Class */}
-        <div className="flex items-center justify-between border-b pb-2">
+        <div className="flex items-center justify-between border-b pb-2 overflow-hidden">
           <p className="text-base md:text-lg">
             Class: 
             {isEditing ? (
@@ -109,7 +109,7 @@ function Profileinfo({ details, onEdit }) {
         </div>
 
         {/* Gender */}
-        <div className="flex items-center justify-between border-b pb-2">
+        <div className="flex items-center justify-between border-b pb-2 overflow-hidden">
           <p className="text-base md:text-lg">
             Gender: 
             {isEditing ? (
