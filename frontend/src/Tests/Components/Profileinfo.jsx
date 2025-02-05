@@ -29,8 +29,8 @@ function Profileinfo({ details, onEdit }) {
       {/* Details Section */}
       <div className="space-y-3 md:space-y-4">
         {/* Full Name */}
-        <div className="flex items-center justify-between border-b pb-2">
-          <p className="text-base md:text-lg overflow-hidden">
+        <div className="flex items-center justify-between border-b pb-2 overflow-hidden">
+          <p className="text-base md:text-lg ">
             Full Name: 
             {isEditing ? (
               <input
