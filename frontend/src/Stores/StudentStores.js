@@ -73,6 +73,7 @@ export const StudentStores = create(
         console.log(token);
         const response = await axios.get(`${API_URL}/join/${token}`);
         set({ isLoading: false });
+        window.location.reload();
         return response.data;
       } catch (error) {
         console.error("Join Class Error:", error.response?.data || error);
