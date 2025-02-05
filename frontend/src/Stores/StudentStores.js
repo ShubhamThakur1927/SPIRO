@@ -27,6 +27,7 @@ export const StudentStores = create(
         set({ isLoading: true });
         const response = await axios.post(`${API_URL}/update-profile`, { name, phone, branch, yearAndDivision,gender});
         set({ student: response.data.student, isLoading: false });
+        window.location.reload();
       } catch (error) {
         set({ error: error.message, isLoading: false });
       }
