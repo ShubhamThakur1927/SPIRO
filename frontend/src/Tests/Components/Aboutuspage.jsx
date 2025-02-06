@@ -1,37 +1,19 @@
-import React from 'react';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+import React from 'react'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+import FeaturesGrid from './FeaturesGrid'
 
 function Aboutuspage() {
-  const [textColor, setTextColor] = useState("text-white");
-  
-    useEffect(() => {
-      AOS.init();
-    }, []);
-  
-    useEffect(() => {
-      const handleScroll = () => {
-        if (window.scrollY > 50) {
-          setTextColor("text-black");
-        } else {
-          setTextColor("text-white");
-        }
-      };
-  
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, []);
   return (
-    <div>
-      <Navbar className={"text-black"}/>
+    <div className='bg-main'>
+      <Navbar/>
+      <div>
       <div className="bg-main">
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center px-6 py-24 md:p-32 text-center space-y-5">
-          <h2 className="text-display leading-display font-bold text-blue-600">Who are we?</h2>
+          <h2 className="text-display leading-display font-bold text-primary">Who are we?</h2>
           <p className="text-h3 text-gray-600">
-            <span className="font-bold text-blue-600">SPIRO</span>, we believe that education should be accessible,
+            <span className="font-bold text-primary">SPIRO</span>, we believe that education should be accessible,
             engaging, and empowering for every learner.
           </p>
         </div>
@@ -49,8 +31,8 @@ function Aboutuspage() {
         {/* Our Mission Section */}
         <div className="flex flex-col md:flex-row items-start md:items-center px-6 md:px-32 py-16">
           <div className="md:w-1/3">
-            <h2 className="text-h2 font-bold text-blue-600">Our Mission</h2>
-            <button className="mt-2 p-3 text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700">
+            <h2 className="text-h2 font-bold text-primary">Our Mission</h2>
+            <button className="mt-2 p-3 text-white bg-primary rounded-lg shadow-md hover:bg-blue-700">
               Explore →
             </button>
           </div>
@@ -61,50 +43,18 @@ function Aboutuspage() {
               high-quality educational tools and resources designed to inspire growth,
               curiosity, and achievement.
             </p>
+            
           </div>
+      
         </div>
-
-        {/* Quote Section */}
-        <div className="bg-main px-6 md:px-8 max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold text-gray-800">
-            "We believe that education is not just a stepping stone to success but a
-            <span className="text-blue-600 font-bold"> lifelong journey.</span>"
-          </h2>
-          <div className="mt-6 flex flex-col md:flex-row items-center gap-6">
-            <img
-              src="https://s3-alpha-sig.figma.com/img/8f3a/64b2/a3099a7614dd710b3754113b91bd556c?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=nlZoeivSfizq~Bme2BT-DSLUGqEIMXI1aI2bNmCDQPuKxMVbK2kigIP7rOiPm6nekK5Jdt6ho~BGqBDMfSvwATuxgVLo3yPd2b8mGBUpBdvFfzljLUmCGuOZ6E3LKlaDQFbFm8uGu8pJHDd8NbKDUsGUs~PPfN6faGlW7EbJqxyOSu~3~Y~2L~XuKgewMr2uBjizSt3EqrkybG-lsYy2SpcoBhkU5HXA5ZHsC-SMve91H0HOCoRzsdA7V4vr6Rf6EkisgOBZujI2zdLGOohb2b-0Cp~OelECo3~RXMHeZuCP1daAivG3q5gMOVmoHNie3hH3KcR-YNq8CjCAZmB2mw__"
-              alt="Education discussion"
-              className="rounded-xl shadow-md w-full md:w-1/2"
-            />
-            <div className="text-gray-700 text-base leading-relaxed md:w-1/2">
-              <p>
-                Our platform is designed to nurture creativity, critical thinking,
-                and a passion for knowledge, creating a foundation for personal and
-                academic excellence.
-              </p>
-              <p className="mt-4">
-                By collaborating with educators, learners, and innovators, we aim to
-                make education more than a process—it's a movement that inspires
-                change, empowers individuals, and shapes the future.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Why Choose Spiro Section */}
-        <div className="p-6 md:p-10 max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-gray-900">
-            Why choose <span className="text-primary">SPIRO</span>?
-          </h2>
-          <p className="text-gray-700 mt-4 max-w-3xl mx-auto">
-            SPIRO offers flexible, personalized, and technology-driven learning with expert-crafted
-            content, global accessibility, and lifelong resources, empowering learners to achieve
-            their goals and thrive in a collaborative, ever-evolving world.
-          </p>
-        </div>
-
-        {/* Features Section */}
-        <div className="flex justify-center items-center px-6 md:px-0 py-10 bg-gray-100">
+        <div className='text-center '>
+        <h1 className='text-primary text-h1 font-bold'>Our Vision</h1>
+        <p className=' text-h4'>
+        SPIRO offers flexible, personalized, and technology-driven learning with expert-crafted content, global accessibility, and lifelong resources, empowering learners to achieve their goals and thrive in a collaborative, ever-evolving world.
+        </p>
+      </div>
+      </div>
+      <div className="flex justify-center items-center px-6 md:px-0 py-10 bg-gray-100">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {[
               { title: "Interactive Courses", desc: "Our expertly crafted courses feature a dynamic mix of multimedia content." },
@@ -119,29 +69,44 @@ function Aboutuspage() {
             ))}
           </div>
         </div>
-
-        {/* Profile Section */}
-        <div className="flex flex-col md:flex-row border rounded-2xl shadow-lg overflow-hidden w-full md:w-4/5 mx-auto p-6 md:p-10 items-center">
-          <img
-            src="https://s3-alpha-sig.figma.com/img/c587/f13f/32a5de37d4a5fc2da78de2854395c284?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=BdGIxzHHk1UolBo4-~Qc7yIzI7AT453J7juXPwZqgdhgCYprJ-~eSbEDgXmlNtFzLTy34d5Sf~9STElT9mLVjJvJr7Rq0DVSf-VMwrfVKzkZDgA-Or1cE19coFQwzzJBvfzexFtaEvIgTn-fzl8uYxeQiIDJf2HFM5wUamcpJOsNNA0q8VTHVnrxnkymKyAHoeHV1RXw4Ec0Fkn2tB2EvvM1RDPsmOqgtWlPKH3XpWXltZd3DCLcRUaukgW1nPR7OpD0tvXcgoEazEPvFia1alQ5zYyz7mIrWYzl-lXCb~BKxq5z5aqyxHLZXM7E3OuRvr49IWzKo14bJiGVDZpZ7Q__"
-            alt="Profile"
-            className="w-full md:w-1/3 object-cover rounded-xl"
-          />
-          <div className="p-6 bg-main h-auto w-full md:w-2/3 text-center md:text-left">
-            <h2 className="text-xl font-semibold text-blue-600">Mr. Shubham Thakur</h2>
-            <p className="text-sm text-blue-500">CEO, Founder</p>
-            <p className="text-gray-700 mt-2">
-              Shubham Thakur, the CEO of Spiro, is a dynamic leader passionate about transforming
-              education through innovative platforms. His vision drives Spiro's mission to make
-              learning engaging, efficient, and accessible.
-            </p>
-          </div>
+        <div className='text-center'>
+          <h1 className='text-h1 font-semibold '>
+            Why we choose <span className='text-primary '>SPIRO</span>?
+          </h1>
+          <p className='text-gray-600'>
+          SPIRO offers flexible, personalized, and technology-driven learning with expert-crafted content, global accessibility, and lifelong resources, empowering learners to achieve their goals and thrive in a collaborative, ever-evolving world.
+          </p>
         </div>
+        <div className='text-center'>
+          <h1 className='text-h1 font-semibold'>
+            What we offer?
+          </h1>
+          <p>
+          SPIRO provides an extensive range of educational content designed to cater to the diverse needs of students across multiple disciplines and stages of learning. Whether you're preparing for crucial exams, mastering new skills, or pursuing a passion, our platform offers everything you need to succeed
+          </p>
+        </div>
+        <FeaturesGrid/>
+        <div className="flex bg-gray-100 p-6 rounded-lg h-max shadow-md w-screen">
+      <img
+        src="https://s3-alpha-sig.figma.com/img/c587/f13f/32a5de37d4a5fc2da78de2854395c284?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=DvnObZQODr1ZaHPCTaKaqP7i-9s2yfE19DPuYFChNWe9FnjxOCcqowULaLe3q7HEVy3JvaUUVPyf3fWV5myD8rOCAYCVXua3nP-eD6gTD3IcLEAw8NQW0B0WkFEMUXZlQwQk6hiso0BMxPq1YLpMGLJzU86rsBkRIIDytTtoU~i5YBALZyErW~8p9k1Nb2TG1118Qio9Ytv9SfUpTQcYGNKzrhVcLrpmUYOqjZnVXSRfylvE2eEDOvaqjDEGINWNgbiTElChZS6IxH~1EgqQQKUx0y7hnHz0xfH8zB-sqkYgd2B7kbcdFytp1IgPsBr~45Qq~3LPQ2oCGzBAyxaZ~A__"
+        alt="Mr. Shubham Thakur"
+        className="w-1/2 h-auto rounded-lg object-cover"
+      />
+      <div className="ml-6 flex flex-col justify-center">
+        <h3 className="text-blue-600 font-semibold text-xl">Mr. Shubham Thakur</h3>
+        <p className="text-blue-500 text-sm">CEO, Founder</p>
+        <p className="text-gray-700 text-sm mt-2">
+          Shubham Thakur, the CEO of Spiro, is a dynamic leader passionate
+          about transforming education through innovative platforms. His vision
+          drives Spiro's mission to make learning engaging, efficient, and
+          accessible.
+        </p>
       </div>
-
-      <Footer />
     </div>
-  );
+      </div>
+      <Footer/>
+    </div>
+  )
 }
 
-export default Aboutuspage;
+export default Aboutuspage

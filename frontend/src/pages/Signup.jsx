@@ -154,7 +154,7 @@ function Signup() {
                   />
                   <div className="text-start">
                     <input type="checkbox" className="h-5 w-4 relative top-1" />{" "}
-                    I agree with{" "}
+                    I agree with{"terms-and-conditions "}
                     <span className="underline underline-offset-1">Terms </span>
                     and{" "}
                     <span className="underline underline-offset-1">

@@ -70,15 +70,19 @@ import Navbar from '../../components/Navbar'
           <p className="mt-2">We take reasonable measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is entirely secure, and we cannot guarantee absolute security.</p>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center bg-blue-700 text-white p-6 w-screen mx-auto">
-      {/* Image Section */}
-      <div className="md:w-1/3 w-full p-2">
-        <img
-          src="https://s3-alpha-sig.figma.com/img/1e02/14b4/74d3a40b1c765f4791a98ecf53a146a7?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LiqNS84ro~BEw23eheynzQjQqoeBgK4I-uXNOiWXPzKOeDOpxBoUaG-GJjEuXO71~ger~hrH~r8rzBjSxl-dU7FWzwh9bZ-0OxfDPjRy2qGEClBxWFf3iWXpm7lnrodk64PpgWhgkf2MF56uPX0Gm1CBPEZynd5S8fAc6uhR4Xe-KorfY1ilAlnhOEn7~QWKRVQ3tPQmtAJebnEwlQ0u3crCWdR2gXZHbdbIgXCxT6b0ACifidyM3uf49Lq6Cfh7V3AoicV2zT~G6Hx1WwuYH8npf-Ai8harcY4odK8qwDbsP7ao6apjqIWnFys88C8E7ApBZ6ZdKrsROfeqGP-3hg__"
-          alt="Laptop Image"
-          className="w-full rounded-lg shadow-md"
-        />
-      </div>
+      <div className="flex flex-col md:flex-row flex-wrap items-center bg-blue-700 text-white p-6 md:p-10 w-full">
+  {/* Image Section */}
+  <div className="w-full md:w-1/3 p-2">
+    <img
+      src="https://s3-alpha-sig.figma.com/img/1e02/14b4/74d3a40b1c765f4791a98ecf53a146a7?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LiqNS84ro~BEw23eheynzQjQqoeBgK4I-uXNOiWXPzKOeDOpxBoUaG-GJjEuXO71~ger~hrH~r8rzBjSxl-dU7FWzwh9bZ-0OxfDPjRy2qGEClBxWFf3iWXpm7lnrodk64PpgWhgkf2MF56uPX0Gm1CBPEZynd5S8fAc6uhR4Xe-KorfY1ilAlnhOEn7~QWKRVQ3tPQmtAJebnEwlQ0u3crCWdR2gXZHbdbIgXCxT6b0ACifidyM3uf49Lq6Cfh7V3AoicV2zT~G6Hx1WwuYH8npf-Ai8harcY4odK8qwDbsP7ao6apjqIWnFys88C8E7ApBZ6ZdKrsROfeqGP-3hg__"
+      alt="Laptop Image"
+      className="w-full max-w-sm md:max-w-full rounded-lg shadow-md"
+    />
+  </div>
+
+
+
+
 
       {/* Text Section */}
       <div className="md:w-2/3 w-full mt-4 md:mt-0 md:pl-6">
