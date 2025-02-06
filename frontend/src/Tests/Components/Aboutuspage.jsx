@@ -47,7 +47,7 @@ function Aboutuspage() {
           </div>
       
         </div>
-        <div className='text-center '>
+        <div className='text-center md:m-24 py-10'>
         <h1 className='text-primary text-h1 font-bold'>Our Vision</h1>
         <p className=' text-h4'>
         SPIRO offers flexible, personalized, and technology-driven learning with expert-crafted content, global accessibility, and lifelong resources, empowering learners to achieve their goals and thrive in a collaborative, ever-evolving world.
@@ -69,7 +69,7 @@ function Aboutuspage() {
             ))}
           </div>
         </div>
-        <div className='text-center'>
+        <div className='text-center px-5 md:m-24 '>
           <h1 className='text-h1 font-semibold '>
             Why we choose <span className='text-primary '>SPIRO</span>?
           </h1>
@@ -77,7 +77,7 @@ function Aboutuspage() {
           SPIRO offers flexible, personalized, and technology-driven learning with expert-crafted content, global accessibility, and lifelong resources, empowering learners to achieve their goals and thrive in a collaborative, ever-evolving world.
           </p>
         </div>
-        <div className='text-center'>
+        <div className='text-center px-10 md:m-24'>
           <h1 className='text-h1 font-semibold'>
             What we offer?
           </h1>

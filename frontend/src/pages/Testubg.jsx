@@ -1,4 +1,6 @@
 import React from 'react'
+import Sidebar from '../components/Sidebar'
+import Aboutuspage from '../Tests/Components/Aboutuspage'
 
 
 
@@ -6,7 +8,7 @@ function Testubg() {
   return (
     <div>
       
-      <Sidebar/>
+      <Aboutuspage/>
     </div>
   )
 }
