@@ -8,7 +8,7 @@ function Aboutuspage() {
     <div className='bg-main'>
       <Navbar/>
       <div>
-      <div className="bg-main">
+      <div className="bg-main space-y-4">
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center px-6 py-24 md:p-32 text-center space-y-5">
           <h2 className="text-display leading-display font-bold text-primary">Who are we?</h2>
@@ -54,7 +54,7 @@ function Aboutuspage() {
         </p>
       </div>
       </div>
-      <div className="flex justify-center items-center px-6 md:px-0 py-10 bg-gray-100">
+      <div className="flex justify-center items-center px-6 md:px-0 py-10 ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {[
               { title: "Interactive Courses", desc: "Our expertly crafted courses feature a dynamic mix of multimedia content." },
@@ -86,23 +86,24 @@ function Aboutuspage() {
           </p>
         </div>
         <FeaturesGrid/>
-        <div className="flex bg-gray-100 p-6 rounded-lg h-max shadow-md w-screen">
-      <img
-        src="https://s3-alpha-sig.figma.com/img/c587/f13f/32a5de37d4a5fc2da78de2854395c284?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=DvnObZQODr1ZaHPCTaKaqP7i-9s2yfE19DPuYFChNWe9FnjxOCcqowULaLe3q7HEVy3JvaUUVPyf3fWV5myD8rOCAYCVXua3nP-eD6gTD3IcLEAw8NQW0B0WkFEMUXZlQwQk6hiso0BMxPq1YLpMGLJzU86rsBkRIIDytTtoU~i5YBALZyErW~8p9k1Nb2TG1118Qio9Ytv9SfUpTQcYGNKzrhVcLrpmUYOqjZnVXSRfylvE2eEDOvaqjDEGINWNgbiTElChZS6IxH~1EgqQQKUx0y7hnHz0xfH8zB-sqkYgd2B7kbcdFytp1IgPsBr~45Qq~3LPQ2oCGzBAyxaZ~A__"
-        alt="Mr. Shubham Thakur"
-        className="w-1/2 h-auto rounded-lg object-cover"
-      />
-      <div className="ml-6 flex flex-col justify-center">
-        <h3 className="text-blue-600 font-semibold text-xl">Mr. Shubham Thakur</h3>
-        <p className="text-blue-500 text-sm">CEO, Founder</p>
-        <p className="text-gray-700 text-sm mt-2">
-          Shubham Thakur, the CEO of Spiro, is a dynamic leader passionate
-          about transforming education through innovative platforms. His vision
-          drives Spiro's mission to make learning engaging, efficient, and
-          accessible.
-        </p>
-      </div>
-    </div>
+        <div className="flex flex-col md:flex-row  p-6  w-full max-w-4xl mx-auto">
+  <img
+    src="https://s3-alpha-sig.figma.com/img/c587/f13f/32a5de37d4a5fc2da78de2854395c284?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=DvnObZQODr1ZaHPCTaKaqP7i-9s2yfE19DPuYFChNWe9FnjxOCcqowULaLe3q7HEVy3JvaUUVPyf3fWV5myD8rOCAYCVXua3nP-eD6gTD3IcLEAw8NQW0B0WkFEMUXZlQwQk6hiso0BMxPq1YLpMGLJzU86rsBkRIIDytTtoU~i5YBALZyErW~8p9k1Nb2TG1118Qio9Ytv9SfUpTQcYGNKzrhVcLrpmUYOqjZnVXSRfylvE2eEDOvaqjDEGINWNgbiTElChZS6IxH~1EgqQQKUx0y7hnHz0xfH8zB-sqkYgd2B7kbcdFytp1IgPsBr~45Qq~3LPQ2oCGzBAyxaZ~A__"
+    alt="Mr. Shubham Thakur"
+    className="w-full md:w-1/2 h-auto rounded-lg object-cover"
+  />
+  <div className="mt-4 md:mt-0 md:ml-6 flex flex-col justify-center">
+    <h3 className="text-blue-600 font-semibold text-xl">Mr. Shubham Thakur</h3>
+    <p className="text-blue-500 text-sm">CEO, Founder</p>
+    <p className="text-gray-700 text-sm mt-2">
+      Shubham Thakur, the CEO of Spiro, is a dynamic leader passionate
+      about transforming education through innovative platforms. His vision
+      drives Spiro's mission to make learning engaging, efficient, and
+      accessible.
+    </p>
+  </div>
+</div>
+
       </div>
       <Footer/>
     </div>
