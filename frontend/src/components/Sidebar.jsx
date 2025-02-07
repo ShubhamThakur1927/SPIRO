@@ -5,6 +5,7 @@ import ToDoList from "../pages/Dashboard-Pages/ToDoList";
 import Dashboard from "../pages/Dashboard-Pages/Dashboard";
 import ClassesPage from "../pages/Dashboard-Pages/ClassesPage";
 import { Calendar, CalendarDays, GamepadIcon, LogOut, NotebookPen, PencilRuler, School } from "lucide-react";
+import Dashboardstudent from "../Tests/Thrashbotlipit/Dashboardstudent";
 
 const Sidebar = ({ classes, handleLogout, onContentChange }) => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Sidebar = ({ classes, handleLogout, onContentChange }) => {
       <div>
         <h1
           className="text-primary text-wrap text-display font-semibold p-4 m-10 cursor-pointer"
-          onClick={() => onContentChange(<Dashboard/>)}
+          onClick={() => onContentChange(<Dashboardstudent/>)}
         >
           SPIRO
         </h1>
