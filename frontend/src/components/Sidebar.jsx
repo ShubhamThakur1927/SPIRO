@@ -4,7 +4,6 @@ import Dropdown from "../components/Dropdown";
 import ToDoList from "../pages/Dashboard-Pages/ToDoList";
 import Dashboard from "../pages/Dashboard-Pages/Dashboard";
 import ClassesPage from "../pages/Dashboard-Pages/ClassesPage";
-=======
 import { Calendar, CalendarDays, GamepadIcon, LogOut, NotebookPen, PencilRuler, School } from "lucide-react";
 
 const Sidebar = ({ classes, handleLogout, onContentChange }) => {
@@ -17,6 +16,7 @@ const Sidebar = ({ classes, handleLogout, onContentChange }) => {
   }
 
   return (
+
     <div className="sidebar bg-white h-full w-auto fixed top-0 left-0 shadow-lg shadow-black rounded-r-xl overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-gray-100 flex flex-col justify-between">
       <div>
         <h1
@@ -121,7 +121,7 @@ const Sidebar = ({ classes, handleLogout, onContentChange }) => {
           Logout
         </button>
       </div>
-    </>
+      </div>
   );
 };
 

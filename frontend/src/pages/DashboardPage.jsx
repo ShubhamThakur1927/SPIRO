@@ -7,12 +7,13 @@ import { Bell, Home, Plus, Settings } from "lucide-react";
 import Profilepage from "./Dashboard-Pages/Profilepage";
 import profilealt from "../assets/profile-alt.svg";
 import { useNavigate } from "react-router-dom";
+import Dashboardstudent from "../Tests/Thrashbotlipit/Dashboardstudent"
 
 function DashboardPage() {
   const { logout } = useAuthstore();
   const { getClasses, joinClass, getProfile } = StudentStores();
   const [classes, setClasses] = useState([]);
-  const [content, setContent] = useState(<Dashboard />);
+  const [content, setContent] = useState(<Dashboardstudent/>);
   const [profilePic, setProfilePic] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [link, setLink] = useState("");
