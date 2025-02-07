@@ -43,120 +43,12 @@ function Dashboardstudent() {
   );
 
   return (
-    <div className="flex relative bg-white h-screen">
-      {/* Left Sidebar */}
-      <div
-        className="w-[332px] h-full bg-white rounded-r-3xl overflow-y-auto"
-        style={{
-          boxShadow: "4px 0 10px 0 #f1f1f2",
-          scrollbarWidth: "thin", // For Firefox
-          scrollbarColor: "#6076DD #f1f1f2", // Thumb and track color for Firefox
-        }}
-      >
-        <style>
-          {`
-            .left-sidebar::-webkit-scrollbar {
-              width: 8px;
-            }
-            .left-sidebar::-webkit-scrollbar-thumb {
-              background-color: #6076DD;
-              border-radius: 4px;
-            }
-            .left-sidebar::-webkit-scrollbar-thumb:hover {
-              background-color: #4e63b9;
-            }
-            .left-sidebar::-webkit-scrollbar-track {
-              background: #f1f1f2;
-            }
-          `}
-        </style>
-        {/* Logo Section */}
-        <div className="logo rounded-3xl p-10">
-          <h1 className="text-display leading-h1 text-primary font-semibold text-center">SPIRO</h1>
-        </div>
-
-        {/* Navigation Menu */}
-        <div className="p-10">
-          <ul>
-            <li className="text-h3 cursor-pointer mt-4">
-              <div
-                className="flex items-center justify-between"
-                onClick={() => setClassesOpen(!isClassesOpen)}
-              >
-                <div className="flex items-center">
-                  <FaChalkboardTeacher className="mr-2 text-black" />
-                  <span>Classes</span>
-                </div>
-                <Arrow isOpen={isClassesOpen} />
-              </div>
-              {isClassesOpen && (
-                <ul className="ml-6 mt-2">
-                  <li className="mt-2">Class 1</li>
-                  <li className="mt-2">Class 2</li>
-                  <li className="mt-2">Class 3</li>
-                </ul>
-              )}
-            </li>
-            <li className="text-h3 mt-4">
-              <div className="flex items-center">
-                <FaComments className="mr-2 text-black" />
-                <span>Chats</span>
-              </div>
-            </li>
-            <li className="text-h3 mt-4">
-              <div className="flex items-center">
-                <FaCalendarAlt className="mr-2 text-black" />
-                <span>Calendar</span>
-              </div>
-            </li>
-            <li className="text-h3 mt-4">
-              <div className="flex items-center">
-                <FaTasks className="mr-2 text-black" />
-                <span>Assignments</span>
-              </div>
-            </li>
-            <li className="text-h3 mt-4">
-              <div className="flex items-center">
-                <FaClipboardList className="mr-2 text-black" />
-                <span>To Do List</span>
-              </div>
-            </li>
-            <li className="text-h3   mt-4 cursor-pointer">
-              <div
-                className="flex items-center justify-between"
-                onClick={() => setActivityOpen(!isActivityOpen)}
-              >
-                <div className="flex items-center">
-                  <FaTasks className="mr-2 text-black" />
-                  <span>Activity</span>
-                </div>
-                <Arrow isOpen={isActivityOpen} />
-              </div>
-              {isActivityOpen && (
-                <ul className="ml-6 mt-2">
-                  <li className="mt-2">Activity 1</li>
-                  <li className="mt-2">Activity 2</li>
-                  <li className="mt-2">Activity 3</li>
-                </ul>
-              )}
-            </li>
-          </ul>
-        </div>
-
-        {/* Logout */}
-        <div className="p-10">
-          <div className="flex items-center text-h3">
-            <FaSignOutAlt className="mr-2 text-black" />
-            <span>Logout</span>
-          </div>
-        </div>
-      </div>
-
+    <div className="flex relative bg-transparent h-screen">
       {/* Main Content */}
-      <div className="overflow-y-auto" style={{ flex: 1 }}>
+      <div className="overflow-y-auto scrollbar-hide" style={{ flex: 1 }}>
         {/* Search Bar */}
         <div
-          className="absolute bg-gray-200 border border-gray-300 rounded-full flex items-center"
+          className="absolute  bg-gray-200 border border-gray-300 rounded-full flex items-center"
           style={{
             width: "684px",
             height: "41px",

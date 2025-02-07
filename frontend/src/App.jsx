@@ -54,9 +54,9 @@ function App() {
           </ProtectedRoute>
         } />
         <Route path="/dashboard" element={
-           <ProtectedRoute>
+      
             <DashboardPage />
-           </ProtectedRoute>
+          
         } />
         <Route path="/login" element={
           <RedirectAuthenticatedUser>
