@@ -22,6 +22,7 @@ function ClassesPage({ id }) {
                     file: content.fileNames[index],
                     _id: index, // Use index as a temporary unique identifier
                     watched: alreadyWatched.includes(content.fileNames[index]), // Check if the lecture is watched
+                    author: content.teacher || ' ', // Add a placeholder author
                 }));
                 setLectures(lectures);
             } else {
@@ -39,14 +40,18 @@ function ClassesPage({ id }) {
     }, [id, getContent]);
 
     return (
-        <div className='w-auto h-screen bg-main p-4 '>
+        <div className='w-full h-screen bg-main p-4 '>
             <ModuleCard
                 title="Lectures"
+                ModuleTitle="Module-1"
                 items={lectures.map((cls) => ({
                     label: cls.lectureTitle || 'Untitled Lecture', // Ensure correct property name
                     value: cls.file || '', // Use file as the value
                     watched: cls.watched, // Add a watched property
+                    author: cls.teacher || ' ', // Add a placeholder author
+                    description: cls.description || 'No description', // Add a description property
                 }))}
+                author={lectures[0]?.author || 'Unknown'} // Pass the author's name to ModuleCard
                 onItemSelect={(value) => navi(`/lectures/${value}`)} // Optional handler for selection
             />
         </div>
