@@ -1,11 +1,15 @@
 import React from 'react'
 
-import Pagenotfound from '../Tests/Components/Pagenotfound'
+
+import Aboutuspage from '../Tests/Components/Aboutuspage'
+import Contactusform from '../Tests/Components/Contactusform'
+
 
 function Testubg() {
   return (
     <div>
-      <Pagenotfound/>
+      
+      <Aboutuspage/>
     </div>
   )
 }
