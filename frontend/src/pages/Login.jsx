@@ -115,6 +115,7 @@ function Login() {
 
                 <span className='Signup text-md'> Don't have an account? <Link to="/signup" className='underline font-bold underline-offset-1 text-primary'>Sign Up</Link></span>
               </form>
+              {error && <p className='text-red-500 text-center'>{error}</p>}
               <div className='relative md:right-28 md:bottom-40 mt-1 bottom-32  right-16'>
                 <input
                   className=' h-5'

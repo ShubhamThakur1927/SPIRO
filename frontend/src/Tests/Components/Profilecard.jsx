@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Profilecard = ({ image, name, onUpdateVisibility }) => {
+const Profilecard = ({ image, name, onUpdateProfile }) => {
   return (
     <div className="flex flex-col items-center justify-center p-4 w-full sm:w-[280px] h-[280px] border border-gray-200 shadow-md rounded-lg bg-white">
       {/* Profile Image */}
@@ -38,10 +38,10 @@ const Profilecard = ({ image, name, onUpdateVisibility }) => {
 
       {/* Update Profile Button */}
       <button
-        onClick={onUpdateVisibility}
+        onClick={onUpdateProfile}
         className="text-blue-600 text-sm mt-2 hover:underline"
       >
-        Update profile visibility
+        Update profile Picture
       </button>
     </div>
   );

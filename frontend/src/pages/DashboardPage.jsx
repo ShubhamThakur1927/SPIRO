@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuthstore } from "../Stores/authstores";
 import { StudentStores } from "../Stores/StudentStores";
-import { useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import Dashboard from "./Dashboard-Pages/Dashboard";
-import { Bell } from "lucide-react";
+import { Bell, Home, Plus, Settings } from "lucide-react";
+import Profilepage from "./Dashboard-Pages/Profilepage";
+import profilealt from "../assets/profile-alt.svg";
+import { useNavigate } from "react-router-dom";
 
 function DashboardPage() {
   const { logout } = useAuthstore();
-  const { getClasses, joinClass } = StudentStores();
+  const { getClasses, joinClass, getProfile } = StudentStores();
   const [classes, setClasses] = useState([]);
-  const [classLink, setClassLink] = useState("");
   const [content, setContent] = useState(<Dashboard />);
+  const [profilePic, setProfilePic] = useState();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [link, setLink] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchClasses = async () => {
@@ -23,8 +28,18 @@ function DashboardPage() {
       }
     };
 
+    const fetchProfileData = async () => {
+      try {
+        const profileData = await getProfile();
+        setProfilePic(profileData?.ProfilePicUrl);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     fetchClasses();
-  }, [getClasses]);
+    fetchProfileData();
+  }, [getClasses, getProfile]);
 
   const handleLogout = () => {
     logout();
@@ -32,8 +47,7 @@ function DashboardPage() {
 
   const handleJoinClass = async () => {
     try {
-      console.log(classLink);
-      await joinClass(classLink);
+      await joinClass(link);
     } catch (error) {
       console.log(error);
     }
@@ -41,6 +55,21 @@ function DashboardPage() {
 
   const handleContentChange = (newContent) => {
     setContent(newContent);
+  };
+
+  const handlePlusClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleLinkSubmit = () => {
+    setLink(link);
+    console.log(link);
+    handleJoinClass();
+    setIsModalOpen(false);
   };
 
   return (
@@ -51,17 +80,23 @@ function DashboardPage() {
         onContentChange={handleContentChange}
       />
       <div className=" flex w-screen h-screen overflow-auto">
-        <div className="h-screen w-80 overflow-auto"></div>
-        <div className="w-full content-area p-4">{content}
+        <div className="w-9/12 xl:ml-72 ml-52 xl:place-items-center content-area px-8 mt-2">{content}
         <div className="w-auto fixed right-0 top-0 h-screen bg-white rounded-xl">
           {" "}
           <div className="px-5">
-            <div className="my-10 grid gap-5">
-              <div></div>
+            <div className="grid gap-5 my-10">
               <ul className="grid gap-5">
-                <li><Bell /></li>
-                <li><Bell /></li>
-                <li><Bell /></li>
+                <li>
+                  <div className="cursor-pointer" onClick={() => setContent(<Profilepage profilePic={profilePic} />)}>
+                  <img src={profilePic|| profilealt} alt="Profile" className="w-10 h-10 rounded-full" />
+                  </div>
+                </li>
+                <li className="place-items-center"><Bell /></li>
+                <li className="place-items-center"><Settings/></li>
+                <li className="place-items-center cursor-pointer" onClick={handlePlusClick}><Plus/></li>
+                <li className="place-items-center cursor-pointer" onClick={()=>{
+                  navigate("/")
+                }}><Home/></li>
               </ul>
             </div>
             
@@ -70,6 +105,25 @@ function DashboardPage() {
         </div>
         
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-xl mb-4">Enter Link</h2>
+            <input
+              type="text"
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
+              className="border p-2 w-full mb-4"
+            />
+            <div className="flex justify-end space-x-4">
+              <button onClick={handleModalClose} className="bg-gray-500 text-white p-2 rounded">Cancel</button>
+              <button onClick={handleLinkSubmit} className="bg-blue-500 text-white p-2 rounded">Submit</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

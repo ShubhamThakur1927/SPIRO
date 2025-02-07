@@ -7,6 +7,9 @@ import cookieParser from 'cookie-parser';
 import teacherRouter from './routh/Teacher.routh.js';
 import Studentrouter from './routh/Student.js';
 import { generateTokenAndSetCookie } from './utils/token.js';
+import cron from 'node-cron';
+import axios from 'axios';
+
 
 const app = express();
 
@@ -15,7 +18,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: /*process.env.URL ||*/ "http://localhost:5173",
   // Your frontend domain
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"]
@@ -28,9 +31,14 @@ app.use('/api/v1', router);
 app.use('/api/v1', teacherRouter);
 app.use('/api/v1', Studentrouter);
 
-app.post('/api/v1/', (req, res) => {
-  console.log("Hello");
-  console.log(req.cookies);
+
+cron.schedule("*/14 * * * *", async () => {
+  try {
+    await axios.get(process.env.URL);
+    console.log("Pinged the server");
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 app.listen(PORT, () => {
