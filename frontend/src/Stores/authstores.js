@@ -66,9 +66,8 @@ export const useAuthstore = create((set) => ({
 			axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 			set({ isLoading: true, error: null });
             try {
-                const response = await axios.get(`${API_URL}/student-auth`);
-
-                set({ isAuthenticated: true, student: response.data.student, teacher: response.data.teacher, isLoading: false });
+                const response = await axios.get(`${API_URL}/auth`);
+                set({ isAuthenticated: true, student:response.data.user, isLoading: false });
             } catch (error) {
                 sessionStorage.removeItem("token");
 				delete axios.defaults.headers.common['Authorization'];
@@ -76,6 +75,7 @@ export const useAuthstore = create((set) => ({
             }
         }
     },
+	
 
 
 	verify: async (code) => {  // Accept navigate as a parameter

@@ -10,6 +10,8 @@ import {
 } from "react-icons/fa";
 
 import { FiSettings, FiSun, FiMoon, FiUser, FiBell } from "react-icons/fi";
+import banner from "../../assets/Banner.png"
+import Search from "../../components/Search";
 
 function Dashboardstudent() {
   const [isClassesOpen, setClassesOpen] = useState(false);
@@ -43,31 +45,13 @@ function Dashboardstudent() {
   );
 
   return (
-    <div className="flex relative bg-transparent h-screen">
+    <div className="flex relative pr-14 bg-transparent h-screen">
       {/* Main Content */}
-      <div className="overflow-y-auto scrollbar-hide" style={{ flex: 1 }}>
-        {/* Search Bar */}
-        <div
-          className="absolute  bg-gray-200 border border-gray-300 rounded-full flex items-center"
-          style={{
-            width: "684px",
-            height: "41px",
-            top: "13px",
-            left: "496px",
-            borderRadius: "32px",
-          }}
-        >
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-full h-full px-4 pr-10 bg-transparent focus:outline-none"
-          />
-          <FaSearch className="absolute right-4 text-gray-500" />
-        </div>
-
+      <div className="overflow-y-auto place-items-center scrollbar-hide" style={{ flex: 1 }}>
+        <Search/>
         {/* Banner Section */}
         <div
-          className="relative mt-[64px] mx-auto rounded-xl flex items-center justify-center align-middle p-3"
+          className="relative mx-auto rounded-xl flex items-center justify-center align-middle p-3"
           style={{
             width: "1014px",
             height: "232px",
@@ -76,12 +60,12 @@ function Dashboardstudent() {
           }}
         >
           <img
-            src="https://s3-alpha-sig.figma.com/img/11c9/164c/abf54060170229aec039010b5d97c203?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VI37dDPgT~f1QWillKjaqEauehWjRNssQil0jKtyGk0Bq7bAzPzOmJ0grvPMwbFwZWUr2UOY27PGxIAgZy2jwW4MgIsBnKRIaiz0z8vUrkhAxE1NYZmW81tBUz6Gjeevc5VuS7kDrIK0AoK33lK8YnNkg~ZiCb5Uq~kEk7VM3picQy0ZS8ae5taXE45DH9S-mio4pypDem0gWFxCyxZzgeII2sESiDO6P4EupbbISk~8JMATI84urMBp0ELnStNGF4AI8jnDpjO9PVLXVwzgmr~2W2LA-VeLHGwpMHA8hNn96XjLfbCei85f32-VfJ4NR6lLuOYebzrUzfBLdTJ-Zg__"
+            src={banner}
             alt="Banner"
             className="absolute w-full h-full object-cover"
             style={{ opacity: 0.2 }}
           />
-          <div className="relative z-10 text-white text-left">
+          <div className="relative z-10 w-full mx-10 text-white text-left">
             <h1 className="text-h1 font-bold">Your Vision, Our Platform</h1>
             <p className="text-h5">Let’s Connect Today!</p>
             <button
@@ -142,33 +126,6 @@ function Dashboardstudent() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Right Sidebar */}
-      <div
-        className="fixed bg-white rounded-l-3xl h-full flex flex-col items-center p-4 shadow-lg"
-        style={{
-          width: "80px",
-          top: "0",
-          right: "0",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <div className="mb-8 cursor-pointer flex flex-col items-center">
-          <FiUser className="text-black text-3xl mb-2" />
-        </div>
-        <div className="mb-8 cursor-pointer flex flex-col items-center">
-          <FiBell className="text-black text-3xl mb-2" />
-        </div>
-        <div
-          className="mb-8 cursor-pointer flex flex-col items-center"
-          onClick={() => setIsDarkTheme(!isDarkTheme)}
-        >
-          {isDarkTheme ? <FiMoon className="text-black text-3xl mb-2" /> : <FiSun className="text-black text-3xl mb-2" />}
-        </div>
-        <div className="cursor-pointer flex flex-col items-center">
-          <FiSettings className="text-black text-3xl mb-2" />
         </div>
       </div>
     </div>
