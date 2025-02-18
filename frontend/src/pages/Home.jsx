@@ -41,15 +41,15 @@ function Home() {
       <Navbar className={`${textColor}`} />
       <div className="min-h-screen min-w-screen hero overflow-hidden relative">
         <div className="absolute inset-0 bg-black opacity-30"></div>
-        <div className="relative z-10 top-36 left-4 mx-10 md:left-24 w-auto h-full">
+        <div className="relative z-10 mt-44 xl:mx-10 xl:left-32 md:left-20 left-0 mx-10 w-auto h-full">
           <div className="text-white text-display xl:my-20 xl: xl:w-1/3 w-2/3 md:w-1/2  leading-display font-semibold">
             Empowering Your Future
             <p className="text-small text-white leading-small my-5 font-normal">
               Achieve your goals with flexible, high-quality  programs for all levels
             </p>
           </div>
-          <button className="bg-primary relative xl:bottom-14 text-white font-semibold flex align-middle items-center py-3 px-8 rounded-lg">
-            Get Free Demo <ChevronRight size={24} />
+          <button className="bg-primary relative xl:bottom-14 hover:bg-primary-dark text-white font-semibold flex align-middle items-center py-3 px-8 rounded-lg">
+            Explore <ChevronRight size={24} />
           </button>
         </div>
       </div>
@@ -57,10 +57,10 @@ function Home() {
       {/* MID Section */}
       <section className="bg-white relative bg-opacity-80 bottom-12 rounded-3xl w-auto h-auto py-20 flex flex-col items-center justify-around align-middle">
         {/* Feature Section */}
-        <h1 className="text-h1 font-semibold w-4/5 md:w-2/5 text-center leading-h1" data-aos="fade-up">
+        <h1 className="text-h1 font-semibold w-full md:w-1/2 text-center leading-h1" data-aos="fade-up">
           Unlock The Future Of Education With <Link to="/login"><span className="text-primary font-bold">SPIRO</span></Link>
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full px-4 md:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full md:w- px-4 md:px-10">
           <div className="grid gap-5">
             <FeatureCard title="The Tech That Simplifies Your Educational World" />
             <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
@@ -80,11 +80,11 @@ function Home() {
         <h1 className="text-h1 leading-h1 font-semibold w-4/5 md:w-2/5 my-10 text-center" data-aos="fade-up">
           Transforming learning, one click at a time
         </h1>
-        <div className="grid grid-cols-1 gap-12 w-full px-4 md:px-10">
-          <div className="w-full h-[400px] bg-[#F4ECE0] rounded-3xl" data-aos="fade-right"></div>
+        <div className="grid grid-cols-1 gap-12 w-full md:w-2/3 px-4 md:px-10">
+          <div className="w-full h-[400px] bg-[url(./assets/cardbg.png)] bg-cover bg-center bg-no-repeat bg-blend-screen bg-slate-900 rounded-3xl" data-aos="fade-right"></div>
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="w-full md:w-1/2 h-[400px] bg-[#F4ECE0] rounded-3xl" data-aos="fade-down"></div>
-            <div className="w-full md:w-1/2 h-[400px] bg-[#F4ECE0] rounded-3xl" data-aos="fade-up"></div>
+            <div className="w-full md:w-1/2 h-[400px] bg-[url(./assets/image108.png)] bg-cover bg-center bg-no-repeat bg-blend-screen bg-slate-900 rounded-3xl" data-aos="fade-down"></div>
+            <div className="w-full md:w-1/2 h-[400px] bg-[url(./assets/image109.png)] bg-cover bg-center bg-no-repeat bg-blend-screen bg-slate-900 rounded-3xl" data-aos="fade-up"></div>
           </div>
         </div>
 

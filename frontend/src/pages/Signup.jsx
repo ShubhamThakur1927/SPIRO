@@ -8,6 +8,7 @@ import Logo from "../assets/logo.png";
 import { Circle, Edit2Icon, CircleCheck, Loader } from "lucide-react";
 import { useAuthstore } from "../Stores/authstores";
 import OtpInput from "../components/Otp-input";
+import { toast } from "react-toastify";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -18,6 +19,7 @@ function Signup() {
   const [showOtp, setShowOtp] = useState(false);
   const navigate = useNavigate();
   const [otp, setOtp] = useState(""); // Add OTP state
+  const [isChecked, setIsChecked] = useState(false); // Add checkbox state
 
   const [valid, setValid] = useState({
     passwordLength: false,
@@ -43,7 +45,6 @@ function Signup() {
   const handleverification = async (e) => {
     e.preventDefault();
     try {
-
       const response = await verify(otp); // Pass navigate function
       console.log(response.success);
       if(response.success == true) {
@@ -51,6 +52,7 @@ function Signup() {
         navigate("/login");
       }
     } catch (error) {
+      toast.error(error.message || "Error verifying OTP");
       console.log(error);
     }
   };
@@ -61,6 +63,7 @@ function Signup() {
       await signup(email, password, confirmPassword);
       setShowOtp(true);
     } catch (error) {
+      toast.error(error.message || "Error signing up");
       console.log(error);
     }
   };
@@ -152,20 +155,24 @@ function Signup() {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
-                  <div className="text-start">
-                    <input type="checkbox" className="h-5 w-4 relative top-1" />{" "}
-                    I agree with{"terms-and-conditions "}
-                    <span className="underline underline-offset-1">Terms </span>
-                    and{" "}
-                    <span className="underline underline-offset-1">
-                      {" "}
-                      Privacy policy
+                  <div className="text-start flex items-center gap-2 text-xs md:text-sm">
+                    <input
+                      type="checkbox"
+                      className="h-4 w-4"
+                      checked={isChecked}
+                      onChange={(e) => setIsChecked(e.target.checked)}
+                    /> 
+                    <span>
+                      I agree with 
+                      <span className="underline underline-offset-1"> Terms </span>
+                      and 
+                      <span className="underline underline-offset-1"> Privacy policy</span>
                     </span>
                   </div>
                   <motion.button
                     className="bg-primary text-center flex justify-center text-white w-full  py-2 md:py-4 text-small rounded-md my-2"
                     type="submit"
-                    disabled={isLoading}
+                    disabled={isLoading || !isChecked}
                   >
                     {isLoading ? <Loader /> : "Sign Up"}
                   </motion.button>

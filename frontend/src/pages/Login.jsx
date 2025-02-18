@@ -24,7 +24,12 @@ function Login() {
     try {
       const backendUrl = userType === "teacher" ? "/teacherlogin" : "/studentLogin"; // Determine backend URL
       await login(email, password, backendUrl, rememberMe); // Pass backend URL and rememberMe to login function
-      navigate("/dashboard"); // Navigate to success page or any other action
+
+      if (userType === "teacher") {
+        navigate("/teacher-dashboard"); // Navigate to teacher dashboard
+      } else {
+        navigate("/dashboard"); // Navigate to student dashboard
+      }
     } catch (error) {
       console.log(error);
     }
@@ -47,12 +52,12 @@ function Login() {
             </div>
             <h2 className="md:text-h2 text-4xl text-center mb-4">Login</h2>
             <p className='md:text-lg text-lg mb-2'>Step towards Success</p>
-            <div className='border-2 border-black text-center py-2 w-full  md:text-h4 flex items-center rounded-md justify-center gap-2'>
+            {/* <div className='border-2 border-black text-center py-2 w-full  md:text-h4 flex items-center rounded-md justify-center gap-2'>
               <img src={GoogleIcon} alt="" />Google
             </div>
             <div className="divider text-center my-2">
               OR
-            </div>
+            </div> */}
 
             <div className='Form-login'>
               <form onSubmit={handleLogin}>
@@ -115,6 +120,7 @@ function Login() {
 
                 <span className='Signup text-md'> Don't have an account? <Link to="/signup" className='underline font-bold underline-offset-1 text-primary'>Sign Up</Link></span>
               </form>
+              {error && <p className='text-red-500 text-center'>{error}</p>}
               <div className='relative md:right-28 md:bottom-40 mt-1 bottom-32  right-16'>
                 <input
                   className=' h-5'

@@ -5,7 +5,7 @@ import s3 from "../db/CloudStorage.js";
 
 const join = async (req, res) => {
   const { token } = req.params;
-  const studentId = req.userId; // Extracted from JWT
+  const studentId = req.userId;// Extracted from JWT
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     if (Date.now() > decoded.expiresAt) {
@@ -48,18 +48,14 @@ const join = async (req, res) => {
 };
 
 const getStudentClasses = async (req, res) => {
+  const studentId = req.userId;
   try {
-    const student = await Student.findById(req.userId).populate(
-      "enrolledClasses"
-    );
+    const student = await Student.findById(studentId).populate('enrolledClasses');
     if (!student) {
       return res.status(404).json({ message: "Student not found" });
     }
     const watchedVideos = student.watchedVideos;
-    const enrolledClasses = await Classes.find({
-      _id: { $in: student.enrolledClasses },
-    });
-
+    const enrolledClasses = student.enrolledClasses;
     res.status(200).json({ enrolledClasses, watchedVideos });
   } catch (error) {
     console.error(error);
@@ -71,8 +67,15 @@ const getclasscontent = async (req, res) => {
   const { id } = req.params;
   try {
     const findclass = await Classes.findById(id);
-    const lectureTitles = findclass.file.map((f) => f.lectureTitle);
-    const fileNames = findclass.file.map((f) => f.file);
+    if (!findclass) {
+      return res.status(404).json({ message: "Class not found" });
+    }
+
+    // Ensure findclass.file is an array
+    const files = Array.isArray(findclass.file) ? findclass.file : [];
+
+    const lectureTitles = files.map((f) => f.lectureTitle);
+    const fileNames = files.map((f) => f.file);
     res.status(200).json({ success: true, lectureTitles, fileNames });
   } catch (error) {
     console.error(error);
