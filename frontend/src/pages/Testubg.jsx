@@ -1,15 +1,11 @@
 import React from 'react'
 
 
-import Aboutuspage from '../Tests/Components/Aboutuspage'
-import Contactusform from '../Tests/Components/Contactusform'
-
-
+import Dashboardvideo from '../Tests/Components/Dashboardvideo';
 function Testubg() {
   return (
     <div>
-      
-      <Aboutuspage/>
+      <Dashboardvideo/>
     </div>
   )
 }
