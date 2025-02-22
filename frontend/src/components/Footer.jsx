@@ -9,7 +9,7 @@ function Footer() {
         
         {/* Logo */}
 
-
+        
         {/* Links Section */}
         <div className="grid grid-cols-2 sm:grid-cols-3  lg:gap-8 md:gap-24 gap-10 text-small text-body-2">
           
