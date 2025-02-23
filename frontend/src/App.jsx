@@ -11,6 +11,7 @@ import LecturesView from "./pages/LecturesView";
 import AboutUs from "./pages/AboutUs";
 import PageNotFound from "./pages/PageNotFound";
 import Dashboardteacher from "./pages/Dashboardteacher";
+import Termsandcondition from "./Tests/Components/Termsandcondition";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, checkAuth } = useAuthstore();
@@ -70,6 +71,7 @@ function App() {
         <Route path="/test" element={<Testubg />} />
         <Route path="/pagenotfound" element={<PageNotFound/>} />
         <Route path="*" element={<Navigate to="/pagenotfound" />} />
+        <Route path="/terms&conditions" element={<Termsandcondition/>}/>
       </Routes>
     </BrowserRouter>
   );
