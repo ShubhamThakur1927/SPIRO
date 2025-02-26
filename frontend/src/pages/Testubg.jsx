@@ -1,11 +1,12 @@
 import React from 'react'
 
 
-import Dashboardvideo from '../Tests/Components/Dashboardvideo';
+
+import Contactuspage from '../Tests/Components/Contactuspage';
 function Testubg() {
   return (
     <div>
-      <Dashboardvideo/>
+    <Contactuspage/>
     </div>
   )
 }

@@ -28,7 +28,7 @@ function Dashboardvideo() {
         <h1 className="text-xl font-bold">Welcome, to our Community !!!</h1>
         <div className="mt-4">
           <video className="w-full rounded-lg" controls>
-            <source src="https://www.youtube.com/watch?v=8N2k-gv6xNE" type="video/mp4" />
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
