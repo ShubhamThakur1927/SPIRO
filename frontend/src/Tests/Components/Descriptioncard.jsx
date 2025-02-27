@@ -2,7 +2,7 @@ import React from 'react'
 
 function Descriptioncard({ title, referenceLink }) {
     return (
-      <div className="flex-1 border p-4 rounded-lg shadow-md">
+      <div className="flex-1 border bg-white p-4 rounded-lg shadow-md">
         <h2 className="font-semibold">{title}</h2>
         <h2 className="font-semibold mt-2">REFERENCE</h2>
         <a

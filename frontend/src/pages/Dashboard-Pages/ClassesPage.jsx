@@ -3,23 +3,26 @@ import { StudentStores } from '../../Stores/StudentStores';
 import ModuleCard from '../../components/ModuleCard';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuthstore } from '../../Stores/authstores';
+import { useTeacherStore } from '../../Stores/teacherStores';
 
 function ClassesPage({ id }) {
     const { getContent, getClasses} = StudentStores();
     const {checkAuth ,student} = useAuthstore();
+    const { Upload } = useTeacherStore();
     const [lectures, setLectures] = useState([]); // Initialize as an empty array
     const [alreadyWatched, setAlreadyWatched] = useState([]); // Initialize as an empty array
     const [isTeacher, setIsTeacher] = useState(false);
     const [newLectureTitle, setNewLectureTitle] = useState("");
-    const [newLectureFile, setNewLectureFile] = useState("");
+    const [newLectureFile, setNewLectureFile] = useState(null);
     const navi = useNavigate();
+
+
     const fetchClasses = async () => {
         try {
             const classes = await getClasses();
             if (classes?.watchedVideos) {
                 setAlreadyWatched(classes.watchedVideos);
             }
-
             const content = await getContent(id);
             if (content?.success && Array.isArray(content.lectureTitles)) {
                 const lectures = content.lectureTitles.map((title, index) => ({
@@ -48,8 +51,30 @@ function ClassesPage({ id }) {
         }
     }
 
-    const handleAddLecture = () => {
-        console.log(newLectureTitle, newLectureFile);
+    const handleAddLecture = async () => {
+        const subjectname = "Java";
+        if (newLectureTitle.trim() !== "" && newLectureFile) {
+            try {
+                const formData = new FormData();
+                formData.append('lectureTitle', newLectureTitle);
+                formData.append('file', newLectureFile);
+                formData.append('subjectname', subjectname);
+                 // Replace with the actual subject name
+                await Upload(formData); // Upload the lecture file with subject name
+                const newLecture = {
+                    lectureTitle: newLectureTitle,
+                    file: newLectureFile.name, // Use the file name
+                    _id: lectures.length, // Use length as a temporary unique identifier
+                    watched: false,
+                    author: student?.name || 'Unknown', // Use student's name as author
+                };
+                setLectures([...lectures, newLecture]);
+                setNewLectureTitle("");
+                setNewLectureFile(null);
+            } catch (error) {
+                console.error('Error uploading lecture:', error);
+            }
+        }
     };
 
     useEffect(() => {
@@ -60,7 +85,7 @@ function ClassesPage({ id }) {
     }, [id, getContent,checkAuth]);
 
     return (
-        <div className='w-full h-screen bg-main p-4 '>
+        <div className='w-full h-auto bg-main p-4 '>
             {isTeacher && (
                 <div className="mb-4">
                     <h2 className="text-h3 font-semibold mb-2">Add New Lecture</h2>
@@ -72,10 +97,8 @@ function ClassesPage({ id }) {
                         className="border p-2 rounded w-full mb-2"
                     />
                     <input
-                        type="text"
-                        value={newLectureFile}
-                        onChange={(e) => setNewLectureFile(e.target.value)}
-                        placeholder="Lecture File"
+                        type="file"
+                        onChange={(e) => setNewLectureFile(e.target.files[0])}
                         className="border p-2 rounded w-full mb-2"
                     />
                     <button onClick={handleAddLecture} className="p-2 bg-primary text-white rounded">Add Lecture</button>

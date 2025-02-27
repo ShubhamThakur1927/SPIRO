@@ -35,7 +35,9 @@ const Sidebar = ({ classes, handleLogout, onContentChange }) => {
                   label: cls.subjectname,
                   value: cls._id,
                 }))}
-                onItemSelect={(id) => onContentChange(<ClassesPage id={id} />)}
+                onItemSelect={(id) => {
+                  console.log(id);
+                  onContentChange(<ClassesPage id={id} />)} }
                 icon={<School />} 
               />
             </li>

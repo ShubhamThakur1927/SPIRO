@@ -4,7 +4,7 @@ function LectureList({ items, onItemSelect }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-        <ul className="lectures-list mx-2 grid gap-2">
+        <ul className="lectures-list mx-2 mt-5 grid gap-2">
           {Array.isArray(items) && items.length > 0 ? (
             items.map((item) => (
               <li

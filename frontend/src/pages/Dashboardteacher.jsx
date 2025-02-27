@@ -66,12 +66,12 @@ function Dashboardteacher() {
   return (
     <div className="container mx-auto h-screen bg-main flex">
       {/* <Sidebar
-                classes={classes}
-                handleLogout={handleLogout}
-                onContentChange={handleContentChange}
+                    classes={[]}
+                    handleLogout={() => {}}
+                    onContentChange={() => {}}
                 /> */}
 
-                {/* sidebar */}
+      {/* sidebar */}
       <div className="sidebar bg-white h-full w-auto fixed top-0 left-0 shadow-lg shadow-black rounded-r-xl overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-gray-100 flex flex-col justify-between">
         <div>
           <h1
@@ -83,17 +83,25 @@ function Dashboardteacher() {
           <div className="p-2 mx-10">
             <ul className="grid gap-10 cursor-pointer">
               <li className="text-h3 font-semibold leading-h3">
-                <Dropdown title="Classes" icon={<School />}>
-                  <ul>
+                <Dropdown title="Classes" icon={<School />}
+                  items={classes.map((cls) => ({
+                    label: cls,
+                    value: cls,
+                  }))}
+                  onItemSelect={(id) => {
+                    console.log("class id",id);
+                    handleContentChange(<ClassesPage id={id} />)} }
+                >
+                  {/* <ul>
                     {classes.map((className, index) => (
                       <li
                         key={index}
                         className="p-2 text-h4 leading-h4 flex justify-between items-center"
                       >
                         <span
-                          onClick={() =>
+                          onClick={(id) =>
                             handleContentChange(
-                              <ClassesPage className={className} />
+                              <ClassesPage className={className}  />
                             )
                           }
                         >
@@ -102,7 +110,7 @@ function Dashboardteacher() {
                         <Plus onClick={join} />
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                   <div className="p-2">
                     <button
                       className="text-small text-gray-500 flex items-center gap-2"
@@ -155,33 +163,34 @@ function Dashboardteacher() {
         </button>
       </div>
 
-        {/* content */}
+      {/* content */}
 
-      <div className="flex w-screen h-screen overflow-auto">{content}</div>
-      <div>
-        <div className="px-5">
-          <div className="grid gap-5 my-10">
-            <ul className="grid gap-5">
-              <li className="place-items-center">
-                <Bell />
-              </li>
-              <li className="place-items-center">
-                <Settings />
-              </li>
-              <li
-                className="place-items-center cursor-pointer"
-                onClick={() => navigate("/")}
-              >
-                <Home />
-              </li>
-            </ul>
+      <div className="w-9/12 xl:ml-72 ml-52 xl:place-items-center content-area px-8 mt-2">
+        {content}
+        <div className="w-auto fixed right-0 top-0 h-screen bg-white rounded-xl">
+          {" "}
+          <div className="px-5">
+            <div className="grid gap-5 my-10">
+              <ul className="grid gap-5">
+                <li className="place-items-center">
+                  <Bell />
+                </li>
+                <li className="place-items-center">
+                  <Settings />
+                </li>
+                <li
+                  className="place-items-center cursor-pointer"
+                  onClick={() => navigate("/")}
+                >
+                  <Home />
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
-
-                    {/* class creataion Modal */}
-
+      {/* class creataion Modal */}
 
       {isModalOpen && (
         <Modal onClose={() => setIsModalOpen(false)}>
@@ -212,10 +221,7 @@ function Dashboardteacher() {
         </Modal>
       )}
 
-
-                 {/* class link creataion modal  */}
-
-
+      {/* class link creataion modal  */}
     </div>
   );
 }
