@@ -9,7 +9,7 @@ function Smallcard(props) {
 
   return (
       <div
-        className="card bg-main h-auto w-auto rounded-xl"
+        className="card bg-main h-auto w-auto rounded-xl hover:bg-primary hover:text-white"
         data-aos="fade-down"
       >
         <div className="card-content h-auto text-start w-auto pl-6 pr-20 pt-44 pb-5"> 

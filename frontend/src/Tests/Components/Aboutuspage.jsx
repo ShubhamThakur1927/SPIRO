@@ -47,10 +47,11 @@ function Aboutuspage() {
           </div>
       
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 max-w-5xl mx-autos px-28 ">
-      “We believe that education is not just a stepping stone to success but a 
-      <span className="text-blue-600"> lifelong journey.</span>”
-    </h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-900 max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
+  “We believe that education is not just a stepping stone to success but a 
+  <span className="text-blue-600"> lifelong journey.</span>"
+</h2>
+
         <div className="flex flex-col md:flex-row items-center justify-center px-6 md:px-20 py-10 max-w-5xl mx-auto">
           
   <div className="md:w-1/2">

@@ -8,10 +8,10 @@ function Card (props) {
     }, [])
   return (
     <div
-  className="card bg-main h-auto w-auto rounded-xl"
+  className="card bg-main h-auto w-auto rounded-xl hover:bg-primary hover:text-white"
   data-aos="fade-right"
 >
-  <div className="card-content mt-64 w-auto mb-5 px-6">
+  <div className="card-content mt-64 w-auto mb-5 px-6 ">
     <h3 className="title mb-2 text-h4 xl:text-h3 leading-h4 xl:leading-h3 font-semibold">
       {props.title}
     </h3>

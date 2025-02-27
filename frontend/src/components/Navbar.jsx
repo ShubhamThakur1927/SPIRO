@@ -28,7 +28,7 @@ function Navbar({ className, textColor = 'text-white' }) {
         <ul className='hidden md:flex space-x-8 text-small'>
           <Link to='*'><li className='hover:text-primary transition'>Docs</li></Link>
           <Link to='/about-us'><li className='hover:text-primary transition'>About</li></Link>
-          <Link to='*'><li className='hover:text-primary transition'>Contact Us</li></Link>
+          <Link to='/contact-us'><li className='hover:text-primary transition'>Contact Us</li></Link>
         </ul>
 
         {/* Desktop Buttons */}

@@ -55,12 +55,12 @@ function Home() {
       </div>
 
       {/* MID Section */}
-      <section className="bg-white relative bg-opacity-80 bottom-12 rounded-3xl w-auto h-auto py-20 flex flex-col items-center justify-around align-middle">
+      <section className="bg-white relative  bottom-12 rounded-3xl w-auto h-auto py-20 flex flex-col items-center justify-around align-middle">
         {/* Feature Section */}
         <h1 className="text-h1 font-semibold w-full md:w-1/2 text-center leading-h1" data-aos="fade-up">
           Unlock The Future Of Education With <Link to="/login"><span className="text-primary font-bold">SPIRO</span></Link>
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full md:w- px-4 md:px-10">
+        <div className="grid grid-cols-1 bg-opacity-80 md:grid-cols-3 gap-5 w-full md:w- px-4 md:px-10">
           <div className="grid gap-5">
             <FeatureCard title="The Tech That Simplifies Your Educational World" />
             <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
