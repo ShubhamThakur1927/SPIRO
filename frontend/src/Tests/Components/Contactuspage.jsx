@@ -1,58 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const Contactuspage = () => {
-    const [formData, setFormData] = useState({
-      name: "",
-      email: "",
-      phone: "",
-      role: "",
-      message: "",
-    });
-  
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormData((prevData) => ({ ...prevData, [name]: value }));
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("Form submitted:", formData);
-      alert("Form submitted successfully!");
-      setFormData({ name: "", email: "", phone: "", role: "", message: "" });
-    };
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    role: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    alert("Form submitted successfully!");
+    setFormData({ name: "", email: "", phone: "", role: "", message: "" });
+  };
+
   return (
-    <div>
-        <div>
-            <h1 className='text-h1 text-primary font-semibold'>
-                SPIRO
-            </h1>
-        </div>
-      <div className=''>
-      <div>
-      <div className="bg-white shadow-lg p-10 rounded-lg w-full md:w-4/5 lg:w-3/5 flex flex-col md:flex-row relative">
-        <div className="w-full md:w-1/2 p-8">
-          
-          <p className="mt-4 text-gray-700 text-lg">
-            Have questions? Let's make learning seamless together! Reach out to SPIRO today!
+    <div
+      className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center px-6 md:px-12"
+      style={{ backgroundImage: `url('/images/contact-bg.jpg')` }} // Change the path accordingly
+    >
+      {/* Header */}
+      <div className="text-center mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+          SPIRO
+        </h1>
+        <p className="text-lg text-gray-200 mt-2">
+          Have questions? Let's make learning seamless together!
+        </p>
+      </div>
+
+      {/* Contact Card */}
+      <div className="bg-white shadow-lg rounded-lg p-6 md:p-10 w-full max-w-4xl flex flex-col md:flex-row">
+        {/* Contact Info */}
+        <div className="md:w-1/2 p-6 flex flex-col justify-center">
+          <h2 className="text-2xl font-bold text-gray-800">Get in Touch</h2>
+          <p className="text-gray-600 mt-2">
+            Reach out to SPIRO today!
           </p>
           <div className="mt-6 space-y-3 text-gray-700">
-            <p>📍 Mumbai</p>
-            <p>✉️ spiroedu9@gmail.com</p>
-            <p>📞 91+ 8452976481</p>
+            <p>📍 <span className="font-medium">Mumbai</span></p>
+            <p>✉️ <span className="font-medium">spiroedu9@gmail.com</span></p>
+            <p>📞 <span className="font-medium">+91 8452976481</span></p>
           </div>
-          <div className="mt-6 flex flex-col space-y-3">
-            <p className="flex items-center space-x-2"><span>📘</span> @spiroedu</p>
-            <p className="flex items-center space-x-2"><span>📷</span> @spiroedu</p>
-            <p className="flex items-center space-x-2"><span>💼</span> @spiroedu</p>
-            <p className="flex items-center space-x-2"><span>🐦</span> @spiroedu</p>
+          <div className="mt-6 space-y-3 text-gray-700">
+            <p>📘 @spiroedu</p>
+            <p>📷 @spiroedu</p>
+            <p>💼 @spiroedu</p>
+            <p>🐦 @spiroedu</p>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 w-2/3 h-1/3 "></div>
-      </div>
-        </div>
-        <div>
-        <div className="w-full md:w-1/2 p-8">
-          <h1 className="text-3xl font-bold text-blue-600 md:hidden">SPIRO</h1>
+
+        {/* Contact Form */}
+        <div className="md:w-1/2 p-6">
+          <h2 className="text-2xl font-bold text-blue-600 text-center md:hidden">SPIRO</h2>
           <form className="space-y-5 mt-6" onSubmit={handleSubmit}>
             <div>
               <label className="block text-gray-700 font-semibold">Name*</label>
@@ -86,7 +93,7 @@ const Contactuspage = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                placeholder="91+"
+                placeholder="+91"
                 required
               />
             </div>
@@ -132,10 +139,9 @@ const Contactuspage = () => {
             </button>
           </form>
         </div>
-        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contactuspage
+export default Contactuspage;

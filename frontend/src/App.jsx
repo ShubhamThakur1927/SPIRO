@@ -12,6 +12,8 @@ import AboutUs from "./pages/AboutUs";
 import PageNotFound from "./pages/PageNotFound";
 import Dashboardteacher from "./pages/Dashboardteacher";
 import Termsandcondition from "./Tests/Components/Termsandcondition";
+import Aboutuspage from "./Tests/Components/Aboutuspage";
+import Contactuspage from "./Tests/Components/Contactuspage";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, checkAuth } = useAuthstore();
@@ -66,12 +68,13 @@ function App() {
         } />
 
         <Route path="/Signup" element={<Signup />} />
-        <Route path="/about-us" element={<AboutUs/>}/>
+        <Route path="/about-us" element={<Aboutuspage/>}/>
         <Route path="/Forgetpassword" element={<Forgetpassword />} />
         <Route path="/test" element={<Testubg />} />
         <Route path="/pagenotfound" element={<PageNotFound/>} />
         <Route path="*" element={<Navigate to="/pagenotfound" />} />
         <Route path="/terms&conditions" element={<Termsandcondition/>}/>
+        <Route path="/contact-us" element={<Contactuspage/>} />
       </Routes>
     </BrowserRouter>
   );
