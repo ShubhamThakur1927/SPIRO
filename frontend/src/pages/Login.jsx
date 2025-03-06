@@ -37,14 +37,14 @@ function Login() {
 
   return (
     <section
-  className="bg-[url('https://s3-alpha-sig.figma.com/img/ffed/033b/eac4ec8c986b5ecc26305e3347d08700?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=V~rRbjhW4jp3eWBPZLwno3lS2K1FcENxP5ZPhkO0X2kZiOcbb1LYrCCSOmH21dcxYSgY0Fex24zNpgYcMGNeV1EZPIggdQ7iae0~6NO1koisUeodinxYoQZKl1x8YVpG73icE-RQnOB6-Yy54AI31AlKUgdxOyBJaJqJ9zSjBcTKBqVHeU1KurYVis8eQ6QGLaaar7w8yO86fEuDlCdhc7fdF3h4bYRZooaAVumzlt-LNz9NwG9MKbKJE3m-PnD04I-x2Rd~RDtU1FEt7qU8KeMRYLqS9D~iRMUKww1fHxMFN-MneKTRaURm3cTUCem2TKyjB4dY5ChyjVkWG6biig__')] bg-cover bg-center min-h-screen min-w-auto flex items-center"
+  className="min-h-screen min-w-auto flex items-center"
 >
-      <div className="lg:w-screen min-h-screen hidden lg:block text-white ">
-        <div className=' font-bold relative top-20 left-20 flex flex-col'>
+      <div className="lg:w-screen min-h-screen hidden lg:block bg-[url('https://s3-alpha-sig.figma.com/img/ffed/033b/eac4ec8c986b5ecc26305e3347d08700?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=V~rRbjhW4jp3eWBPZLwno3lS2K1FcENxP5ZPhkO0X2kZiOcbb1LYrCCSOmH21dcxYSgY0Fex24zNpgYcMGNeV1EZPIggdQ7iae0~6NO1koisUeodinxYoQZKl1x8YVpG73icE-RQnOB6-Yy54AI31AlKUgdxOyBJaJqJ9zSjBcTKBqVHeU1KurYVis8eQ6QGLaaar7w8yO86fEuDlCdhc7fdF3h4bYRZooaAVumzlt-LNz9NwG9MKbKJE3m-PnD04I-x2Rd~RDtU1FEt7qU8KeMRYLqS9D~iRMUKww1fHxMFN-MneKTRaURm3cTUCem2TKyjB4dY5ChyjVkWG6biig__')] bg-cover bg-center">
+        {/* <div className=' font-bold relative top-20 left-20 flex flex-col'>
           <h1 className='text-display font-bold'>Learn without limits</h1>
           <h2 className='text-small font-normal mb-5 w-1/2'>Start, switch, or advance your career with more than 7,000 courses, Professional Certificates, and degrees from world-class universities and companies.</h2>
           <Link to="/" className='w-0'><span className='bg-primary py-3 px-8 text-center rounded-full  w-auto font-semibold text-white'>Explore</span></Link>
-        </div>
+        </div> */}
       </div>
       <div className=" flex flex-col items-center justify-center lg:w-1/2 w-screen h-screen bg-white">
         <div className="flex flex-col items-center justify-center  h-auto  rounded-2xl">

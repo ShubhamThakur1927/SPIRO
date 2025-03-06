@@ -21,11 +21,13 @@ import ToDoList from "./Dashboard-Pages/ToDoList";
 import Modal from "../components/Modal";
 import { useTeacherStore } from "../Stores/teacherStores";
 import { useNavigate } from "react-router-dom";
+import { StudentStores } from "../Stores/StudentStores";
 
 function Dashboardteacher() {
   const { logout } = useAuthstore();
   const [content, setContent] = useState(<Dashboard />);
   const [classes, setClasses] = useState([]);
+  const { getClasses } = StudentStores();
   const [newClassName, setNewClassName] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { CreateClass, profile, joinLink } = useTeacherStore();
@@ -39,6 +41,16 @@ function Dashboardteacher() {
         console.log(error);
       }
     };
+
+    const fetchClasses = async () => {
+      try {
+        const classesData = await getClasses();
+        setClasses(classesData?.enrolledClasses || []);
+      } catch (error) {
+        console.log(error);
+      } 
+    };
+    fetchClasses();
     fetchProfile();
   }, []);
 

@@ -26,7 +26,7 @@ function DashboardPage() {
         setClasses(classesData?.enrolledClasses || []);
       } catch (error) {
         console.log(error);
-      }
+      } 
     };
 
     const fetchProfileData = async () => {
