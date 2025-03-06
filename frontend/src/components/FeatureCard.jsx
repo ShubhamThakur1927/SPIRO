@@ -8,7 +8,7 @@ function FeatureCard(props) {
     }, [])
   return (
     <div
-  className="card bg-primary text-white font-semibold h-auto w-auto rounded-xl"
+  className="card hover:bg-primary text-white font-semibold h-auto w-auto rounded-xl"
   data-aos="fade-right"
 >
   <div className="card-content my-32 xl:w-auto px-6">
