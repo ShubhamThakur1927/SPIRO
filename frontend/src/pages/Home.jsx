@@ -62,7 +62,7 @@ function Home() {
         </h1>
         <div className="grid grid-cols-1 bg-opacity-80 md:grid-cols-3 gap-5 w-full md:w- px-4 md:px-10">
           <div className="grid gap-5">
-            <Card title="The Tech That Simplifies Your Educational World" />
+            <FeatureCard title="The Tech That Simplifies Your Educational World" />
             <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
           </div>
           <div className="grid gap-5">
