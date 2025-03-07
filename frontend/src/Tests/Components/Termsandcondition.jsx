@@ -9,7 +9,7 @@ function Termsandcondition() {
         <div className="max-w-screen-lg mx-auto bg-white p-6 md:p-10 shadow-lg rounded-2xl border border-gray-200">
           <h2 className="text-2xl font-bold text-center mb-4">Terms and Conditions</h2>
           <img
-            src="https://s3-alpha-sig.figma.com/img/3e96/9e67/5fee9b130fef9c7efbd9f5287f3339da?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OEPIwD71MzWgAiddH-oEzckUPMpDlplVsfHX3VCIRu5ucVYnhr0FGi2YBy5TQpzJHDoixxWUDD1kCYwWOaX6Pn5QWOqcBvUPVYT-Jr-CqBbZhLQxd7KKro4fS8T9I0NM7cl9l8vTKy96IPyQs-xAijIAhNrIU7u4KFEwisMItLQoaIFTb1qk0VDDe5E58a4Si5w76EccXcKA~pJgUpHKdltOqDaq8ZHkx3EbxAD8L7rFDLrEcWtWtwQyAbxWU4d5Y0YrF78NM8J2czwPqgfD3WWRy~MYNJ~Ns3pXu5LnSpooQpBPds4kxAy7MdS7o16OguosJ6kAX1KLXdqIf2oqkQ__"
+            src="https://s3-alpha-sig.figma.com/img/3e96/9e67/5fee9b130fef9c7efbd9f5287f3339da?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=FtG5lZUMjttDmpdk3-DMu4O3LH3GsgymU1reroYUDb65x4w23cXP0TTrS6RBEukKf7hkcP6iBaXP1tNZHwAghH47S~~Zymc7qnOT~o1cw1JwVBZTiblMmdPM2DU~EVE66ceqrnuU4dZgPo6nTKu45q4fFxF8EMv7VUrKEWEkVZkinGFn6bGIOueFHSupvXNYHpKQ6xRHeRXmCPtUWMLWJ2VNz3QtZc2VdGfgaSX~HWVNo8WuAk6zQMndG4Yix5b3Ky8R12L1ZUyDNU8NN~WIEURDjkI6II0WxQKB7GH2YPft~cc1hY0mX2WkJ5tG8EyTstJuKbpSVvtcKGbw5ReSag__"
             alt="Handshake"
             className="w-full rounded-lg mb-4"
           />

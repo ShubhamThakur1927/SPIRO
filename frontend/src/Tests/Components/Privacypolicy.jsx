@@ -5,8 +5,8 @@ import Navbar from '../../components/Navbar'
       return (
         <div className='bg-main'>
       <Navbar />
-      <div className="relative bg-cover bg-center h-screen  p-6 space-y-5 flex items-center justify-center text-white text-center p-6 " style={{ backgroundImage: "url('https://s3-alpha-sig.figma.com/img/f11d/4aa0/babd7bb113a756fb50fd292071986e56?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=im84vEgjRkNuqJTsIJbfJPPgVMD0XhjIapzXsNF4W0A9etpiHPy6TAXfb-j7skidsdCYVgQTazrsrXW0oRWMabMX3iFaNIRNbOIvF0RcTU7xGbf~Dj4mpCfvf0lKZ7y~BFUJfAgm7EUKyU7xa3zQmgsMR5ZYcj0VNAKBElM-Vaa51rah0ttF2YIl7reLbD~daov9exiSfpby~6F~4bCs5okjf6pY54iZoItPN1qqKldbKe1U9ZYisX6NGKlX4p8h1-7RjnD0he55mz~KaflMF9byxjrO~crtLTspkl5-TmA4XKQQA36mimIwdpjWJX~3dL0U7CXEXbyMG47D8ckgbw__')" }}>
-        <div className="bg-black bg-opacity-50 p-6 rounded-lg">
+      <div className="relative bg-cover bg-center w-screen h-screen space-y-5 flex text-white text-center" style={{ backgroundImage: "url('https://s3-alpha-sig.figma.com/img/f11d/4aa0/babd7bb113a756fb50fd292071986e56?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=i5BUx4tfE4W8SVgVA8nV7P-kZuyUvzzXAKRZDaRszc676bMUS5MvyYkXwV~Nz2PDtyhUCH5cJZDmsQmDFS95-6AqnZu9BkqashhTD~kYhhEJ7cvu153ryP1BgaoO4PvUENTVLHkG-DTcIbtHpD6-aQ~GqIWh~YOfJHSNMKpe9K-A~0Sy7bp~QhtJZUxvK3Vxc0YZRsLmqS1K-qhiCoY2Gan69tbM3YFAwOHG4Xk4JyyqpxK6SpqqF9yolWKYZm6P0sZWNEwYV4aMtpx7BA4PbWezMdgHoW4CXNCjnc8q7dP4WklM3UJJfCnFvSfCA1YBQwTxOvtbKjilixLfT9afzw__')" }}>
+        <div className="bg-black bg-opacity-50 w-screen p-6 rounded-lg  place-content-center">
           <h1 className="text-4xl font-bold">Your Privacy, Our Priority</h1>
           <p className="mt-2 text-lg">We’re committed to protecting your personal information.</p>
           <p className="mt-2 text-sm">SPIRO is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our platform. By using SPIRO, you agree to the practices outlined in this policy.</p>
@@ -36,7 +36,7 @@ import Navbar from '../../components/Navbar'
             </ul>
           </div>
           <div className="w-1/3 ml-6">
-            <img src="https://s3-alpha-sig.figma.com/img/52ff/18db/0d2362cb8efd202559a78b0e07e8c190?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=dmHXh4oFOxwKg1RzH1HQMSBPJSV1FTt84na3l7Oj40yJl-w-cB1092Hpw~qNTFURSBawgPy69ATmMpjGJy9PqkhkTyE2cObf7uA2~EV1-vDhNKZboILUu1GOztTCCiF-nRs9pKik~GeIt5Jg4kjX6jpTu-2iCXlxWwqBvYtfxQUk8Vu8cQaTELHlu2Dc8layn93-Fzx65R7SYSmpstb046wDy36nsuGA6bk2bu2KPfSlTCMV9RbAvBSmb4-Ah3-62OcWqnefqbgSdG7cqVp1bUCAytkPgX2L4rtnPvzQuXHaHm87hMKRL9a3SSofXf4eInhN6AYdtZOAHAZ96eOewQ__" alt="Data Security" className="rounded-lg shadow-md" />
+            <img src="https://s3-alpha-sig.figma.com/img/52ff/18db/0d2362cb8efd202559a78b0e07e8c190?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=d4gGvUOjXk4ImPwmApIoBmk2URWXC7xWSzcFIl1jr8SoZKI4OIDR1KYHBmipDTn7t9Nr42LjXPUD8tNcCcrkLv68HzeDKZ31oIuobr0hYWuRZde68TrSElNZEMivvK8-geq9a6Uj3yHgaZn3X2mZp1WwXAdRu6oGK0wKiHWgp7x-dNeNQnHQBAjUwtO3O3wfRdJ29pkLx-PspCgoGXSiW5K3Gy18WE~0w981TAVrXMAFoZIQfW6Y~YUUBheWlB7xNuVdhQn~8V3X3vkH-HknDK1wJv9Rbdn7P63spJaOPiw029el9wykWikbi1RQwDGU5oy~gHI1XIGf~KQjbOSp8w__" alt="Data Security" className="rounded-lg shadow-md" />
           </div>
         </div>
         <div >
@@ -74,7 +74,7 @@ import Navbar from '../../components/Navbar'
   {/* Image Section */}
   <div className="w-full md:w-1/3 p-2">
     <img
-      src="https://s3-alpha-sig.figma.com/img/1e02/14b4/74d3a40b1c765f4791a98ecf53a146a7?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LiqNS84ro~BEw23eheynzQjQqoeBgK4I-uXNOiWXPzKOeDOpxBoUaG-GJjEuXO71~ger~hrH~r8rzBjSxl-dU7FWzwh9bZ-0OxfDPjRy2qGEClBxWFf3iWXpm7lnrodk64PpgWhgkf2MF56uPX0Gm1CBPEZynd5S8fAc6uhR4Xe-KorfY1ilAlnhOEn7~QWKRVQ3tPQmtAJebnEwlQ0u3crCWdR2gXZHbdbIgXCxT6b0ACifidyM3uf49Lq6Cfh7V3AoicV2zT~G6Hx1WwuYH8npf-Ai8harcY4odK8qwDbsP7ao6apjqIWnFys88C8E7ApBZ6ZdKrsROfeqGP-3hg__"
+      src="https://s3-alpha-sig.figma.com/img/1e02/14b4/74d3a40b1c765f4791a98ecf53a146a7?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=P9~bnXt7An0cH62YoRFiX~rsy37I7VP3~Yl5~gXScUIbKqd7xAN4T4ED4Um~KM4g2qoDq1FFcmlMBiQOrqkvgRj7A9sI3fjVCMyAZmrCQsRmVrVVxLTqINaqL6X~FpGq9Afx4EOQ1fjTvyXCBvrpV55g1gZrMJtz3kPWpXVW2dGnwiTVDxi9Ea-8VM9LWxJAeVkbQC9ibe9bKga8Kdtw1Bo-YrwykFdb0UNY~T92Jr4sSsRiKLppsKXPJMpMTvE8WxIq8kfllI5H5SCjC2RMRWRblNs62sX7Dr7nL8uG5Qo5iMZHYoCPkkCvk70PiWXoDC1VeqMCY38Ns4x5WMUUvQ__"
       alt="Laptop Image"
       className="w-full max-w-sm md:max-w-full rounded-lg shadow-md"
     />

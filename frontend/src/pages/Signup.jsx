@@ -164,9 +164,14 @@ function Signup() {
                     /> 
                     <span>
                       I agree with 
-                      <span className="underline underline-offset-1"> Terms </span>
+                      <a href="/terms-us" className="underline underline-offset-1 text-blue-600 hover:text-blue-800">
+  Terms
+</a>
+
                       and 
-                      <span className="underline underline-offset-1"> Privacy policy</span>
+                      <a href="/privacy-us" className="underline underline-offset-1 text-blue-600 hover:text-blue-800">
+  Privacy and Policy 
+</a>
                     </span>
                   </div>
                   <motion.button
