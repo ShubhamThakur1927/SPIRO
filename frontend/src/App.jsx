@@ -14,6 +14,7 @@ import Dashboardteacher from "./pages/Dashboardteacher";
 import Termsandcondition from "./Tests/Components/Termsandcondition";
 import Aboutuspage from "./Tests/Components/Aboutuspage";
 import Contactuspage from "./Tests/Components/Contactuspage";
+import Privacypolicy from "./Tests/Components/Privacypolicy";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, checkAuth } = useAuthstore();
@@ -75,6 +76,8 @@ function App() {
         <Route path="*" element={<Navigate to="/pagenotfound" />} />
         <Route path="/terms&conditions" element={<Termsandcondition/>}/>
         <Route path="/contact-us" element={<Contactuspage/>} />
+        <Route path="/terms-us" element={<Termsandcondition/>} />
+        <Route path="/privacy-us" element={<Privacypolicy/>} />
       </Routes>
     </BrowserRouter>
   );
