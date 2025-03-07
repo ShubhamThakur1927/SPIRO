@@ -1,12 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import FeaturesGrid from './FeaturesGrid'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { PlayCircleIcon } from "lucide-react";
+import spiro from "../../assets/spirotest.mp4";
 
 function Aboutuspage() {
+
+  const [textColor, setTextColor] = useState("text-black");
+    const videoRef = React.useRef(null);
+  
+    const handlePlayButtonClick = () => {
+      if (videoRef.current) {
+        if (videoRef.current.paused) {
+          videoRef.current.play();
+        } else {
+          videoRef.current.pause();
+        }
+      }
+    };
+    
+    useEffect(() => {
+      AOS.init();
+    }, []);
+    
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          setTextColor("text-black");
+        } else {
+          setTextColor("text-black");
+        }
+      };
+    
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+    
   return (
     <div className='bg-main'>
-      <Navbar/>
+      <Navbar className={`${textColor}`} textColor="text-black" />
       <div>
       <div className="bg-main space-y-4">
         {/* Hero Section */}
@@ -19,15 +56,20 @@ function Aboutuspage() {
         </div>
 
         {/* Embedded Video Section */}
-        <div className="w-full px-6 md:px-32 flex justify-center items-center">
-          <iframe
-            className="w-full h-64 md:h-80 rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Embedded Video"
-            allowFullScreen
-          ></iframe>
-        </div>
-
+        <div className="justify-items-center px-4 sm:px-6 md:px-10 lg:px-16 py-10 gap-6">
+                  <div className="relative w-full h-auto md:w-3/4 rounded-xl overflow-hidden shadow-lg">
+                    {/* Video */}
+                    <video ref={videoRef} className="w-full h-full" autoPlay muted>
+                      <source src={spiro} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+        
+                    {/* Play Button */}
+                    <div className="absolute top-3 left-3 p-2 rounded-full shadow-md cursor-pointer" onClick={handlePlayButtonClick}>
+                      <PlayCircleIcon color="white" size={32} />
+                    </div>
+                  </div>
+                </div>
         {/* Our Mission Section */}
         <div className="flex flex-col md:flex-row items-start md:items-center px-6 md:px-32 py-16">
           <div className="md:w-1/3">
