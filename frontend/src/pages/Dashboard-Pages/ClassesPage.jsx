@@ -52,7 +52,7 @@ function ClassesPage({ id }) {
     }
 
     const handleAddLecture = async () => {
-        const subjectname = "Cpp";
+        const subjectname = "Science";
         if (newLectureTitle.trim() !== "" && newLectureFile) {
             try {
                 const formData = new FormData();
