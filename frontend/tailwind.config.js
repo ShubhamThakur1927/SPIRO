@@ -32,7 +32,7 @@ export default {
       'tiny':"18px",
       'small':"32px",
       'h2':"48px",
-      'h3':"32px",
+      'h3':"28px",
       'h5':"20px",
       'h9':"64px",
       },

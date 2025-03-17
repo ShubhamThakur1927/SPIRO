@@ -95,7 +95,8 @@ function Dashboardteacher() {
           <div className="p-2 mx-10">
             <ul className="grid gap-10 cursor-pointer">
               <li className="text-h3 font-semibold leading-h3">
-                <Dropdown title="Classes" icon={<School />}
+                <Dropdown title="Classes" icon={<School />}>
+                {/* <Dropdown title="Classes" icon={<School />}
                   items={classes.map((cls) => ({
                     label: cls,
                     value: cls,
@@ -103,8 +104,8 @@ function Dashboardteacher() {
                   onItemSelect={(id) => {
                     console.log("class id",id);
                     handleContentChange(<ClassesPage id={id} />)} }
-                >
-                  {/* <ul>
+                > */}
+                  <ul>
                     {classes.map((className, index) => (
                       <li
                         key={index}
@@ -122,7 +123,7 @@ function Dashboardteacher() {
                         <Plus onClick={join} />
                       </li>
                     ))}
-                  </ul> */}
+                  </ul>
                   <div className="p-2">
                     <button
                       className="text-small text-gray-500 flex items-center gap-2"

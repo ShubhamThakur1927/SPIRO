@@ -57,7 +57,7 @@ function Home() {
       {/* MID Section */}
       <section className="bg-white relative  bottom-12 rounded-3xl w-auto h-auto py-20 flex flex-col items-center justify-around align-middle">
         {/* Feature Section */}
-        <h1 className="text-h1 font-semibold w-full md:w-1/2 text-center leading-h1" data-aos="fade-up">
+        <h1 className=" md:text-h1 text-h2 font-semibold w-full md:w-1/2 text-center md:leading-h1 leading-h2 mb-10" data-aos="fade-up">
           Unlock The Future Of Education With <Link to="/login"><span className="text-primary font-bold">SPIRO</span></Link>
         </h1>
         <div className="grid grid-cols-1 bg-opacity-80 md:grid-cols-3 gap-5 w-full md:w- px-4 md:px-10">
@@ -81,10 +81,32 @@ function Home() {
           Transforming learning, one click at a time
         </h1>
         <div className="grid grid-cols-1 gap-12 w-full md:w-2/3 px-4 md:px-10">
-          <div className="w-full h-[400px] bg-[url(./assets/cardbg.png)] bg-cover bg-center bg-no-repeat bg-blend-screen bg-slate-900 rounded-3xl" data-aos="fade-right"></div>
+          <div className="w-full h-[400px] bg-[url(./assets/cardbg.png)] md:px-10 px-5 pb-6 text-white bg-cover bg-center place-content-end md:place-items-end bg-no-repeat bg-blend-screen bg-slate-900 rounded-3xl" data-aos="fade-right">
+            <div className="md:w-3/4 w-full md:text-end space-y-2">
+              <h3 className="text-h3 leading-h3 font-semibold">Increased Engagement</h3>
+              <p className="text-small leading-small">
+                Gamified elements, simulations, and real-time collaboration keep students actively involved in their learning journey.
+              </p>
+            </div>
+          </div>
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="w-full md:w-1/2 h-[400px] bg-[url(./assets/image108.png)] bg-cover bg-center bg-no-repeat bg-blend-screen bg-slate-900 rounded-3xl" data-aos="fade-down"></div>
-            <div className="w-full md:w-1/2 h-[400px] bg-[url(./assets/image109.png)] bg-cover bg-center bg-no-repeat bg-blend-screen bg-slate-900 rounded-3xl" data-aos="fade-up"></div>
+            <div className="w-full md:w-1/2 h-[400px]  px-5 pb-8 bg-[url(./assets/image108.png)] bg-cover bg-center bg-no-repeat place-content-end bg-blend-screen bg-slate-900 rounded-3xl text-white" data-aos="fade-down">
+            <div className="w-full space-y-4">
+              <h3 className="text-h3 leading-h3 font-semibold">Improved Teacher-Student Communication</h3>
+              <p className="text-small leading-small font-normal">
+              Fosters better communication through discussion and real-time feedback, allowing educators to address student needs quickly.
+              </p>
+            </div>
+            </div>
+            <div className="w-full md:w-1/2 h-[400px] px-5 pb-8 bg-[url(./assets/image109.png)] bg-cover bg-center bg-no-repeat bg-blend-screen place-content-end text-white bg-slate-900 rounded-3xl" data-aos="fade-up">
+            <div className="w-full space-y-5">
+              <h3 className="text-h3 leading-h3 font-semibold">Flexible Learning
+              Opportunities</h3>
+              <p className="text-small leading-small font-normal">
+              Learn at your own pace, anywhere, anytime, fitting education into your schedule.
+              </p>
+            </div>
+            </div>
           </div>
         </div>
 
