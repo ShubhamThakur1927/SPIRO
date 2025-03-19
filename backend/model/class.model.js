@@ -7,11 +7,6 @@ const classSchema = new mongoose.Schema(
       trim: true, // Removes extra spaces
       required: true,
     },
-    description: {
-      type: String,
-      required: true,
-      trim: true,
-    },
     teacherId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Teacher",
@@ -20,8 +15,8 @@ const classSchema = new mongoose.Schema(
     },
     studentLinks: [
       {
-        link: { type: String, required: true },
-        expiresAt: { type: Date, required: true, index: { expires: '1h' } }, // Auto-delete expired links
+        link: { type: String, required: false },
+        // expiresAt: { type: Date, required: true, index: { expires: '10s' } }, // Auto-delete expired links
         redeemedBy: { type: mongoose.Schema.Types.ObjectId, ref: "Student" },
       },
     ],

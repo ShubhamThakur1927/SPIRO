@@ -8,15 +8,11 @@ const Socialmedia = ({ icon, text, url }) => {
     case 'Github':
       IconComponent = Github;
       break;
-    case 'Gmail':
-      IconComponent = Mail;
-      break;
+    
     case 'Linkedin':
       IconComponent = Linkedin;
       break;
-    case 'Instagram':
-      IconComponent = Instagram;
-      break;
+    
     default:
       IconComponent = null;
   }

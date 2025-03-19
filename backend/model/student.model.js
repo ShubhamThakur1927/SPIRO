@@ -3,13 +3,15 @@ import bcrypt from "bcryptjs";
 
 const userSchema = new mongoose.Schema(
   {
-    firstName: {
+    ProfilePicUrl: {
+      type: String,
+    },
+    ProfilePicKey:{
+      type: String,
+    },
+    FullName: {
       type: String,
       trim: true, // Removes extra spaces
-    },
-    lastName: {
-      type: String,
-      trim: true,
     },
     email: {
       type: String,
@@ -22,7 +24,24 @@ const userSchema = new mongoose.Schema(
       type: String, // Using String instead of Number for international formats
       trim: true,
     },
+    Branch: {
+      type: String,
+      trim: true,
+    },
+    Class: {
+      type: String,
+      trim : true,
+    },
+    Gender: {
+      type: String,
+      enum : ["Male", "Female"],
+    },
     password: {
+      type: String,
+      required: true,
+      minlength: 8, // Enforce minimum length for security
+    },
+    passwordConfirm: {
       type: String,
       required: true,
       minlength: 8, // Enforce minimum length for security
@@ -34,6 +53,10 @@ const userSchema = new mongoose.Schema(
     isVerified: {
       type: Boolean,
       default: false,
+    },
+    role:{
+      type: String,
+      default: "student",
     },
     enrolledClasses: [
       {

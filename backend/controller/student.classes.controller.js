@@ -5,7 +5,7 @@ import s3 from "../db/CloudStorage.js";
 
 const join = async (req, res) => {
   const { token } = req.params;
-  const studentId = req.userId;// Extracted from JWT
+  const studentId = req.user;// Extracted from JWT
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     if (Date.now() > decoded.expiresAt) {
@@ -18,11 +18,10 @@ const join = async (req, res) => {
     if (!foundClass)
       return res.status(404).json({ message: "Class not found" });
 
-    const student = await Student.findById(req.userId);
+    const student = await Student.findById(studentId);
     if (!student) {
       return res.status(404).json({ message: "Student not found" });
     }
-
     const classToJoin = await Classes.findOne({
       subjectname: foundClass.subjectname,
     });
@@ -30,7 +29,7 @@ const join = async (req, res) => {
       return res.status(404).json({ message: "Class not found" });
     }
 
-    if (!student.enrolledClasses.includes(foundClass.subjectname)) {
+    if (!student.enrolledClasses.includes(classToJoin._id)) {
       student.enrolledClasses.push(classToJoin._id);
       await student.save();
     } else {
@@ -48,7 +47,7 @@ const join = async (req, res) => {
 };
 
 const getStudentClasses = async (req, res) => {
-  const studentId = req.userId;
+  const studentId = req.user;
   try {
     const student = await Student.findById(studentId).populate('enrolledClasses');
     if (!student) {
@@ -96,7 +95,7 @@ const fetchVideo = async (req, res) => {
     const params = {
       Bucket: process.env.R2_BUCKET_NAME,
       Key: id,
-      Expires: 3600, // Set expires here
+      // Expires: 3600, // Set expires here
       ResponseContentDisposition: "inline", // Ensure the video is displayed inline
       ResponseContentType: "video/mp4",
     };
@@ -112,7 +111,7 @@ const fetchVideo = async (req, res) => {
 
 const updateWatchedStatus = async (req, res) => {
   const { videoId } = req.body;
-  const studentId = req.userId;
+  const studentId = req.user;
   try {
     const student = await Student.findById(studentId);
     if (!student) {

@@ -16,7 +16,7 @@ function Login() {
   const [rememberMe, setRememberMe] = useState(false); // New state for remember me
   const [showPassword, setShowPassword] = useState(false); // New state for toggling password visibility
   const { login, isLoading, error } = useAuthstore();
-  const notify = (message) => toast(message);
+  const notify = (message) => toast.error(message); // Notify function
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -122,7 +122,19 @@ function Login() {
 
                 <span className='Signup text-md'> Don't have an account? <Link to="/signup" className='underline font-bold underline-offset-1 text-primary'>Sign Up</Link></span>
               </form>
-              {error && <p className='text-red-500 text-center'>{error}</p>}
+              {/* { error && <p className='text-red-500'>{error}</p> } */}
+              {error && notify(error)}
+              {/* <ToastContainer 
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              /> */}
               <div className='relative md:right-28 md:bottom-40 mt-1 bottom-32  right-16'>
                 <input
                   className=' h-5'
