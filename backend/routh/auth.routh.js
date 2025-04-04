@@ -28,6 +28,7 @@ import { join } from "../controller/student.classes.controller.js";
 const router = express.Router();
 
 // Teacher auth check
+router.post("/verify", verifyToken)
 router.get("/auth", verifyToken, checkAuth);
 
 // Teacher registration, login, and logout

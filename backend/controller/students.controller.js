@@ -1,6 +1,6 @@
 import bcryptjs from 'bcryptjs';
 import crypto from 'crypto';
-import { generateTokenAndSetCookie } from '../utils/token.js';
+import { generateTokenAndSetCookie, refreshtoken } from '../utils/token.js';
 import { sendVerificationEmail } from '../mailtrap/email.js';
 import { Student } from '../model/student.model.js';
 import s3 from '../db/CloudStorage.js';
@@ -100,8 +100,12 @@ const LoginStudent = async (req, res) => {
             return res.status(400).json({ message: "Invalid credentials" });
         }
 
-        const token = generateTokenAndSetCookie(res, student._id, rememberMe);
+        const token = generateTokenAndSetCookie(res, student._id,);
+        const refreshToken = refreshtoken(res, student._id,);
+
+        // database
         student.lastLogin = new Date();
+        student.refrshtoken = refreshToken;
         await student.save();
 
         return res.status(200).json({
@@ -113,6 +117,7 @@ const LoginStudent = async (req, res) => {
             },
             token,
         });
+        return res.cookie('jwt', refreshToken, {httpOnly: true, maxAge: 24 * 60 * 60 * 1000});
     } catch (error) {
         return res.status(400).json({ success: false, message: error.message });
     }

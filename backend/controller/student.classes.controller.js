@@ -109,6 +109,7 @@ const fetchVideo = async (req, res) => {
   }
 };
 
+/// remaing
 const updateWatchedStatus = async (req, res) => {
   const { videoId } = req.body;
   const studentId = req.user;
