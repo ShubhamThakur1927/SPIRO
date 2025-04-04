@@ -123,7 +123,7 @@ function Login() {
                 <span className='Signup text-md'> Don't have an account? <Link to="/signup" className='underline font-bold underline-offset-1 text-primary'>Sign Up</Link></span>
               </form>
               {/* { error && <p className='text-red-500'>{error}</p> } */}
-              {error && notify(error)}
+              {error && <p className='text-red-500'>{error}</p>}
               {/* <ToastContainer 
               position="top-right"
               autoClose={5000}
