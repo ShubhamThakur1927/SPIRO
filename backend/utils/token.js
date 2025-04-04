@@ -1,14 +1,18 @@
 import jwt from "jsonwebtoken";
 
-const generateTokenAndSetCookie = (res, userId, rememberMe = false) => {
-	const expiresIn = rememberMe ? "30d" : "7d"; 
-	const maxAge = rememberMe ? 30 * 24 * 60 * 60 * 1000 : 7 * 24 * 60 * 60 * 1000;
-
-	const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
-		expiresIn,
+const generateTokenAndSetCookie = (res, userId,) => {
+const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
+		expiresIn: '30s'
 	});
-	// ✅ Return token in response
-	return token;
+// ✅ Return token in response
+
+return token;
 };
 
-export { generateTokenAndSetCookie };
+const refreshtoken = (res, userId,) =>{
+	const refreshToken = jwt.sign({ userId },process.env.JWT_REFRESH_SECRET,{
+		expiresIn: '1d'
+	});
+};
+
+export { generateTokenAndSetCookie, refreshtoken };

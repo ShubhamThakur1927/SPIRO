@@ -1,4 +1,4 @@
-import {create} from 'zustand';
+import {create} from 'zustand'; // zustand is alternative of redux
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from 'axios';

@@ -64,6 +64,7 @@ const userSchema = new mongoose.Schema(
         ref: "Classes",
       },
     ],
+    refrshtoken: String,
     resetPasswordToken: String,
     resetPasswordExpiresAt: Date,
     verificationToken: String,
