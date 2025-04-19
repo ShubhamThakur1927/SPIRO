@@ -17,6 +17,7 @@ export const StudentStores = create(
     isCheckingAuth: true,
     message: null,
     email: undefined,
+    classes: [],
 
     updateProfile:async (student) => {
       const name = student.name;
@@ -37,7 +38,7 @@ export const StudentStores = create(
         try {
             set({ isLoading: true });
             const response = await axios.get(`${API_URL}/fetch-data`);
-            set({ student: response.data.student, isAuthenticated: true, isLoading: false });
+            set({ user: response.data.student, isAuthenticated: true, isLoading: false });
             return response.data.student;
         } catch (error) {
             set({ error: error.message, isLoading: false });
@@ -49,8 +50,7 @@ export const StudentStores = create(
       set({ isLoading: true, error: null });
       try {
         const response = await axios.get(`${API_URL}/fetch-classes`);
-        set({ isLoading: false });
-        //console.log(response.data.enrolledClasses);
+        set({ isLoading: false, classes: response.data.enrolledClasses });
         return response.data; 
       } catch (error) {
         set({ error: error.response?.data?.message || "Error fetching classes", isLoading: false });

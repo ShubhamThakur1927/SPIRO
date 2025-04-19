@@ -1,0 +1,40 @@
+name: Sprio
+
+services:
+
+  api:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sprio_api
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    networks:
+      - spiro-web-app
+    ports:
+      - "8000:8000"
+
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: sprio_web
+    restart: unless-stopped
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - spiro-web-app
+    ports:
+      - 5173:5173
+    depends_on:
+      - api
+
+networks:
+  spiro-web-app:
+    driver: bridge

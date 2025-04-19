@@ -39,7 +39,7 @@ const join = async (req, res) => {
     }
 
     await classToJoin.save();
-    res.status(200).json({ message: "Successfully joined the class" });
+    return res.status(200).json({ message: "Successfully joined the class" ,classes: classToJoin.subjectname, });
   } catch (error) {
     console.error(error);
     res.status(400).json({ message: "Invalid or expired link" });

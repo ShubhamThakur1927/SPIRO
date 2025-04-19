@@ -10,11 +10,9 @@ import { useNavigate } from "react-router-dom";
 import Dashboardstudent from "../Tests/Thrashbotlipit/Dashboardstudent"
 
 function DashboardPage() {
-  const { logout } = useAuthstore();
-  const { getClasses, joinClass, getProfile } = StudentStores();
-  const [classes, setClasses] = useState([]);
+  const {getClasses, joinClass ,classes} = StudentStores();
+  const {user,logout} = useAuthstore();
   const [content, setContent] = useState(<Dashboardstudent/>);
-  const [profilePic, setProfilePic] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [link, setLink] = useState("");
   const navigate = useNavigate();
@@ -22,25 +20,13 @@ function DashboardPage() {
   useEffect(() => {
     const fetchClasses = async () => {
       try {
-        const classesData = await getClasses();
-        setClasses(classesData?.enrolledClasses || []);
+        await getClasses();
       } catch (error) {
         console.log(error);
       } 
     };
-
-    const fetchProfileData = async () => {
-      try {
-        const profileData = await getProfile();
-        setProfilePic(profileData?.ProfilePicUrl);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
     fetchClasses();
-    fetchProfileData();
-  }, [getClasses, getProfile]);
+  }, [getClasses]);
 
   const handleLogout = () => {
     logout();
@@ -88,8 +74,8 @@ function DashboardPage() {
             <div className="grid gap-5 my-10">
               <ul className="grid gap-5">
                 <li>
-                  <div className="cursor-pointer" onClick={() => setContent(<Profilepage profilePic={profilePic} />)}>
-                  <img src={profilePic|| profilealt} alt="Profile" className="w-10 h-10 rounded-full" />
+                  <div className="cursor-pointer" onClick={() => setContent(<Profilepage profilePic={user?.ProfilePicUrl} />)}>
+                  <img src={user?.ProfilePicUrl|| profilealt} alt="Profile" className="w-10 h-10 rounded-full" />
                   </div>
                 </li>
                 <li className="place-items-center"><Bell /></li>

@@ -30,11 +30,14 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const RedirectAuthenticatedUser = ({ children }) => {
-  const { isAuthenticated, student, teacher } = useAuthstore();
-  if (isAuthenticated && student?.role === "student") {
+  const { isAuthenticated, role, checkAuth } = useAuthstore();
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+  if (isAuthenticated && role === "student") {
     return <Navigate to="/dashboard" replace />;
   }
-  if(isAuthenticated && student?.role === "teacher"){
+  if(isAuthenticated && role === "teacher"){
     return <Navigate to="/teacher-dashboard" replace />;
   }
 
@@ -68,7 +71,11 @@ function App() {
           </ProtectedRoute>
         } />
 
-        <Route path="/Signup" element={<Signup />} />
+        <Route path="/Signup" element={
+          <RedirectAuthenticatedUser>
+          <Signup />
+          </RedirectAuthenticatedUser>
+          } />
         <Route path="/about-us" element={<Aboutuspage/>}/>
         <Route path="/Forgetpassword" element={<Forgetpassword />} />
         <Route path="/test" element={<Testubg />} />

@@ -2,21 +2,23 @@ import {create} from 'zustand'; // zustand is alternative of redux
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from 'axios';
+import { StudentStores } from './StudentStores';
 
 // const API_URL = "https://backend-npyb.onrender.com/api/v1";
 const API_URL = "http://localhost:8000/api/v1";
-
 axios.defaults.withCredentials = true;
 
+
 export const useAuthstore = create((set) => ({
-    teacher: null,
-	student: null,
+    user:null,
 	isAuthenticated: false,
 	error: null,
 	isLoading: false,
 	isCheckingAuth: true,
 	message: null,
 	email: undefined,
+	role: undefined,
+	Classes:[],
 
 
     login: async (email, password, backendUrl, rememberMe) => {
@@ -28,15 +30,15 @@ export const useAuthstore = create((set) => ({
 				password,
 				rememberMe,
 			}, { withCredentials: true }); // Ensures cookies are sent
-	
+
 			const { data } = response;
-	
+			// console.log(data.user.role);
+			
 			if (data.token) {
-				sessionStorage.setItem("token", data.token); // Store token in sessionStorage
-				axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
+				// sessionStorage.setItem("token", data.token); // Store token in sessionStorage
+				axios.defaults.headers.common['authorization'] = data.token;
 			}
-	
-			set({ isAuthenticated: true, student: data.student, teacher: data.teacher, isLoading: false });
+			set({ isAuthenticated: true, isLoading: false,user: data.user});
 		} catch (error) {
 			const errorMessage = error.response?.data?.message || "Error logging in";
 			toast.error(errorMessage);
@@ -44,9 +46,17 @@ export const useAuthstore = create((set) => ({
 		}
 	},
 	logout: async () => {
-		sessionStorage.removeItem("token");
-		set({ isAuthenticated: false, student: null, teacher: null });
-		window.location.reload(); // Ensures full logout
+		set({ isAuthenticated: false, user: null, isLoading: true });
+		try {
+			const response = await axios.post(`${API_URL}/logout`);
+			axios.defaults.headers.common['authorization'] = '';
+			// console.log(response.data);
+			set({ user: null, isAuthenticated: false, isLoading: false });
+			// toast.success("Logged out successfully");
+		}
+		catch (error) {
+			toast.error("Error logging out");
+			}
 	},	
 	signup : async (email, password, passwordConfirm) => {
 		set({ isLoading: true, error: null });
@@ -62,19 +72,16 @@ export const useAuthstore = create((set) => ({
 	},
 
 	checkAuth: async () => {
-        const token = sessionStorage.getItem("token");
-        if (token) {
-			axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+			// axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 			set({ isLoading: true, error: null });
             try {
                 const response = await axios.get(`${API_URL}/auth`);
-                set({ isAuthenticated: true, student:response.data.user, isLoading: false });
+				const { data } = response;
+                set({ isAuthenticated: true, role: data.user.role, user: data.user, isLoading: false });
             } catch (error) {
-                sessionStorage.removeItem("token");
-				delete axios.defaults.headers.common['Authorization'];
-                set({ isAuthenticated: false, student: null, teacher: null, isLoading: false });
+				const errorMessage = error.response?.data?.message || "Error checking authentication";
+                set({ isAuthenticated: false, user:null, isLoading: false });
             }
-        }
     },
 	
 

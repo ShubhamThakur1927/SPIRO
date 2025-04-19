@@ -10,7 +10,7 @@ import {
 
 import {
   LoginStudent,
-  LogoutStudent,
+  Logout,
   SignupStudent,
   StudentForgotPassword,
   studentResetPassword,
@@ -28,7 +28,7 @@ import { join } from "../controller/student.classes.controller.js";
 const router = express.Router();
 
 // Teacher auth check
-router.post("/verify", verifyToken)
+// router.post("/verify", verifyToken)
 router.get("/auth", verifyToken, checkAuth);
 
 // Teacher registration, login, and logout
@@ -49,7 +49,7 @@ router.post("/generate-join-link", verifyToken, generateJoinLink);
 router.post("/studentSignup", SignupStudent);
 router.post("/verifyStudent", VerifyStudent);
 router.post("/studentLogin", LoginStudent);
-router.post("/studentLogout", LogoutStudent);
+router.post("/logout", Logout);
 router.post("/studentForgetpassword", StudentForgotPassword);
 router.post("/studentResetpassword/:token", studentResetPassword);
 

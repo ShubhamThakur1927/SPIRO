@@ -13,6 +13,18 @@ const refreshtoken = (res, userId,) =>{
 	const refreshToken = jwt.sign({ userId },process.env.JWT_REFRESH_SECRET,{
 		expiresIn: '1d'
 	});
+	return refreshToken;
+	
 };
 
-export { generateTokenAndSetCookie, refreshtoken };
+// const SessionId = (res, userId) =>{
+// 	const sessionId = jwt.sign({ userId }, process.env.JWT_SESSION_SECRET, {
+// 		expiresIn: '30d'
+// 	});
+// 	return sessionId;
+// }
+
+
+
+
+export { generateTokenAndSetCookie, refreshtoken};

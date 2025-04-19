@@ -64,6 +64,10 @@ const userSchema = new mongoose.Schema(
         ref: "Classes",
       },
     ],
+    sessionId: {
+      type: String,
+      default: null,
+    },
     refrshtoken: String,
     resetPasswordToken: String,
     resetPasswordExpiresAt: Date,
