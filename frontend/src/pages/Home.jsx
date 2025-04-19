@@ -10,12 +10,13 @@ import FeatureCard from "../components/FeatureCard";
 import Banner from "../components/Banner";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 
 function Home() {
   const [textColor, setTextColor] = useState("text-white");
 
+  const navigate= useNavigate();
   useEffect(() => {
     AOS.init();
   }, []);
@@ -48,7 +49,9 @@ function Home() {
               Achieve your goals with flexible, high-quality  programs for all levels
             </p>
           </div>
-          <button className="bg-primary relative xl:bottom-14 hover:bg-primary-dark text-white font-semibold flex align-middle items-center py-3 px-8 rounded-lg">
+          <button onClick={()=>{
+            navigate("/about-us")
+          }} className="bg-primary relative xl:bottom-14 hover:bg-primary-dark text-white font-semibold flex align-middle items-center py-3 px-8 rounded-lg">
             Explore <ChevronRight size={24} />
           </button>
         </div>

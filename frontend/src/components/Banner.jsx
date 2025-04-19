@@ -22,7 +22,7 @@ function Banner(props) {
       {props.Subtitle}
       <div className="bg-primary h-[272px] w-auto rounded-2xl my-10 ">
         <div className="banner h-[272px] w-auto opacity-20 "></div>
-        <button onClick={()=>{navigate('/login')}} className="bg-transparent border-2 border-white relative bottom-24 left-14 hover:bg-white hover:text-black text-white font-semibold flex items-center py-3 px-8 rounded-lg">
+        <button onClick={()=>{navigate('/contact-us')}} className="bg-transparent border-2 border-white relative bottom-24 left-14 hover:bg-white hover:text-black text-white font-semibold flex items-center py-3 px-8 rounded-lg">
           Get Started <ChevronRight size={24} />
         </button>
       </div>

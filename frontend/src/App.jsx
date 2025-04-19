@@ -24,7 +24,7 @@ const ProtectedRoute = ({ children }) => {
   }, [checkAuth]);
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/" replace />;
   }
   return children;
 };
@@ -60,9 +60,11 @@ function App() {
            </ProtectedRoute>
         } />
         <Route path="/login" element={
+          <ProtectedRoute>
           <RedirectAuthenticatedUser>
             <Login />
           </RedirectAuthenticatedUser>
+          </ProtectedRoute>
         } />
 
         <Route path="/teacher-dashboard" element={
@@ -72,13 +74,23 @@ function App() {
         } />
 
         <Route path="/Signup" element={
+          <ProtectedRoute>
           <RedirectAuthenticatedUser>
           <Signup />
           </RedirectAuthenticatedUser>
+          </ProtectedRoute>
           } />
         <Route path="/about-us" element={<Aboutuspage/>}/>
-        <Route path="/Forgetpassword" element={<Forgetpassword />} />
-        <Route path="/test" element={<Testubg />} />
+        <Route path="/Forgetpassword" element={
+          <ProtectedRoute>
+          <Forgetpassword />
+          </ProtectedRoute>
+        } />
+        <Route path="/test" element={
+          <ProtectedRoute>
+          <Testubg />
+          </ProtectedRoute>
+          } />
         <Route path="/pagenotfound" element={<PageNotFound/>} />
         <Route path="*" element={<Navigate to="/pagenotfound" />} />
         <Route path="/terms&conditions" element={<Termsandcondition/>}/>

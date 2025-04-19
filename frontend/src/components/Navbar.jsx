@@ -41,8 +41,11 @@ function Navbar({ className, textColor = "text-white" }) {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 text-small">
-          <Link to="*">
+          {/* <Link to="*">
             <li className="hover:text-primary transition">Docs</li>
+          </Link> */}
+          <Link to="/">
+            <li className="hover:text-primary transition">Home</li>
           </Link>
           <Link to="/about-us">
             <li className="hover:text-primary transition">About</li>
@@ -53,7 +56,7 @@ function Navbar({ className, textColor = "text-white" }) {
         </ul>
 
         {/* Desktop Buttons */}
-          {user ? (
+          {/* {user ? (
           <div className="hidden md:flex gap-7 relative">
             <Link to="/Login">
               <img
@@ -85,7 +88,7 @@ function Navbar({ className, textColor = "text-white" }) {
               </span>
             </Link>
           </div>
-        )}
+        )} */}
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center">
@@ -102,8 +105,11 @@ function Navbar({ className, textColor = "text-white" }) {
       {isMenuOpen && (
         <div className="md:hidden text-black bg-white shadow-lg rounded-b-lg p-4 absolute top-16 w-full">
           <ul className="flex flex-col items-center space-y-4 text-small">
-            <Link to="*" onClick={() => setIsMenuOpen(false)}>
+            {/* <Link to="*" onClick={() => setIsMenuOpen(false)}>
               <li className="hover:text-primary transition">Docs</li>
+            </Link> */}
+            <Link to="/" onClick={() => setIsMenuOpen(false)}>
+              <li className="hover:text-primary transition">Home</li>
             </Link>
             <Link to="/about-us" onClick={() => setIsMenuOpen(false)}>
               <li className="hover:text-primary transition">About</li>
@@ -112,7 +118,7 @@ function Navbar({ className, textColor = "text-white" }) {
               <li className="hover:text-primary transition">Contact Us</li>
             </Link>
           </ul>
-          <div className="mt-4 flex flex-col items-center space-y-8">
+          {/* <div className="mt-4 flex flex-col items-center space-y-8">
             <Link to="/signup" onClick={() => setIsMenuOpen(false)}>
               <span className="text-small">Signup</span>
             </Link>
@@ -121,7 +127,7 @@ function Navbar({ className, textColor = "text-white" }) {
                 Login
               </span>
             </Link>
-          </div>
+          </div> */}
         </div>
       )}
     </nav>
