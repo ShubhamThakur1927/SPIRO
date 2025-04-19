@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Contactuspage = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ const Contactuspage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -22,34 +22,27 @@ const Contactuspage = () => {
   };
 
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center px-6 md:px-12"
-      style={{ backgroundImage: `url('/images/contact-bg.jpg')` }} // Change the path accordingly
-    >
-      {/* Header */}
-      <div className="text-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-          SPIRO
-        </h1>
-        <p className="text-lg text-gray-200 mt-2">
-          Have questions? Let's make learning seamless together!
-        </p>
-      </div>
+    <div className="relative min-h-screen bg-gray-100 overflow-hidden">
+      {/* Quarter Circle Background (Visible only on md and above) */}
+      <div className="hidden md:block absolute bottom-0 left-0 w-[300px] h-[300px] bg-primary rounded-tr-full md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] z-0"></div>
 
-      {/* Contact Card */}
-      <div className="bg-white shadow-lg rounded-lg p-6 md:p-10 w-full max-w-4xl flex flex-col md:flex-row">
-        {/* Contact Info */}
-        <div className="md:w-1/2 p-6 flex flex-col justify-center">
-          <h2 className="text-2xl font-bold text-gray-800">Get in Touch</h2>
-          <p className="text-gray-600 mt-2">
+      {/* Main Container */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center px-6 py-12 md:py-24 gap-12">
+        
+        {/* Contact Info (Only visible on md and up) */}
+        <div className="hidden md:block md:w-1/2 text-left space-y-6">
+          <h1 className="text-primary text-4xl font-bold">SPIRO</h1>
+          <p className="text-gray-700 text-lg font-medium">
+            Have questions? <br />
+            Let's make learning seamless together! <br />
             Reach out to SPIRO today!
           </p>
-          <div className="mt-6 space-y-3 text-gray-700">
-            <p>📍 <span className="font-medium">Mumbai</span></p>
-            <p>✉️ <span className="font-medium">spiroedu9@gmail.com</span></p>
-            <p>📞 <span className="font-medium">+91 8452976481</span></p>
+          <div className="text-sm py-8 space-y-3 text-white ">
+            <p>📍 Mumbai</p>
+            <p>✉️ spiroedu9@gmail.com</p>
+            <p>📞 +91 8452976481</p>
           </div>
-          <div className="mt-6 space-y-3 text-gray-700">
+          <div className="pt-4 text-white text-sm space-y-1">
             <p>📘 @spiroedu</p>
             <p>📷 @spiroedu</p>
             <p>💼 @spiroedu</p>
@@ -58,9 +51,13 @@ const Contactuspage = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="md:w-1/2 p-6">
-          <h2 className="text-2xl font-bold text-blue-600 text-center md:hidden">SPIRO</h2>
-          <form className="space-y-5 mt-6" onSubmit={handleSubmit}>
+        <div className="bg-white shadow-xl rounded-2xl p-8 w-full md:w-1/2 max-w-lg">
+          {/* SPIRO logo for mobile only */}
+          <div className="md:hidden mb-6 text-center">
+            <h1 className="text-primary text-3xl font-bold">SPIRO</h1>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-gray-700 font-semibold">Name*</label>
               <input
@@ -68,7 +65,7 @@ const Contactuspage = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
                 placeholder="Full name"
                 required
               />
@@ -80,7 +77,7 @@ const Contactuspage = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
                 placeholder="Email"
                 required
               />
@@ -88,40 +85,34 @@ const Contactuspage = () => {
             <div>
               <label className="block text-gray-700 font-semibold">Phone no.*</label>
               <input
-                type="text"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                placeholder="+91"
-                required
-              />
+  type="text"
+  name="phone"
+  value={formData.phone}
+  onChange={handleChange}
+  className="..."
+  placeholder="91+"
+  required
+  pattern="\d{10}"
+  title="Phone number should be 10 digits only"
+/>
+
             </div>
             <div>
-              <label className="block text-gray-700 font-semibold">What is your role?*</label>
-              <div className="flex space-x-4 mt-2">
-                <label className="flex items-center space-x-2 text-gray-700 font-medium">
-                  <input
-                    type="radio"
-                    name="role"
-                    value="Teacher"
-                    checked={formData.role === "Teacher"}
-                    onChange={handleChange}
-                    className="w-5 h-5"
-                  />
-                  <span>Teacher</span>
-                </label>
-                <label className="flex items-center space-x-2 text-gray-700 font-medium">
-                  <input
-                    type="radio"
-                    name="role"
-                    value="Student"
-                    checked={formData.role === "Student"}
-                    onChange={handleChange}
-                    className="w-5 h-5"
-                  />
-                  <span>Student</span>
-                </label>
+              <label className="block text-gray-700 font-semibold">What is your role? *</label>
+              <div className="flex gap-6 mt-2">
+                {["Teacher", "Student"].map((role) => (
+                  <label key={role} className="flex items-center gap-2 text-gray-700 font-medium">
+                    <input
+                      type="radio"
+                      name="role"
+                      value={role}
+                      checked={formData.role === role}
+                      onChange={handleChange}
+                      className="accent-primary"
+                    />
+                    {role}
+                  </label>
+                ))}
               </div>
             </div>
             <div>
@@ -130,11 +121,15 @@ const Contactuspage = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                rows={4}
+                className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none resize-none"
                 placeholder="Write your message"
-              ></textarea>
+              />
             </div>
-            <button type="submit" className="w-full bg-blue-600 text-white p-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all">
+            <button
+              type="submit"
+              className="w-full bg-primary hover:bg-opacity-90 transition text-white text-lg font-semibold py-3 rounded-lg shadow-sm hover:shadow-md"
+            >
               SUBMIT →
             </button>
           </form>
