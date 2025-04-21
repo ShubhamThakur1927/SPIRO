@@ -232,7 +232,7 @@ function AboutUs() {
         </div>
         <div className="flex flex-col md:flex-row  overflow-hidden w-full md:w-4/5 mx-auto p-6 md:p-10 items-center">
           <img
-            src="https://s3-alpha-sig.figma.com/img/c587/f13f/32a5de37d4a5fc2da78de2854395c284?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=BdGIxzHHk1UolBo4-~Qc7yIzI7AT453J7juXPwZqgdhgCYprJ-~eSbEDgXmlNtFzLTy34d5Sf~9STElT9mLVjJvJr7Rq0DVSf-VMwrfVKzkZDgA-Or1cE19coFQwzzJBvfzexFtaEvIgTn-fzl8uYxeQiIDJf2HFM5wUamcpJOsNNA0q8VTHVnrxnkymKyAHoeHV1RXw4Ec0Fkn2tB2EvvM1RDPsmOqgtWlPKH3XpWXltZd3DCLcRUaukgW1nPR7OpD0tvXcgoEazEPvFia1alQ5zYyz7mIrWYzl-lXCb~BKxq5z5aqyxHLZXM7E3OuRvr49IWzKo14bJiGVDZpZ7Q__"
+            src="https://www.figma.com/design/nScHdcu9CuBKfvP11YhvWd/SPIRO?node-id=2319-1452&t=I1bzzj8J9os2O5jm-0"
             alt="Profile"
             className="w-full md:w-1/3 object-cover rounded-xl"
           />

@@ -12,9 +12,10 @@ import AboutUs from "./pages/AboutUs";
 import PageNotFound from "./pages/PageNotFound";
 import Dashboardteacher from "./pages/Dashboardteacher";
 import Termsandcondition from "./Tests/Components/Termsandcondition";
-import Aboutuspage from "./Tests/Components/Aboutuspage";
+
 import Contactuspage from "./Tests/Components/Contactuspage";
 import Privacypolicy from "./Tests/Components/Privacypolicy";
+import Aboutuspage from "./Tests/Components/Aboutuspage";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, checkAuth } = useAuthstore();

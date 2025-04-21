@@ -14,12 +14,32 @@ const Contactuspage = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Form submitted successfully!");
-    setFormData({ name: "", email: "", phone: "", role: "", message: "" });
+  
+    try {
+      const res = await fetch("http://localhost:5000/api/v1/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+  
+      const data = await res.json();
+  
+      if (res.ok) {
+        alert("✅ Message sent successfully!");
+        setFormData({ name: "", email: "", phone: "", role: "", message: "" });
+      } else {
+        alert(`❌ Failed to send: ${data.message}`);
+      }
+    } catch (err) {
+      console.error("Error submitting contact form:", err);
+      alert("❌ Something went wrong. Please try again later.");
+    }
   };
+  
 
   return (
     <div className="relative min-h-screen bg-gray-100 overflow-hidden">

@@ -99,7 +99,7 @@ function Aboutuspage() {
   <div className="md:w-1/2">
   
     <img 
-      src="https://s3-alpha-sig.figma.com/img/8f3a/64b2/a3099a7614dd710b3754113b91bd556c?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=adMq~Skt-oGjSmHpyIR-jsioA2Ql8-ay4awHPsSSlj9pex5IwCNYYydkQn57~O5CzUUnBrkMHv0U74A1EChRT09-9~puQj2BkKMbNaAl4t7mEM9MCrqAZUG~Ra5-BKNqoJNUqixn8YISCl4zuZF84bd-CONyYYsbCL9pEnvnXVNPz9dan3hyII~PTanR7lL~Gg1ZdANvmJ0n~YSBq8O7YCejQNHtJwZRzlHc4HvRkPpdF-XkOqnl0ZsB1O8598eT0OEUYBg06MD0ENgjaJ0MVyIIIsFhxpZkattvSSK9cQr4qDZc1i8XaqjUiV8QkfOkK8dupuFyndoQVhyK7stLxA__" 
+      src=" https://s3-alpha-sig.figma.com/img/8f3a/64b2/a3099a7614dd710b3754113b91bd556c?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=dXNDi8ZDheKzdNAjwYh13Zk6u9ZxodK9bbWCi6vHePa3hkvM-8I~HVCvQuqoYn55mA~OQLo6gyvLZuQYJl6HPZWu5B5T1L7kMcpLQg4mWnF9YoNrSlKE1Yv7-zE4fRWcjkd~jEk-2-yzZj0X8JTsZeTEcBXKd~oToOtYLfJA69gVs7ao1rZPWpo1bgZkQfMe8gfDus7NV5xBUVZ5VUZU-8gAXi0kobgK05eTKWe9nJE34x5gC4oFBheEjDoen0FOP2HX2JWC3T4nX-kcwEwn2G5yC-44rWiO2xGtheAG-lknV64BkXU2~MJ-OBpvE~ayTb-CvWgJxf5NoOaajIeAYA__" 
       alt="Teacher and students" 
       className="rounded-lg shadow-md w-full"
     />
@@ -166,7 +166,7 @@ function Aboutuspage() {
         <FeaturesGrid/>
         <div className="flex flex-col md:flex-row  p-6  w-full max-w-4xl mx-auto">
   <img
-    src="https://s3-alpha-sig.figma.com/img/c587/f13f/32a5de37d4a5fc2da78de2854395c284?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=eGR5lH32wLWShDpPnrW0NesUwb4XlRIaqgo0hGO9d~RIVPZwIqtfdV282PVph4njcDXnj7efMq1lEvEkrVKaL3QFge1ntZOsEyzoaDM6xx~Dx4KF90WRAYGWcdqXFwr4Kz91hYcm2qrj5lSgaCmjLNVDaPqOLLkQazAybGXbs8UZij3xUrTsL4NzR~BNHaUX9zYJJmpCKiOacXs2PX1HtVk8MUABLSBAKJQbSZPtNe~udJkZChxPevKdluCE09omgw9L5VQg70qhUxQMza9Lb1~mfzR26k86GcSg8vWT7Ph1It62TMFtmTsAw10b~n4AQgorVTRShmSbESPe31~e~A__"
+    src="   https://s3-alpha-sig.figma.com/img/c587/f13f/32a5de37d4a5fc2da78de2854395c284?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=cjQ~pCehEIUOV3BRKO2ugyvZU~wHoJ7TYKdsGbI~sMqUR~4OsQz-eRnOoKHfXKlG~79IQLMDp3KN25pcTGT-isptzeTOB6DR5OMvqcEu5uMpBwx7lVkXEhbk5EXlgal9E~lp8nKg5IaEYhLPH4zu-dGXOreMkqFB0DFLSmEDu3IhLzYkRnuj3D0aiaIiEF5Nt578~I9asIB9MQpqMPFPzA75g5Diyt3CCml55ROa8X5EZu~~sXos3H85F39DLYeaAhtJchUh5ety3N-mvSZpJiIRTNnUIKTuy77mHrLmyO7PcRgs8mIKMaS4kUopXVy95wKx5WM9Wt3vLaWv1SQhZg__  "
     alt="Mr. Shubham Thakur"
     className="w-full md:w-1/2 h-auto rounded-lg object-cover"
   />

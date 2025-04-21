@@ -8,19 +8,31 @@ function Smallcard(props) {
   }, []);
 
   return (
-      <div
-        className="card bg-main h-auto w-auto rounded-xl hover:bg-primary hover:text-white"
-        data-aos="fade-down"
-      >
-        <div className="card-content h-auto text-start w-auto pl-6 pr-20 pt-44 pb-5"> 
-          <h3 className="title xl:text-h3 text-small w-auto font-semibold">
-            {props.title}
-          </h3>
-          <p className="subtitle text-xs sm:text-small leading-normal sm:leading-small">
-            {props.subtitle}
-          </p>
+    <div
+      className="bg-gray-100 rounded-xl p-6 w-full h-auto text-center hover:bg-primary hover:text-white transition-all duration-300"
+      data-aos="fade-up"
+    >
+      {/* GIF/Icon */}
+      {props.gif && (
+        <div className="justify-center align-middle items-center">
+          <img
+            src={props.gif}
+            alt="icon"
+            className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+          />
         </div>
-        </div>
+      )}
+
+      {/* Title */}
+      <h3 className="font-semibold text-h2 leading-tight mb-1">
+        {props.title}
+      </h3>
+
+      {/* Subtitle */}
+      <p className="text-h4 text-gray-500">
+        {props.subtitle}
+      </p>
+    </div>
   );
 }
 

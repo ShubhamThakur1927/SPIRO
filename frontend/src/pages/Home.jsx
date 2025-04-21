@@ -63,21 +63,28 @@ function Home() {
         <h1 className=" md:text-h1 text-h2 font-semibold w-full md:w-1/2 text-center md:leading-h1 leading-h2 mb-10" data-aos="fade-up">
           Unlock The Future Of Education With <Link to="/login"><span className="text-primary font-bold">SPIRO</span></Link>
         </h1>
-        <div className="grid grid-cols-1 bg-opacity-80 md:grid-cols-3 gap-5 w-full md:w- px-4 md:px-10">
-          <div className="grid gap-5">
-            <FeatureCard title="The Tech That Simplifies Your Educational World" />
-            <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
-          </div>
-          <div className="grid gap-5">
-            <Smallcard title="Personalized Chatbot" />
-            <Smallcard title="Personalized Chatbot" />
-            <Smallcard title="Personalized Chatbot" />
-          </div>
-          <div className="grid gap-5">
-            <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
-            <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
-          </div>
-        </div>
+        <div className="grid grid-cols-1 bg-opacity-80 md:grid-cols-3 gap-5 w-full px-4 md:px-10">
+  <div className="grid gap-5">
+    <FeatureCard title="The Tech That Simplifies Your Educational World" />
+    <Card title="Seamless Sharing" subtitle="Easily collaborate and share resources." />
+  </div>
+  <div className="grid gap-5">
+    <Smallcard title="Personalized Chatbot" subtitle="Instant support for your learning." 
+    gif="https://s3-alpha-sig.figma.com/img/afc3/da47/25433bb036ef9d6827fcd72fc1b9d5ba?Expires=1746403200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=VM82b5kt75RZZnPrfH1A-9ju6evyvb~iEdVOPFps5Q4NboG4yLK-m9bQSXIrhskZsWYIew2KbanNo5lShBQDb02AxRas8HLRp8vxhHGxNdAKQUWCb5Fyep3LDELuDP6-yxFl2rUJpRGdPgmnqBMq6XbVYlGsZUOzmWvU0Lb69rX81soZKnjJJ3-7xpAQaWRS-yhyKMkc9Mf-v53JzhMgV1za4ODfWJtYgRMqddfGmXgmVGJ6i1AMz0z-ch2i0m7Pez9kffE3kBoyyr~q~aqZi56IfMMXrTEr2AIIaMexuCM~lSWYEdqIbLDrwcLTdsRoet076ceZuy7-ObYMnik4yQ__"
+    />
+    <Smallcard title="Progress Tracking" subtitle="Monitor your growth with detail."
+    gif="https://s3-alpha-sig.figma.com/img/b005/00da/b3f140a319772ee9db0b1d924a39ca98?Expires=1746403200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OK61Xua~EYyRVGNAxc~us2UEkvquDI0ebPHVc-nAXUZnRxnzt8art1WbqXt7JpaQjedczkzRo94TCNZbcVdgg~ZUikcSNI1vIWwSF0DGixtpV-IQ3FtxXvUfAGg~y~rn5TK-lkQLYgM6QcAyGjb3uz7dp1ae4-DJlzVR4dIQOVYhldJqS4fJ1l0S1h00ASRUi3YTLUP31qk6GwaEVmHaqJLm2-bjUqt0e6zXoP8~K92LL4qfNeaWYs-jGf0EkIzXgJEJsORj7O~57bhjqAdGlIlXVAN3Hp8JKD96iJ3cNs8-O9uAVvpb0U9GuwWUzJdkZlQsPqqQ9QOgtROK3UGRaA__"
+    />
+    <Smallcard title="Secure Learning" subtitle="Top-level security for your data." 
+    gif="https://s3-alpha-sig.figma.com/img/b5d7/0565/fb3b2304bbf0b3f9fcd542fbe3ebd503?Expires=1746403200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LoX~Ufj~~c6LSWxdfBbsgBP1~J-kWPDK-vl2esk2gb-XzBeJf64Q5tiy2cd-8AzG5h8NsyyBbohN4ACaBAzP8~3IPjZAvo9UmcEj0ccAUmMnJRdlnpOrQPHcU4KPPSYOHpKSl8PjjCAYis3qwgyUZCax7laoI6-j9meLleAaturdxnJ1xYkLyVEZcJFHDJAr5mWqSUUQJxSj771bsKpoDS2XIxrBmLVcO4eVdBteih30u0iNlO3dqVh5GWB4Y4vS7I0VGagICe-WCDrh3bkm7I4zzE4kH64IPd70K7Alnas784l1mheTp4v9pIUhyIhU47Z5UMkBVh0ei~fW4IFe4Q__ "
+    />
+  </div>
+  <div className="grid gap-5">
+    <Card title="Engaging Simulations" subtitle="Interactive tools to enhance learning." />
+    <Card title="Interesting Games" subtitle="Gaming zone making studies interesting." />
+  </div>
+</div>
+
 
         {/* About Section */}
         <h1 className="text-h1 leading-h1 font-semibold w-4/5 md:w-2/5 my-10 text-center" data-aos="fade-up">
