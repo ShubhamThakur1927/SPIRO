@@ -1,13 +1,13 @@
 import React from 'react'
 
-
-
-import Contactuspage from '../Tests/Components/Contactuspage';
-import Aboutuspage from '../Tests/Components/Aboutuspage';
 function Testubg() {
   return (
     <div>
-    <Aboutuspage/>
+    <h1 className="text-3xl font-bold text-primary">
+  SPIRO
+  <span className="text-base font-normal text-primary-light ml-1">edu</span>
+</h1>
+
     </div>
   )
 }

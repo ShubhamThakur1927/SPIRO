@@ -16,7 +16,7 @@ const Contactuspage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const res = await fetch("http://localhost:5000/api/v1/contact", {
         method: "POST",
@@ -25,9 +25,9 @@ const Contactuspage = () => {
         },
         body: JSON.stringify(formData)
       });
-  
+
       const data = await res.json();
-  
+
       if (res.ok) {
         alert("✅ Message sent successfully!");
         setFormData({ name: "", email: "", phone: "", role: "", message: "" });
@@ -39,7 +39,6 @@ const Contactuspage = () => {
       alert("❌ Something went wrong. Please try again later.");
     }
   };
-  
 
   return (
     <div className="relative min-h-screen bg-gray-100 overflow-hidden">
@@ -57,7 +56,7 @@ const Contactuspage = () => {
             Let's make learning seamless together! <br />
             Reach out to SPIRO today!
           </p>
-          <div className="text-sm py-8 space-y-3 text-white ">
+          <div className="text-sm py-8 space-y-3 text-white">
             <p>📍 Mumbai</p>
             <p>✉️ spiroedu9@gmail.com</p>
             <p>📞 +91 8452976481</p>
@@ -105,17 +104,16 @@ const Contactuspage = () => {
             <div>
               <label className="block text-gray-700 font-semibold">Phone no.*</label>
               <input
-  type="text"
-  name="phone"
-  value={formData.phone}
-  onChange={handleChange}
-  className="..."
-  placeholder="91+"
-  required
-  pattern="\d{10}"
-  title="Phone number should be 10 digits only"
-/>
-
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+                placeholder="91xxxxxxxxxx"
+                required
+                pattern="^\+?\d{1,4}?[\s\-]?\(?\d{1,3}?\)?[\s\-]?\d{3}[\s\-]?\d{4}$"
+                title="Phone number should be a valid format (e.g., +91 8452976481)"
+              />
             </div>
             <div>
               <label className="block text-gray-700 font-semibold">What is your role? *</label>

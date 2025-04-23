@@ -34,8 +34,8 @@ function Navbar({ className, textColor = "text-white" }) {
         {/* Logo */}
         <div className="text-h1 font-semibold leading-h1 text-primary">
           <Link to="/" className="flex gap-2 items-center">
-            {" "}
-            <img src={logo} alt="Logo" /> SPIRO
+            {" "} 
+            <img src={logo} alt="Logo"  className="size-16  w-auto" /> 
           </Link>
         </div>
 
